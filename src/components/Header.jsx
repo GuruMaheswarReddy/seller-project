@@ -25,7 +25,7 @@ const Header = () => {
           </div>
           <div>
             <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-sm font-semibold uppercase tracking-[0.18em] text-transparent">
-              BlackCart SaaS
+              BlackCart SAAS
             </div>
             <p className="text-[11px] text-gray-400">
               Empowering sellers. Managing commerce.
