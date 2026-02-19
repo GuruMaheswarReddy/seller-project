@@ -40,7 +40,7 @@ const Home = () => {
             <button
               type="button"
               onClick={() => navigate('/register')}
-              className="rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 px-6 py-2 text-sm font-semibold text-black shadow-xl shadow-yellow-500/40 transition hover:-translate-y-0.5 hover:shadow-yellow-500/60"
+             className="rounded-full bg-gradient-to-r from-green-400 to-green-600 px-6 py-2 text-sm font-semibold text-white shadow-xl shadow-green-500/40 transition hover:-translate-y-0.5 hover:shadow-green-500/60"
             >
               Get Started
             </button>
