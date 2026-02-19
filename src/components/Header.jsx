@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle.jsx'
 import { useAuth } from '../context/AuthContext.jsx'
+import logo from '../assets/Arshith_circle_logo.jpeg' 
 
 const Header = () => {
   const { user } = useAuth()
@@ -20,9 +21,12 @@ const Header = () => {
           className="flex cursor-pointer items-center gap-2"
           onClick={() => navigate('/')}
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 text-black shadow-lg shadow-yellow-500/40">
-            <span className="text-lg font-black tracking-tight">AF</span>
-          </div>
+          <img
+  src={logo}
+  alt="Arshith Fresh Logo"
+  className="h-10 w-auto object-contain"
+/>
+
           <div>
             <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-sm font-semibold uppercase tracking-[0.18em] text-transparent">
               ArshithFresh
