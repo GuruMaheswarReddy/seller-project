@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="space-y-14">
       {/* Hero with glassmorphism and gradient background */}
-      <section className="relative overflow-hidden rounded-3xl border border-yellow-500/20 bg-gradient-to-r from-yellow-400/20 via-yellow-500/10 to-yellow-600/20 px-6 py-10 shadow-2xl shadow-yellow-500/30 backdrop-blur-2xl sm:px-10 lg:flex lg:items-center lg:justify-between">
+      <section className="relative overflow-hidden rounded-3xl border border-green-100 bg-white px-6 py-10 shadow-lg sm:px-10 lg:flex lg:items-center lg:justify-between">
         <div className="pointer-events-none absolute -top-40 -left-40 h-72 w-72 rounded-full bg-yellow-500/25 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -right-40 h-72 w-72 rounded-full bg-yellow-600/25 blur-3xl" />
 
