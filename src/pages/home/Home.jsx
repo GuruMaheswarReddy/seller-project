@@ -103,22 +103,84 @@ const Home = () => {
   </div>
 </section>
 
-      {/* Latest products */}
-      <section id="latest-products" className="space-y-4">
-        <div className="flex items-center justify-between gap-2">
-          <div>
-            <h2 className="text-lg font-semibold text-white">Latest Products</h2>
-            <p className="text-xs text-white/60">
-              A sample feed of the commerce apps your sellers are shipping.
-            </p>
-          </div>
-        </div>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {latestProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
+     {/* WHY SELLERS CHOOSE US */}
+<section className="space-y-12 py-16">
+  <div className="text-center space-y-4">
+    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
+      WHY SELLERS CHOOSE US
+    </p>
+
+    <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      Built for local & growing brands
+    </h2>
+
+    <p className="mx-auto max-w-2xl text-sm text-white/70 sm:text-base">
+      Sell more with tools designed for every type of seller.
+      From onboarding to payouts, everything is built for scale.
+    </p>
+  </div>
+
+  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    
+    {/* Card 1 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        📍
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Pan-India Reach
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Reach customers across India with promotional visibility
+        and wide marketplace access.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        🚀
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Simple Onboarding
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Upload KYC, add catalog, and start receiving orders
+        within minutes.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        📊
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Growth Insights
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Real-time analytics, repeat buyer insights,
+        and smart pricing tools.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        💬
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Seller-First Support
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        WhatsApp & callback support for catalog,
+        pricing, and growth help.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
             {/* HOW IT WORKS SECTION */}
       <section className="space-y-10 rounded-3xl bg-white px-6 py-14 text-gray-900 shadow-xl">
