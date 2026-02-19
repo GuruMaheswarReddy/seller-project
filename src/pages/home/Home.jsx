@@ -120,6 +120,105 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+            {/* HOW IT WORKS SECTION */}
+      <section className="space-y-10 rounded-3xl bg-white px-6 py-14 text-gray-900 shadow-xl">
+        <div className="text-center space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#094b3d]">
+            HOW IT WORKS
+          </p>
+          <h2 className="text-3xl font-bold">
+            Go from signup to first order in days
+          </h2>
+          <p className="text-sm text-gray-500">
+            A guided onboarding for busy store owners.
+          </p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="space-y-4">
+            {[
+              {
+                title: 'Create account',
+                desc: 'Start with mobile & email verification.',
+              },
+              {
+                title: 'Complete KYC',
+                desc: 'Add GST, PAN, bank details & address.',
+              },
+              {
+                title: 'Add products',
+                desc: 'Upload SKUs, prices, images & stock.',
+              },
+              {
+                title: 'Start receiving orders',
+                desc: 'Fulfil orders & handover easily.',
+              },
+            ].map((step, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-4 rounded-xl border bg-gray-50 p-4"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#094b3d]/10 font-semibold text-[#094b3d]">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="font-semibold">{step.title}</h3>
+                  <p className="text-sm text-gray-500">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl border-2 border-dashed border-[#094b3d]/30 p-6">
+            <h3 className="text-lg font-semibold mb-4">What you need:</h3>
+            <ul className="space-y-2 text-sm">
+              <li>✓ Business PAN & GST (if available)</li>
+              <li>✓ Bank passbook or cancelled cheque</li>
+              <li>✓ Product photos</li>
+              <li>✓ Pricing & stock</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* EARNINGS SECTION */}
+      <section className="space-y-8 rounded-3xl bg-[#e6f2ee] px-6 py-14 text-gray-900 shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#094b3d]">
+              EARNINGS & PAYOUTS
+            </p>
+            <h2 className="text-3xl font-bold">
+              0% Commission. Keep 100% of your earnings.
+            </h2>
+            <p className="text-sm text-gray-600">
+              No hidden fees. No platform charges.
+            </p>
+
+            <div className="rounded-2xl bg-white p-6 shadow-md border border-[#094b3d]/20 w-56">
+              <p className="text-3xl font-bold text-[#094b3d]">₹0</p>
+              <p className="text-sm text-gray-500">
+                Platform Commission Forever
+              </p>
+            </div>
+
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• Instant or weekly payouts after KYC</li>
+              <li>• No listing fee or catalog charges</li>
+              <li>• Transparent order-wise payouts</li>
+            </ul>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="h-48 w-48 rounded-full bg-[#094b3d]/10 flex items-center justify-center text-6xl">
+              🛒
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
     </div>
   )
 }
