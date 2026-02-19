@@ -16,93 +16,92 @@ const Home = () => {
 
   return (
     <div className="space-y-14 bg-[#094b3d]">
-      {/* Hero with glassmorphism and gradient background */}
-      <section className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 px-6 py-10 shadow-lg sm:px-10 lg:flex lg:items-center lg:justify-between backdrop-blur-xl">
-        <div className="pointer-events-none absolute -top-40 -left-40 h-72 w-72 rounded-full bg-[#094b3d]/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -right-40 h-72 w-72 rounded-full bg-[#094b3d]/30 blur-3xl" />
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#094b3d] via-[#0f6b58] to-[#063d32] px-6 py-16 sm:px-10 lg:flex lg:items-center lg:justify-between">
+  
+  {/* Left Content */}
+  <div className="max-w-xl space-y-6 text-white">
+    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow-300">
+      BLACKCART SAAS
+    </p>
 
-        <div className="relative max-w-xl space-y-6">
-          <p className="inline-flex rounded-full bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white ring-1 ring-white/40">
-            BlackCart SaaS
-          </p>
-          <h1 className="text-balance bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl lg:text-5xl">
-            Empowering Sellers.
-            <br />
-            Managing Commerce.
-          </h1>
-          <p className="max-w-lg text-sm text-white/90 sm:text-base">
-            BlackCart gives modern commerce teams a single pane of glass to manage
-            products, sellers and orders in real time. Built for scale, tuned for
-            performance, and wrapped in a modern SaaS experience.
-          </p>
+    <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
+      Start selling online.
+      <br />
+      Grow your business faster.
+    </h1>
 
-          <div className="flex flex-wrap items-center gap-3 pt-1">
-            <button
-              type="button"
-              onClick={() => navigate('/register')}
-             className="rounded-full bg-gradient-to-r from-white to-white/90 px-6 py-2 text-sm font-semibold text-[#094b3d] shadow-xl shadow-white/40 transition hover:-translate-y-0.5 hover:shadow-white/60"
-            >
-              Get Started
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                const el = document.getElementById('latest-products')
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }}
-              className="rounded-full border border-white/40 bg-white/10 px-5 py-2 text-sm font-medium text-white shadow-lg shadow-white/30 backdrop-blur-md transition hover:-translate-y-0.5 hover:border-white/60 hover:text-white"
-            >
-              View Products
-            </button>
-          </div>
+    <p className="text-base text-white/80">
+      Create your store, add products, and start receiving orders in minutes.
+      No commission. No hidden charges. Built for Indian sellers.
+    </p>
 
-          <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/70">
-            <div className="rounded-full bg-white/20 px-3 py-1">
-              <span className="font-semibold text-white">Live</span> seller &amp;
-              order visibility
-            </div>
-            <div className="rounded-full bg-white/20 px-3 py-1">
-              Multi-tenant, API-first, commerce ready
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-wrap gap-4 pt-4">
+      <button
+        type="button"
+        onClick={() => navigate('/register')}
+        className="rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-black shadow-md transition hover:bg-yellow-300"
+      >
+        Start for Free
+      </button>
 
-        {/* Glass card with company details */}
-        <div className="relative mt-10 w-full max-w-sm lg:mt-0">
-          <div className="rounded-3xl border border-white/30 bg-white/20 p-5 shadow-2xl shadow-white/30 backdrop-blur-2xl">
-            <div className="flex items-center justify-between">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                Platform snapshot
-              </p>
-              <span className="h-2 w-2 rounded-full bg-white shadow shadow-white/70" />
-            </div>
-            <div className="mt-4 space-y-3 text-xs text-white/90">
-              <div className="flex items-center justify-between">
-                <span className="text-white/70">Active sellers</span>
-                <span className="font-semibold text-white">
-                  {users.filter((u) => u.role === 'seller').length}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/70">Products in catalog</span>
-                <span className="font-semibold text-white">
-                  {products.length}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/70">Latency (P95)</span>
-                <span className="font-semibold text-white">120ms</span>
-              </div>
-            </div>
-            <div className="mt-5 rounded-2xl bg-gradient-to-r from-white to-white/90 px-4 py-3 text-xs font-medium text-[#094b3d] shadow-lg shadow-white/50">
-              <p>Deploy your commerce ops in minutes, not months.</p>
-              <p className="mt-1 text-[11px] opacity-80">
-                Built for admins, sellers and growth teams out of the box.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <button
+        type="button"
+        onClick={() => {
+          const el = document.getElementById('latest-products')
+          if (el) el.scrollIntoView({ behavior: 'smooth' })
+        }}
+        className="rounded-lg border border-white/40 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+      >
+        Explore Products
+      </button>
+    </div>
+
+    <div className="flex gap-6 pt-6 text-sm text-white/70">
+      <div>
+        <p className="text-lg font-bold text-white">0%</p>
+        Commission
+      </div>
+      <div>
+        <p className="text-lg font-bold text-white">Instant</p>
+        Payouts
+      </div>
+      <div>
+        <p className="text-lg font-bold text-white">Easy</p>
+        Onboarding
+      </div>
+    </div>
+  </div>
+
+  {/* Right Side Card */}
+  <div className="mt-12 w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl lg:mt-0">
+    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+      Platform Snapshot
+    </h3>
+
+    <div className="mt-6 space-y-4 text-sm text-gray-700">
+      <div className="flex justify-between">
+        <span>Active Sellers</span>
+        <span className="font-semibold">
+          {users.filter((u) => u.role === 'seller').length}
+        </span>
+      </div>
+
+      <div className="flex justify-between">
+        <span>Products Listed</span>
+        <span className="font-semibold">{products.length}</span>
+      </div>
+
+      <div className="flex justify-between">
+        <span>Avg. Response</span>
+        <span className="font-semibold text-green-600">120ms</span>
+      </div>
+    </div>
+
+    <div className="mt-6 rounded-lg bg-[#094b3d] px-4 py-3 text-center text-sm font-medium text-white">
+      Go live in minutes 🚀
+    </div>
+  </div>
+</section>
 
       {/* Latest products */}
       <section id="latest-products" className="space-y-4">
