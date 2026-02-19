@@ -15,7 +15,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  @apply bg-black text-gray-100 antialiased;
+  background-color: #094b3d;   /* Updated color */
+  @apply text-gray-100 antialiased;
 }
 
 #root {
@@ -31,4 +32,5 @@ body {
   background: linear-gradient(to bottom, #facc15, #ca8a04);
   border-radius: 9999px;
 }
+
 
