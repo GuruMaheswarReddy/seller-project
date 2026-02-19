@@ -21,7 +21,7 @@ const Home = () => {
   {/* Left Content */}
   <div className="max-w-xl space-y-6 text-white">
     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow-300">
-      BLACKCART SAAS
+      ArshithFresh
     </p>
 
     <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
