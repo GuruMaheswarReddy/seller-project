@@ -218,6 +218,16 @@ const Home = () => {
         </div>
       </section>
 
+          {/* BASIC FOOTER - ONLY HOME PAGE */}
+      <footer className="mt-16 border-t border-white/20 pt-6 pb-8 text-center text-xs text-white/70">
+        <p>© {new Date().getFullYear()} Seller.ArshithFresh. All rights reserved.</p>
+        <p className="mt-2 text-white/50">
+          Empowering sellers. Managing commerce.
+        </p>
+      </footer>
+
+      
+
       
     </div>
   )
