@@ -21,11 +21,11 @@ const Header = () => {
           onClick={() => navigate('/')}
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 text-black shadow-lg shadow-yellow-500/40">
-            <span className="text-lg font-black tracking-tight">BC</span>
+            <span className="text-lg font-black tracking-tight">AF</span>
           </div>
           <div>
             <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-sm font-semibold uppercase tracking-[0.18em] text-transparent">
-              BlackCart SAAS
+              ArshithFresh
             </div>
             <p className="text-[11px] text-gray-400">
               Empowering sellers. Managing commerce.
