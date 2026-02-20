@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
-import logo from '../assets/Arshith_circle_logo.jpeg'
+import logo from '../assets/logo.jpeg'
 
 const Header = () => {
   const { user } = useAuth()
