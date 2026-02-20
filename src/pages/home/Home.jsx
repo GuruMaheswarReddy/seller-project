@@ -141,6 +141,129 @@ const Home = () => {
         </div>
       </section>
 
+
+
+
+      {/* WHY SELLERS LOVE SECTION */}
+<section className="bg-gray-50 py-24">
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+      {/* LEFT SIDE */}
+      <div className="space-y-6">
+        <h2 className="text-4xl font-bold text-gray-900 leading-tight sm:text-5xl">
+          Why Sellers Love ArshithFresh
+        </h2>
+
+        <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+          All the benefits that come with selling on ArshithFresh are 
+          designed to help you sell more, and make it easier to grow 
+          your business.
+        </p>
+      </div>
+
+      {/* RIGHT SIDE CARD */}
+      <div className="rounded-2xl border border-gray-200 bg-white shadow-lg">
+
+        {/* ITEM 1 */}
+        <div className="flex gap-4 p-8">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-[#094b3d] font-bold text-lg">
+            0%
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900">
+              0% Commission Fee
+            </h3>
+            <p className="mt-2 text-gray-600">
+              Sellers keep 100% of their profit by not paying any commission.
+            </p>
+          </div>
+        </div>
+
+        <hr className="border-gray-200" />
+
+        {/* ITEM 2 */}
+        <div className="flex gap-4 p-8">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-[#094b3d] font-bold">
+            ₹
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900">
+              0 Penalty Charges
+            </h3>
+            <p className="mt-2 text-gray-600">
+              Sell online without fear of cancellation charges or late dispatch penalties.
+            </p>
+          </div>
+        </div>
+
+        <hr className="border-gray-200" />
+
+        {/* ITEM 3 */}
+        <div className="flex gap-4 p-8">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-[#094b3d] font-bold">
+            ↑
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900">
+              Growth for Every Seller
+            </h3>
+            <p className="mt-2 text-gray-600">
+              From small to large businesses, we help every seller grow faster.
+            </p>
+          </div>
+        </div>
+
+        <hr className="border-gray-200" />
+
+        {/* ITEM 4 */}
+        <div className="p-8">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+            Ease of Doing Business
+          </h3>
+
+          <div className="grid gap-4 sm:grid-cols-2 text-gray-700">
+
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
+                ✓
+              </span>
+              Easy Product Listing
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
+                ✓
+              </span>
+              Lowest Shipping Cost
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
+                ✓
+              </span>
+              7-Day Payment Cycle
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
+                ✓
+              </span>
+              Transparent Order Tracking
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+      
+
+
+      
+
       {/* HOW IT WORKS SECTION */}
 <section className="py-24 bg-gray-50">
   <div className="mx-auto max-w-7xl px-6">
