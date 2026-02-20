@@ -16,10 +16,13 @@ const Home = () => {
   })
 
   return (
-    <div>
-    
-  {/* Left Content */}
-  <div className="max-w-xl space-y-6 text-white">
+  <div>
+
+    {/* HERO SECTION */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#094b3d] via-[#0f6b58] to-[#063d32] px-6 py-16 lg:flex lg:items-center lg:justify-between">
+
+      {/* Left Content */}
+      <div className="max-w-xl space-y-6 text-white">
     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow-300">
       ArshithFresh
     </p>
