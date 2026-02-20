@@ -271,32 +271,30 @@ const Home = () => {
       
 
 
-      
+    {/* HOW IT WORKS SECTION */}
+<section className="py-20 bg-gray-50">
+  <div className="mx-auto max-w-6xl px-6">
 
-  {/* HOW IT WORKS SECTION */}
-<section className="py-24 bg-gray-50">
-  <div className="mx-auto max-w-7xl px-6">
-
-    <h2 className="text-center text-4xl font-bold text-gray-900 mb-20">
+    <h2 className="text-center text-3xl font-semibold text-gray-900 mb-16">
       How it works
     </h2>
 
-    <div className="bg-white rounded-3xl shadow-xl p-16">
+    <div className="bg-white rounded-2xl shadow-lg px-10 py-14">
 
       {/* NUMBER ROW */}
-      <div className="hidden md:grid grid-cols-5 items-center mb-16">
+      <div className="hidden md:grid grid-cols-5 items-center mb-12">
 
         {[1, 2, 3, 4, 5].map((num, index) => (
           <div key={index} className="relative flex justify-center items-center">
 
-            {/* Circle */}
-            <div className="z-10 flex h-16 w-16 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
+            {/* Circle (slightly smaller) */}
+            <div className="z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d] text-white font-semibold text-sm">
               {num}
             </div>
 
-            {/* Connector Line */}
+            {/* Short Thin Connector */}
             {index !== 4 && (
-              <div className="absolute right-[-50%] top-1/2 -translate-y-1/2 w-full h-[3px] bg-[#094b3d]"></div>
+              <div className="absolute right-[-35%] top-1/2 -translate-y-1/2 w-[70%] h-[2px] bg-[#094b3d]"></div>
             )}
 
           </div>
@@ -305,7 +303,7 @@ const Home = () => {
       </div>
 
       {/* CONTENT GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
 
         {[
           {
@@ -335,7 +333,7 @@ const Home = () => {
         ].map((step, index) => (
           <div key={index}>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            <h3 className="text-base font-semibold text-gray-900 mb-3">
               {step.title}
             </h3>
 
@@ -344,10 +342,10 @@ const Home = () => {
             </p>
 
             {step.points && (
-              <ul className="mt-3 text-sm text-gray-600 space-y-2 text-left">
+              <ul className="mt-3 text-sm text-gray-600 space-y-1 text-left">
                 {step.points.map((point, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="text-[#094b3d]">•</span>
+                    <span className="text-[#094b3d] text-xs mt-[6px]">•</span>
                     {point}
                   </li>
                 ))}
@@ -361,7 +359,9 @@ const Home = () => {
 
     </div>
   </div>
-</section>
+</section>  
+
+  
       
       {/* TOOLS SECTION */}
 <section className="relative bg-[#eef3f7] py-24 overflow-hidden">
