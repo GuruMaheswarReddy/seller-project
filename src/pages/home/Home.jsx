@@ -273,7 +273,7 @@ const Home = () => {
 
       
 
-    {/* HOW IT WORKS SECTION */}
+   {/* HOW IT WORKS SECTION */}
 <section className="py-24 bg-gray-50">
   <div className="mx-auto max-w-7xl px-6">
 
@@ -281,31 +281,12 @@ const Home = () => {
       How it works
     </h2>
 
-    <div className="bg-white rounded-3xl shadow-xl p-12">
+    <div className="bg-white rounded-3xl shadow-xl p-16 relative">
 
-      {/* TOP NUMBER ROW */}
-      <div className="hidden md:flex items-center justify-between mb-16">
+      {/* CONNECTING LINE */}
+      <div className="hidden md:block absolute top-20 left-0 right-0 h-[3px] bg-[#094b3d]/20"></div>
 
-        {[1, 2, 3, 4, 5].map((num, index) => (
-          <div key={index} className="flex items-center flex-1">
-
-            {/* Circle */}
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
-              {num}
-            </div>
-
-            {/* Line (not for last item) */}
-            {index !== 4 && (
-              <div className="flex-1 h-[3px] bg-[#094b3d] mx-6"></div>
-            )}
-
-          </div>
-        ))}
-
-      </div>
-
-      {/* CONTENT GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 text-center relative">
 
         {[
           {
@@ -333,7 +314,12 @@ const Home = () => {
             desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery."
           }
         ].map((step, index) => (
-          <div key={index}>
+          <div key={index} className="relative flex flex-col items-center">
+
+            {/* Circle Number */}
+            <div className="z-10 mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
+              {index + 1}
+            </div>
 
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {step.title}
