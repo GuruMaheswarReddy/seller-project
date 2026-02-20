@@ -103,45 +103,54 @@ const Home = () => {
         </div>
       </section>
 
-      {/* WHY SELLERS CHOOSE US */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 xl:px-12 bg-gradient-to-b from-gray-50 to-white">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-20 space-y-6">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#094b3d]">
-              Why Sellers Choose Us
-            </p>
-            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
-              Built for local & growing brands
-            </h2>
-            <p className="mx-auto max-w-3xl text-lg text-gray-600">
-              Sell more with tools designed for every type of seller.
-              From onboarding to payouts, everything is built for scale.
-            </p>
-          </div>
+      {/* STATS SECTION */}
+<section className="bg-gray-100 py-20">
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: '📍', title: 'Pan-India Reach', desc: 'Reach customers across India with promotional visibility and wide marketplace access.' },
-              { icon: '🚀', title: 'Simple Onboarding', desc: 'Upload KYC, add catalog, and start receiving orders within minutes.' },
-              { icon: '📊', title: 'Growth Insights', desc: 'Real-time analytics, repeat buyer insights, and smart pricing tools.' },
-              { icon: '💬', title: 'Seller-First Support', desc: 'WhatsApp & callback support for catalog, pricing, and growth help.' }
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="group rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:-translate-y-4 hover:shadow-2xl"
-              >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#094b3d]/10 text-3xl group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* CARD 1 */}
+      <div className="rounded-2xl bg-white p-10 shadow-sm">
+        <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
+          Lakhs of
+        </h3>
+        <p className="text-xl font-semibold text-gray-900 leading-snug">
+          Sellers trust ArshithFresh to sell online
+        </p>
+      </div>
 
+      {/* CARD 2 */}
+      <div className="rounded-2xl bg-white p-10 shadow-sm">
+        <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
+          Crores of
+        </h3>
+        <p className="text-xl font-semibold text-gray-900 leading-snug">
+          Customers buying across India
+        </p>
+      </div>
 
+      {/* CARD 3 */}
+      <div className="rounded-2xl bg-white p-10 shadow-sm">
+        <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
+          Thousands of
+        </h3>
+        <p className="text-xl font-semibold text-gray-900 leading-snug">
+          Serviceable pincodes across India — we deliver everywhere.
+        </p>
+      </div>
+
+      {/* CARD 4 */}
+      <div className="rounded-2xl bg-white p-10 shadow-sm">
+        <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
+          Hundreds of
+        </h3>
+        <p className="text-xl font-semibold text-gray-900 leading-snug">
+          Categories to sell online
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
       {/* WHY SELLERS LOVE SECTION */}
