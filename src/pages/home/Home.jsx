@@ -108,57 +108,7 @@ const Home = () => {
 </section>
 
 
-{/* PLATFORM IMPACT SECTION - NO BOX */}
-<section className="bg-[#e6f2ee] py-20">
-  <div className="mx-auto max-w-7xl px-6">
 
-    <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-
-      {/* Item 1 */}
-      <div>
-        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
-          Lakhs of
-        </h3>
-        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
-          Sellers trust ArshithFresh to sell online
-        </p>
-      </div>
-
-      {/* Item 2 */}
-      <div>
-        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
-          Crores of
-        </h3>
-        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
-          Customers buying across India
-        </p>
-      </div>
-
-      {/* Item 3 */}
-      <div>
-        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
-          Thousands of
-        </h3>
-        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
-          Serviceable pincodes — we deliver everywhere
-        </p>
-      </div>
-
-      {/* Item 4 */}
-      <div>
-        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
-          Hundreds of
-        </h3>
-        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
-          Categories to sell online
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-      
      {/* WHY SELLERS CHOOSE US */}
 <section className="space-y-12 py-16">
   <div className="text-center space-y-4">
@@ -299,18 +249,16 @@ const Home = () => {
         </div>
       </section>
 
-
-      {/* WHY SELLERS LOVE ARSHITHFRESH */}
-<section className="bg-white py-24">
+   {/* WHY SELLERS LOVE ARSHITHFRESH */}
+<section className="bg-white py-20">
   <div className="mx-auto max-w-7xl px-6">
 
-    <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
+    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
 
       {/* LEFT SIDE */}
       <div className="space-y-6">
-        <h2 className="text-4xl font-bold text-gray-900 leading-tight sm:text-5xl">
-          Why Sellers Love <br className="hidden sm:block" />
-          ArshithFresh
+        <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+          Why Sellers Love ArshithFresh
         </h2>
 
         <p className="text-lg text-gray-600 leading-relaxed">
@@ -320,93 +268,80 @@ const Home = () => {
         </p>
       </div>
 
-      {/* RIGHT SIDE BENEFITS (NO BOX) */}
-      <div className="space-y-10">
+      {/* RIGHT SIDE BENEFITS BOX */}
+      <div className="rounded-3xl border border-[#094b3d]/20 bg-[#f4fbf8] p-8 shadow-sm">
 
-        {/* ITEM 1 */}
-        <div className="flex gap-5">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] font-semibold">
+        {/* Item 1 */}
+        <div className="flex gap-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] font-bold">
             0%
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
               0% Commission Fee
             </h3>
-            <p className="mt-2 text-gray-600 leading-relaxed">
+            <p className="mt-2 text-gray-600">
               Sellers keep 100% of their profit by not paying any commission.
             </p>
           </div>
         </div>
 
-        <hr className="border-gray-200" />
+        <hr className="my-6 border-[#094b3d]/10" />
 
-        {/* ITEM 2 */}
-        <div className="flex gap-5">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
+        {/* Item 2 */}
+        <div className="flex gap-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
             ₹
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
               0 Penalty Charges
             </h3>
-            <p className="mt-2 text-gray-600 leading-relaxed">
+            <p className="mt-2 text-gray-600">
               Sell without fear of cancellation charges or late dispatch penalties.
             </p>
           </div>
         </div>
 
-        <hr className="border-gray-200" />
+        <hr className="my-6 border-[#094b3d]/10" />
 
-        {/* ITEM 3 */}
-        <div className="flex gap-5">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
+        {/* Item 3 */}
+        <div className="flex gap-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
             ↑
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
               Growth for Every Seller
             </h3>
-            <p className="mt-2 text-gray-600 leading-relaxed">
+            <p className="mt-2 text-gray-600">
               From small to large businesses, we help every seller grow faster.
             </p>
           </div>
         </div>
 
-        <hr className="border-gray-200" />
+        <hr className="my-6 border-[#094b3d]/10" />
 
-        {/* ITEM 4 */}
+        {/* Item 4 */}
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-5">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">
             Ease of Doing Business
           </h3>
 
-          <div className="grid gap-4 sm:grid-cols-2 text-gray-700">
-            <p className="flex items-center gap-2">
-              <span className="text-[#094b3d]">✔</span>
-              Easy Product Listing
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-[#094b3d]">✔</span>
-              Lowest Shipping Cost
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-[#094b3d]">✔</span>
-              7-Day Payment Cycle
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-[#094b3d]">✔</span>
-              Transparent Order Tracking
-            </p>
+          <div className="grid gap-3 sm:grid-cols-2 text-gray-700">
+            <p>✔ Easy Product Listing</p>
+            <p>✔ Lowest Shipping Cost</p>
+            <p>✔ 7-Day Payment Cycle</p>
+            <p>✔ Transparent Order Tracking</p>
           </div>
         </div>
 
       </div>
-
     </div>
 
   </div>
 </section>
-
+    
       
 
       {/* EARNINGS SECTION */}
