@@ -142,71 +142,65 @@ const Home = () => {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-20 space-y-6">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#094b3d]">
-              How It Works
-            </p>
-            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-              Go from signup to first order in days
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              A guided onboarding for busy store owners.
-            </p>
-          </div>
+<section className="py-24 bg-gray-50">
+  <div className="mx-auto max-w-7xl px-6">
+    
+    <h2 className="text-center text-4xl font-bold text-gray-900 mb-16">
+      How it works
+    </h2>
 
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-            <div className="space-y-6">
-              {[
-                { title: 'Create account', desc: 'Start with mobile & email verification.' },
-                { title: 'Complete KYC', desc: 'Add GST, PAN, bank details & address.' },
-                { title: 'Add products', desc: 'Upload SKUs, prices, images & stock.' },
-                { title: 'Start receiving orders', desc: 'Fulfil orders & handover easily.' }
-              ].map((step, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-6 rounded-3xl bg-white p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-r from-[#094b3d] to-[#0f6b58] font-bold text-2xl text-white shadow-lg">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
+    <div className="relative bg-white rounded-3xl shadow-xl p-12">
+
+      {/* Horizontal Line */}
+      <div className="absolute top-16 left-0 right-0 h-[2px] bg-[#094b3d]/20"></div>
+
+      <div className="relative grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
+
+        {[
+          {
+            title: "Create Account",
+            desc: "Register using your basic business details."
+          },
+          {
+            title: "List Products",
+            desc: "Upload the products you want to sell."
+          },
+          {
+            title: "Get Orders",
+            desc: "Start receiving orders from customers."
+          },
+          {
+            title: "Affordable Shipping",
+            desc: "Ship products across India at low cost."
+          },
+          {
+            title: "Receive Payments",
+            desc: "Get payments directly into your bank account."
+          }
+        ].map((step, index) => (
+          <div key={index} className="relative flex flex-col items-center">
+
+            {/* Step Circle */}
+            <div className="z-10 flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
+              {index + 1}
             </div>
 
-            <div className="lg:ml-12">
-              <div className="rounded-3xl border-4 border-dashed border-[#094b3d]/20 bg-gradient-to-br from-white to-gray-50 p-10 shadow-2xl">
-                <h3 className="mb-8 text-2xl font-bold text-gray-900 text-center">
-                  What you need:
-                </h3>
-                <ul className="space-y-4 text-lg">
-                  <li className="flex items-center gap-3">
-                    <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold text-sm">✓</span>
-                    Business PAN & GST (if available)
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold text-sm">✓</span>
-                    Bank passbook or cancelled cheque
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold text-sm">✓</span>
-                    Product photos
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 font-bold text-sm">✓</span>
-                    Pricing & stock
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <h3 className="mt-6 text-lg font-semibold text-gray-900">
+              {step.title}
+            </h3>
+
+            <p className="mt-3 text-sm text-gray-600">
+              {step.desc}
+            </p>
+
           </div>
-        </div>
-      </section>
+        ))}
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
      
 
