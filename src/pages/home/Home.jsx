@@ -281,10 +281,7 @@ const Home = () => {
       How it works
     </h2>
 
-    <div className="relative bg-white rounded-3xl shadow-xl p-12">
-
-      {/* Green Connecting Line */}
-      <div className="hidden md:block absolute top-20 left-[8%] right-[8%] h-[3px] bg-[#094b3d]"></div>
+    <div className="bg-white rounded-3xl shadow-xl p-12">
 
       <div className="relative grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
 
@@ -299,22 +296,27 @@ const Home = () => {
           },
           {
             title: "List Products",
-            desc: "List the products you want to sell in your supplier panel.",
+            desc: "List the products you want to sell in your supplier panel."
           },
           {
             title: "Get Orders",
-            desc: "Start getting orders from customers actively shopping on our platform.",
+            desc: "Start getting orders from customers actively shopping on our platform."
           },
           {
             title: "Affordable Shipping",
-            desc: "Enjoy affordable shipping to customers across India.",
+            desc: "Enjoy affordable shipping to customers across India."
           },
           {
             title: "Receive Payments",
-            desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery.",
+            desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery."
           }
         ].map((step, index) => (
           <div key={index} className="relative flex flex-col items-center">
+
+            {/* Green Line Between Circles */}
+            {index !== 4 && (
+              <div className="hidden md:block absolute top-7 left-[60%] w-[80%] h-[3px] bg-[#094b3d]"></div>
+            )}
 
             {/* Step Circle */}
             <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
