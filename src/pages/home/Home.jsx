@@ -273,47 +273,51 @@ const Home = () => {
 
       
 
-      {/* HOW IT WORKS SECTION */}
+     {/* HOW IT WORKS SECTION */}
 <section className="py-24 bg-gray-50">
   <div className="mx-auto max-w-7xl px-6">
-    
-    <h2 className="text-center text-4xl font-bold text-gray-900 mb-16">
+
+    <h2 className="text-center text-4xl font-bold text-gray-900 mb-20">
       How it works
     </h2>
 
     <div className="relative bg-white rounded-3xl shadow-xl p-12">
 
-      {/* Horizontal Line */}
-      <div className="absolute top-16 left-0 right-0 h-[2px] bg-[#094b3d]/20"></div>
+      {/* Green Connecting Line */}
+      <div className="hidden md:block absolute top-20 left-[8%] right-[8%] h-[3px] bg-[#094b3d]"></div>
 
       <div className="relative grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
 
         {[
           {
             title: "Create Account",
-            desc: "Register using your basic business details."
+            desc: "All you need is:",
+            points: [
+              "GSTIN (for GST sellers) or Enrolment ID / UIN (for non-GST sellers)",
+              "Bank Account"
+            ]
           },
           {
             title: "List Products",
-            desc: "Upload the products you want to sell."
+            desc: "List the products you want to sell in your supplier panel.",
           },
           {
             title: "Get Orders",
-            desc: "Start receiving orders from customers."
+            desc: "Start getting orders from customers actively shopping on our platform.",
           },
           {
             title: "Affordable Shipping",
-            desc: "Ship products across India at low cost."
+            desc: "Enjoy affordable shipping to customers across India.",
           },
           {
             title: "Receive Payments",
-            desc: "Get payments directly into your bank account."
+            desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery.",
           }
         ].map((step, index) => (
           <div key={index} className="relative flex flex-col items-center">
 
             {/* Step Circle */}
-            <div className="z-10 flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
+            <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
               {index + 1}
             </div>
 
@@ -321,9 +325,20 @@ const Home = () => {
               {step.title}
             </h3>
 
-            <p className="mt-3 text-sm text-gray-600">
+            <p className="mt-3 text-sm text-gray-600 max-w-xs">
               {step.desc}
             </p>
+
+            {step.points && (
+              <ul className="mt-3 text-sm text-gray-600 space-y-2 text-left">
+                {step.points.map((point, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-[#094b3d]">•</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            )}
 
           </div>
         ))}
@@ -333,8 +348,6 @@ const Home = () => {
     </div>
   </div>
 </section>
-
-
       {/* TOOLS SECTION */}
 <section className="relative bg-[#eef3f7] py-24 overflow-hidden">
   <div className="mx-auto max-w-7xl px-6">
