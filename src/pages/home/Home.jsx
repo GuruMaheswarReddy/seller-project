@@ -208,24 +208,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* LATEST PRODUCTS SECTION */}
-      <section id="latest-products" className="py-24 px-4 sm:px-6 lg:px-8 xl:px-12 bg-gradient-to-b from-white to-gray-50">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4">
-              Latest Products
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover what sellers are listing right now
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {latestProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       <Footer />
     </div>
