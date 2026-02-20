@@ -108,14 +108,14 @@ const Home = () => {
 </section>
 
 
-{/* PLATFORM IMPACT SECTION */}
+{/* PLATFORM IMPACT SECTION - NO BOX */}
 <section className="bg-[#e6f2ee] py-20">
   <div className="mx-auto max-w-7xl px-6">
 
-    <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-      {/* Card 1 */}
-      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+      {/* Item 1 */}
+      <div>
         <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Lakhs of
         </h3>
@@ -124,8 +124,8 @@ const Home = () => {
         </p>
       </div>
 
-      {/* Card 2 */}
-      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+      {/* Item 2 */}
+      <div>
         <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Crores of
         </h3>
@@ -134,8 +134,8 @@ const Home = () => {
         </p>
       </div>
 
-      {/* Card 3 */}
-      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+      {/* Item 3 */}
+      <div>
         <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Thousands of
         </h3>
@@ -144,8 +144,8 @@ const Home = () => {
         </p>
       </div>
 
-      {/* Card 4 */}
-      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+      {/* Item 4 */}
+      <div>
         <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Hundreds of
         </h3>
