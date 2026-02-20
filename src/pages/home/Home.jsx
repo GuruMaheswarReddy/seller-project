@@ -380,6 +380,56 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SELLER SUPPORT SECTION */}
+<section className="bg-[#f9fafb] py-24">
+  <div className="mx-auto max-w-7xl px-6">
+
+    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+      {/* LEFT SIDE */}
+      <div>
+        <h2 className="text-4xl font-bold text-gray-900 leading-tight sm:text-5xl">
+          ArshithFresh Seller Support <br className="hidden sm:block" />
+          Available 24/7
+        </h2>
+      </div>
+
+      {/* RIGHT SIDE */}
+      <div className="space-y-8">
+
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Our seller support team is available to solve all your doubts and 
+          issues before and after you start your online selling journey.
+        </p>
+
+        {/* Contact Box */}
+        <div className="flex items-center gap-5 rounded-2xl bg-white p-6 shadow-sm border border-gray-200">
+
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d] text-white text-xl">
+            ✉
+          </div>
+
+          <div>
+            <p className="text-gray-700">
+              You can reach out to
+            </p>
+            <a
+              href="mailto:support@arshithfresh.com"
+              className="text-lg font-semibold text-[#094b3d] hover:underline"
+            >
+              support@arshithfresh.com
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
           {/* BASIC FOOTER - ONLY HOME PAGE */}
       <footer className="mt-16 border-t border-white/20 pt-6 pb-8 text-center text-xs text-white/70">
         <p>© {new Date().getFullYear()} Seller.ArshithFresh. All rights reserved.</p>
