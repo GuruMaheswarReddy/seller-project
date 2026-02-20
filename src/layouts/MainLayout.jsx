@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx'
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen bg-primary-900 text-gray-100">
+    <div className="min-h-screen text-gray-900">
       <Header />
       
         
