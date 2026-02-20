@@ -17,8 +17,7 @@ const Home = () => {
 
   return (
     <div>
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#094b3d] via-[#0f6b58] to-[#063d32] px-6 py-16 sm:px-10 lg:flex lg:items-center lg:justify-between">
-  
+    
   {/* Left Content */}
   <div className="max-w-xl space-y-6 text-white">
     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow-300">
