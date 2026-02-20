@@ -29,10 +29,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400">About Us</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Careers</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Shop All</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Blog</a></li>
+              <li><a href="https://arshithfresh.com/pages/about-us" className="hover:text-yellow-400">About Us</a></li>
+              <li><a href="https://arshithfresh.com/pages/careers" className="hover:text-yellow-400">Careers</a></li>
+              <li><a href="https://arshithfresh.com/collections/all" className="hover:text-yellow-400">Shop All</a></li>
+              <li><a href="https://arshithfresh.com/blogs/news" className="hover:text-yellow-400">Blog</a></li>
             </ul>
           </div>
 
@@ -40,9 +40,9 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Policies</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Shipping Info</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Returns & Refunds</a></li>
+              <li><a href="https://arshithfresh.com/policies/privacy-policy" className="hover:text-yellow-400">Privacy Policy</a></li>
+              <li><a href="https://arshithfresh.com/policies/shipping-policy" className="hover:text-yellow-400">Shipping Info</a></li>
+              <li><a href="https://arshithfresh.com/policies/refund-policy" className="hover:text-yellow-400">Returns & Refunds</a></li>
             </ul>
           </div>
 
