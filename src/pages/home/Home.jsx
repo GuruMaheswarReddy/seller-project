@@ -498,38 +498,38 @@ const Home = () => {
 
       {/* Column 1 */}
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Fresh Fruits Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Fresh Vegetables Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Organic Fruits Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Seasonal Fruits Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Exotic Fruits Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Cold Pressed Oils Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Sunflower Oil Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Groundnut Oil Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Coconut Oil Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Sesame Oil Online</li>
       </ul>
 
       {/* Column 2 */}
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Dry Fruits Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Nuts & Seeds Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Premium Almonds Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Cashews Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Raisins Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Dry Fruits Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Nuts & Seeds Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Premium Almonds Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Cashews Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Raisins Online</li>
       </ul>
 
       {/* Column 3 */}
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Dairy Products Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Fresh Milk Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Paneer Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Butter & Cheese Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Fresh Juices Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Beauty Products Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Toys Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Shirts Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Books Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Watche Juices Online</li>
       </ul>
 
       {/* Column 4 */}
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Groceries Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Spices Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Healthy Snacks Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Buy Combo Offers Online</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Shop All Products</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Groceries Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Spices Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Healthy Snacks Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell Combo Offers Online</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sell All Products</li>
       </ul>
 
     </div>
