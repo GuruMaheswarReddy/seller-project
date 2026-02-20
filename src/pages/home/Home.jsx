@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate()
   const { products, users } = useAppContext()
 
-  const latestProducts = products.slice(0, 12).map((p) => {
+  const latestProducts = products.slice(0, 4).map((p) => {
     const seller = users.find((u) => u.id === p.sellerId)
     return {
       ...p,
@@ -15,211 +15,342 @@ const Home = () => {
   })
 
   return (
-    <div className="bg-[#094b3d] min-h-screen">
-      {/* TOP BANNER - Meesho Style */}
-      <section className="bg-gradient-to-r from-orange-500 to-red-500 px-4 py-3">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between text-white text-sm">
-          <span>🏆 FREE DELIVERY | NO COMMISSION | INSTANT PAYOUTS</span>
-          <span>📞 Call: 1800-XXX-XXXX</span>
+    <div className="space-y-14 bg-[#094b3d]">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#094b3d] via-[#0f6b58] to-[#063d32] px-6 py-16 sm:px-10 lg:flex lg:items-center lg:justify-between">
+  
+  {/* Left Content */}
+  <div className="max-w-xl space-y-6 text-white">
+    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow-300">
+      ArshithFresh
+    </p>
+
+    <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
+      Start selling online.
+      <br />
+      Grow your business faster.
+    </h1>
+
+    <p className="text-base text-white/80">
+      Create your store, add products, and start receiving orders in minutes.
+      No commission. No hidden charges. Built for Indian sellers.
+    </p>
+
+    <div className="flex flex-wrap gap-4 pt-4">
+      <button
+        type="button"
+        onClick={() => navigate('/register')}
+        className="rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-black shadow-md transition hover:bg-yellow-300"
+      >
+        Start for Free
+      </button>
+
+      <button
+        type="button"
+        onClick={() => {
+          const el = document.getElementById('latest-products')
+          if (el) el.scrollIntoView({ behavior: 'smooth' })
+        }}
+        className="rounded-lg border border-white/40 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+      >
+        Explore Products
+      </button>
+    </div>
+
+    <div className="flex gap-6 pt-6 text-sm text-white/70">
+      <div>
+        <p className="text-lg font-bold text-white">0%</p>
+        Commission
+      </div>
+      <div>
+        <p className="text-lg font-bold text-white">Instant</p>
+        Payouts
+      </div>
+      <div>
+        <p className="text-lg font-bold text-white">Easy</p>
+        Onboarding
+      </div>
+    </div>
+  </div>
+
+  {/* Right Side Card */}
+  <div className="mt-12 w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl lg:mt-0">
+    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+      Platform Snapshot
+    </h3>
+
+    <div className="mt-6 space-y-4 text-sm text-gray-700">
+
+  <div>
+    <h3 className="text-lg font-semibold text-gray-900">
+      Seller growth snapshot
+    </h3>
+    <p className="text-xs text-gray-500">
+      Real marketplace insights
+    </p>
+  </div>
+
+  <div className="flex justify-between">
+    <span>Average monthly orders</span>
+    <span className="font-semibold text-green-600">+38%</span>
+  </div>
+
+  <div className="flex justify-between">
+    <span>On-time payouts</span>
+    <span className="font-semibold text-green-600">99.1%</span>
+  </div>
+
+</div>
+
+    <div className="mt-6 rounded-lg bg-[#094b3d] px-4 py-3 text-center text-sm font-medium text-white">
+      Go live in minutes 🚀
+    </div>
+  </div>
+</section>
+
+
+{/* PLATFORM STATS SECTION - FULL WIDTH */}
+<section className="py-20 bg-[#e6f2ee]">
+  <div className="mx-auto max-w-7xl px-6">
+    
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      {/* Card 1 */}
+      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Lakhs of
+        </h3>
+        <p className="mt-4 text-base font-medium text-gray-800">
+          Sellers trust ArshithFresh to sell online
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Crores of
+        </h3>
+        <p className="mt-4 text-base font-medium text-gray-800">
+          Customers buying across India
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Thousands of
+        </h3>
+        <p className="mt-4 text-base font-medium text-gray-800">
+          Serviceable pincodes — we deliver everywhere
+        </p>
+      </div>
+
+      {/* Card 4 */}
+      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Hundreds of
+        </h3>
+        <p className="mt-4 text-base font-medium text-gray-800">
+          Categories to sell online
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      
+     {/* WHY SELLERS CHOOSE US */}
+<section className="space-y-12 py-16">
+  <div className="text-center space-y-4">
+    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
+      WHY SELLERS CHOOSE US
+    </p>
+
+    <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      Built for local & growing brands
+    </h2>
+
+    <p className="mx-auto max-w-2xl text-sm text-white/70 sm:text-base">
+      Sell more with tools designed for every type of seller.
+      From onboarding to payouts, everything is built for scale.
+    </p>
+  </div>
+
+  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    
+    {/* Card 1 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        📍
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Pan-India Reach
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Reach customers across India with promotional visibility
+        and wide marketplace access.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        🚀
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Simple Onboarding
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Upload KYC, add catalog, and start receiving orders
+        within minutes.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        📊
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Growth Insights
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Real-time analytics, repeat buyer insights,
+        and smart pricing tools.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="group rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-2xl">
+        💬
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">
+        Seller-First Support
+      </h3>
+      <p className="mt-2 text-sm text-gray-600">
+        WhatsApp & callback support for catalog,
+        pricing, and growth help.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+            {/* HOW IT WORKS SECTION */}
+      <section className="space-y-10 rounded-3xl bg-white px-6 py-14 text-gray-900 shadow-xl">
+        <div className="text-center space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#094b3d]">
+            HOW IT WORKS
+          </p>
+          <h2 className="text-3xl font-bold">
+            Go from signup to first order in days
+          </h2>
+          <p className="text-sm text-gray-500">
+            A guided onboarding for busy store owners.
+          </p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="space-y-4">
+            {[
+              {
+                title: 'Create account',
+                desc: 'Start with mobile & email verification.',
+              },
+              {
+                title: 'Complete KYC',
+                desc: 'Add GST, PAN, bank details & address.',
+              },
+              {
+                title: 'Add products',
+                desc: 'Upload SKUs, prices, images & stock.',
+              },
+              {
+                title: 'Start receiving orders',
+                desc: 'Fulfil orders & handover easily.',
+              },
+            ].map((step, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-4 rounded-xl border bg-gray-50 p-4"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#094b3d]/10 font-semibold text-[#094b3d]">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="font-semibold">{step.title}</h3>
+                  <p className="text-sm text-gray-500">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl border-2 border-dashed border-[#094b3d]/30 p-6">
+            <h3 className="text-lg font-semibold mb-4">What you need:</h3>
+            <ul className="space-y-2 text-sm">
+              <li>✓ Business PAN & GST (if available)</li>
+              <li>✓ Bank passbook or cancelled cheque</li>
+              <li>✓ Product photos</li>
+              <li>✓ Pricing & stock</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* HERO BANNER - Large Image + Bold CTA */}
-      <section className="relative">
-        <div className="max-w-[1200px] mx-auto px-4 pt-4 pb-8">
-          <img 
-            src="https://images.unsplash.com/photo-1571896349840-0d6f5e818aca?w=1200&h=400&fit=crop" 
-            alt="Sell Online"
-            className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-2xl"
-          />
-          <div className="absolute bottom-8 left-4 md:left-8 text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-2xl">
-              Sell Online 
-              <span className="block text-yellow-400 text-5xl md:text-7xl">₹0 Commission</span>
-            </h1>
-            <div className="flex flex-wrap gap-4">
-              <button 
-                onClick={() => navigate('/register')}
-                className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all"
-              >
-                🚀 START SELLING FREE
-              </button>
-              <button className="border-2 border-white px-8 py-4 rounded-lg font-bold text-white hover:bg-white hover:text-black transition-all">
-                📱 DOWNLOAD APP
-              </button>
+      {/* EARNINGS SECTION */}
+      <section className="space-y-8 rounded-3xl bg-[#e6f2ee] px-6 py-14 text-gray-900 shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#094b3d]">
+              EARNINGS & PAYOUTS
+            </p>
+            <h2 className="text-3xl font-bold">
+              0% Commission. Keep 100% of your earnings.
+            </h2>
+            <p className="text-sm text-gray-600">
+              No hidden fees. No platform charges.
+            </p>
+
+            <div className="rounded-2xl bg-white p-6 shadow-md border border-[#094b3d]/20 w-56">
+              <p className="text-3xl font-bold text-[#094b3d]">₹0</p>
+              <p className="text-sm text-gray-500">
+                Platform Commission Forever
+              </p>
+            </div>
+
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• Instant or weekly payouts after KYC</li>
+              <li>• No listing fee or catalog charges</li>
+              <li>• Transparent order-wise payouts</li>
+            </ul>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="h-48 w-48 rounded-full bg-[#094b3d]/10 flex items-center justify-center text-6xl">
+              🛒
             </div>
           </div>
         </div>
       </section>
 
-      {/* STATS ROW - Meesho Style */}
-      <section className="bg-white/10 backdrop-blur-sm py-6 px-4">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-4 gap-6 text-center text-white">
-          <div>
-            <div className="text-3xl font-bold text-yellow-400 mb-1">50K+</div>
-            <div className="text-sm">Active Sellers</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-yellow-400 mb-1">₹250Cr+</div>
-            <div className="text-sm">Total Sales</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-yellow-400 mb-1">20K+</div>
-            <div className="text-sm">Pincodes</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-yellow-400 mb-1">99.9%</div>
-            <div className="text-sm">Success Rate</div>
-          </div>
-        </div>
-      </section>
-
-      {/* CATEGORIES GRID */}
-      <section className="py-8 px-4">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">POPULAR CATEGORIES</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[
-              { name: 'Grocery', icon: '🥦' },
-              { name: 'Fashion', icon: '👗' },
-              { name: 'Electronics', icon: '📱' },
-              { name: 'Home', icon: '🏠' },
-              { name: 'Beauty', icon: '💄' },
-              { name: 'Sports', icon: '⚽' }
-            ].map((cat, i) => (
-              <div key={i} className="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm hover:bg-white/20 transition-all border border-white/20">
-                <div className="text-4xl mb-3">{cat.icon}</div>
-                <div className="font-bold text-white text-lg">{cat.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PRODUCTS - Meesho Grid Style */}
-      <section className="py-8 px-4 pb-16">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-bold text-white">🔥 LIVE PRODUCTS</h2>
-            <button className="text-yellow-400 font-bold text-lg hover:text-yellow-300">View All →</button>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            {latestProducts.map((product, index) => (
-              <div key={product.id} className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group">
-                <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-3 group-hover:scale-105 transition-transform">
-                  <img 
-                    src={product.image || "https://images.unsplash.com/photo-1608043152269-423dbba4e7e4?w=200&h=200&fit=crop"} 
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-bold text-lg line-clamp-2 text-gray-900 h-12">{product.name}</h3>
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold text-[#094b3d]">₹{product.price}</span>
-                    <span className="text-sm text-gray-500 line-through">₹{Math.round(product.price * 1.3)}</span>
-                    <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold">25% OFF</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-yellow-400 text-sm">
-                    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-                    <span className="text-gray-600">(1.2k)</span>
-                  </div>
-                  <div className="text-xs text-gray-600 capitalize">{product.sellerName}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY ARSHITHFRESH - Meesho Cards */}
-      <section className="bg-white/5 py-12 px-4">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">WHY CHOOSE ARSHITHFRESH?</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: '🚀',
-                title: 'Instant Live',
-                desc: 'Go live in 5 mins with simple KYC'
-              },
-              {
-                icon: '💰',
-                title: '0% Commission',
-                desc: 'Keep 100% profits forever'
-              },
-              {
-                icon: '📦',
-                title: 'Pan India',
-                desc: '20K+ pincodes covered'
-              },
-              {
-                icon: '📊',
-                title: 'Smart Tools',
-                desc: 'Analytics + Growth insights'
-              }
-            ].map((feature, i) => (
-              <div key={i} className="text-center p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
-                <div className="text-4xl mb-4 mx-auto w-16 h-16 bg-yellow-400/20 rounded-2xl flex items-center justify-center">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-white/80 text-sm">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS - Simple Steps */}
-      <section className="py-12 px-4">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">3 EASY STEPS TO START</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Sign Up', desc: 'Mobile + Email (2 mins)' },
-              { step: '2', title: 'Add Products', desc: 'Upload catalog (5 mins)' },
-              { step: '3', title: 'Get Orders', desc: 'Start earning instantly' }
-            ].map((s, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-20 h-20 bg-yellow-400 text-black rounded-full font-bold text-2xl flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-all">
-                  {s.step}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
-                <p className="text-white/80">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="bg-gradient-to-r from-orange-500 to-red-500 py-12 px-4 text-center text-white">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Ready to Sell Online?</h2>
-          <p className="text-xl mb-8">Join 50K+ sellers making money daily</p>
-          <button 
-            onClick={() => navigate('/register')}
-            className="bg-white text-orange-500 px-12 py-5 rounded-xl font-bold text-2xl shadow-2xl hover:shadow-white/50 transform hover:scale-105 transition-all"
-          >
-            START SELLING NOW 🚀
-          </button>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="bg-[#063d32] py-8 px-4 text-white/70 text-center text-sm border-t border-white/20">
-        <div className="max-w-[1200px] mx-auto">
-          <p>© 2026 ArshithFresh. All rights reserved | GST: 37XXXXX | Help: 1800-XXX-XXXX</p>
-          <p className="mt-2">Empowering 50K+ Indian Sellers | Made in India 🇮🇳</p>
-        </div>
+          {/* BASIC FOOTER - ONLY HOME PAGE */}
+      <footer className="mt-16 border-t border-white/20 pt-6 pb-8 text-center text-xs text-white/70">
+        <p>© {new Date().getFullYear()} Seller.ArshithFresh. All rights reserved.</p>
+        <p className="mt-2 text-white/50">
+          Empowering sellers. Managing commerce.
+        </p>
       </footer>
+
+      
+
+      
     </div>
   )
 }
 
-export default Home
-
-
-
+export default Home   
 
 
