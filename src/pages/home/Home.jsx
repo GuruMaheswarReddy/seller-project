@@ -412,7 +412,7 @@ const Home = () => {
 </section>
 
 
-      {/* HELP SECTION */}
+     {/* HELP SECTION */}
 <section className="bg-gray-100 py-24">
   <div className="mx-auto max-w-7xl px-6">
     <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
@@ -422,7 +422,7 @@ const Home = () => {
 
         <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 leading-tight">
           We are happy to{" "}
-          <span className="text-blue-600">help you</span>{" "}
+          <span className="text-[#094b3d]">help you</span>{" "}
           😊
         </h2>
 
@@ -438,17 +438,17 @@ const Home = () => {
           <input
             type="text"
             placeholder="Enter Full Name *"
-            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           />
 
           <input
             type="text"
             placeholder="Enter Mobile Number / Email ID *"
-            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           />
 
           <select
-            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           >
             <option>Select A Topic</option>
             <option>General Query</option>
@@ -460,12 +460,12 @@ const Home = () => {
           <textarea
             rows="5"
             placeholder="Type Your Message *"
-            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           ></textarea>
 
           <button
             type="submit"
-            className="rounded-lg bg-blue-600 px-8 py-3 text-white font-semibold hover:bg-blue-700 transition"
+            className="rounded-lg bg-[#094b3d] px-8 py-3 text-white font-semibold hover:bg-[#0f6b58] transition"
           >
             Send Query
           </button>
@@ -485,9 +485,6 @@ const Home = () => {
     </div>
   </div>
 </section>
-
-     
-
       <Footer />
     </div>
   )
