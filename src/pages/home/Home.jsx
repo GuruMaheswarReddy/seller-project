@@ -41,7 +41,7 @@ const Home = () => {
         onClick={() => navigate('/register')}
         className="rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-black shadow-md transition hover:bg-yellow-300"
       >
-        Start for Free
+        Start Selling
       </button>
 
       <button
@@ -52,7 +52,7 @@ const Home = () => {
         }}
         className="rounded-lg border border-white/40 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
       >
-        Explore Products
+        Login
       </button>
     </div>
 
