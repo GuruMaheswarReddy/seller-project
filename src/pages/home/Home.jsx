@@ -15,6 +15,34 @@ const Home = () => {
     }
   })
 
+  const steps = [
+  {
+    title: "Create Account",
+    desc: "All you need is:",
+    points: [
+      "GSTIN (for GST sellers) or Enrolment ID / UIN (for non-GST sellers)",
+      "Bank Account"
+    ]
+  },
+  {
+    title: "List Products",
+    desc: "List the products you want to sell in your supplier panel."
+  },
+  {
+    title: "Get Orders",
+    desc: "Start getting orders from customers actively shopping on our platform."
+  },
+  {
+    title: "Affordable Shipping",
+    desc: "Enjoy affordable shipping to customers across India."
+  },
+  {
+    title: "Receive Payments",
+    desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery."
+  }
+]
+  
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* HERO SECTION */}
@@ -281,86 +309,89 @@ const Home = () => {
 
     <div className="bg-white rounded-2xl shadow-lg px-10 py-14">
 
-      {/* NUMBER ROW */}
-      <div className="hidden md:grid grid-cols-5 items-center mb-12">
+      {/* ================= DESKTOP VIEW ================= */}
+      <div className="hidden md:block">
 
-        {[1, 2, 3, 4, 5].map((num, index) => (
-          <div key={index} className="relative flex justify-center items-center">
+        {/* NUMBER ROW */}
+        <div className="grid grid-cols-5 items-center mb-12">
+          {[1, 2, 3, 4, 5].map((num, index) => (
+            <div key={index} className="relative flex justify-center items-center">
 
-            {/* Circle (slightly smaller) */}
-            <div className="z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d] text-white font-semibold text-sm">
-              {num}
+              <div className="z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d] text-white font-semibold text-sm">
+                {num}
+              </div>
+
+              {index !== 4 && (
+                <div className="absolute right-[-35%] top-1/2 -translate-y-1/2 w-[70%] h-[2px] bg-[#094b3d]"></div>
+              )}
             </div>
+          ))}
+        </div>
 
-            {/* Short Thin Connector */}
-            {index !== 4 && (
-              <div className="absolute right-[-35%] top-1/2 -translate-y-1/2 w-[70%] h-[2px] bg-[#094b3d]"></div>
-            )}
+        {/* CONTENT GRID */}
+        <div className="grid grid-cols-5 gap-8 text-center">
+          {steps.map((step, index) => (
+            <div key={index}>
+              <h3 className="text-base font-semibold text-gray-900 mb-3">
+                {step.title}
+              </h3>
+              <p className="text-sm text-gray-600">{step.desc}</p>
 
-          </div>
-        ))}
-
+              {step.points && (
+                <ul className="mt-3 text-sm text-gray-600 space-y-1 text-left">
+                  {step.points.map((point, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-[#094b3d] text-xs mt-[6px]">•</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* CONTENT GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+      {/* ================= MOBILE VIEW ================= */}
+      <div className="md:hidden relative">
 
-        {[
-          {
-            title: "Create Account",
-            desc: "All you need is:",
-            points: [
-              "GSTIN (for GST sellers) or Enrolment ID / UIN (for non-GST sellers)",
-              "Bank Account"
-            ]
-          },
-          {
-            title: "List Products",
-            desc: "List the products you want to sell in your supplier panel."
-          },
-          {
-            title: "Get Orders",
-            desc: "Start getting orders from customers actively shopping on our platform."
-          },
-          {
-            title: "Affordable Shipping",
-            desc: "Enjoy affordable shipping to customers across India."
-          },
-          {
-            title: "Receive Payments",
-            desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery."
-          }
-        ].map((step, index) => (
-          <div key={index}>
+        {/* Vertical Line */}
+        <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-[#094b3d]"></div>
 
-            <h3 className="text-base font-semibold text-gray-900 mb-3">
-              {step.title}
-            </h3>
+        <div className="space-y-14">
+          {steps.map((step, index) => (
+            <div key={index} className="relative pl-16">
 
-            <p className="text-sm text-gray-600">
-              {step.desc}
-            </p>
+              {/* Circle */}
+              <div className="absolute left-0 top-1 flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d] text-white font-semibold text-sm shadow-md">
+                {index + 1}
+              </div>
 
-            {step.points && (
-              <ul className="mt-3 text-sm text-gray-600 space-y-1 text-left">
-                {step.points.map((point, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-[#094b3d] text-xs mt-[6px]">•</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            )}
+              {/* Content */}
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {step.title}
+              </h3>
 
-          </div>
-        ))}
+              <p className="text-sm text-gray-600">{step.desc}</p>
 
+              {step.points && (
+                <ul className="mt-3 text-sm text-gray-600 space-y-1">
+                  {step.points.map((point, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-[#094b3d] text-xs mt-[6px]">•</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
     </div>
   </div>
-</section>  
-
+</section>
   
       
       {/* TOOLS SECTION */}
