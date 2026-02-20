@@ -7,7 +7,7 @@ const MainLayout = () => {
       <Header />
       
         
-          <main className="w-full pb-12 pt-6 lg:pt-10">
+          <main className="w-full">
         <Outlet />
       </main>
     </div>
