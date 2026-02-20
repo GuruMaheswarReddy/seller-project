@@ -16,7 +16,7 @@ const Home = () => {
   })
 
   return (
-    <div className="space-y-14 bg-[#094b3d]">
+    <div className="space-y-14 bg-white">
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#094b3d] via-[#0f6b58] to-[#063d32] px-6 py-16 sm:px-10 lg:flex lg:items-center lg:justify-between">
   
   {/* Left Content */}
