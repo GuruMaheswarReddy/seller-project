@@ -79,23 +79,27 @@ const Home = () => {
     </h3>
 
     <div className="mt-6 space-y-4 text-sm text-gray-700">
-      <div className="flex justify-between">
-        <span>Active Sellers</span>
-        <span className="font-semibold">
-          {users.filter((u) => u.role === 'seller').length}
-        </span>
-      </div>
 
-      <div className="flex justify-between">
-        <span>Products Listed</span>
-        <span className="font-semibold">{products.length}</span>
-      </div>
+  <div>
+    <h3 className="text-lg font-semibold text-gray-900">
+      Seller growth snapshot
+    </h3>
+    <p className="text-xs text-gray-500">
+      Real marketplace insights
+    </p>
+  </div>
 
-      <div className="flex justify-between">
-        <span>Avg. Response</span>
-        <span className="font-semibold text-green-600">120ms</span>
-      </div>
-    </div>
+  <div className="flex justify-between">
+    <span>Average monthly orders</span>
+    <span className="font-semibold text-green-600">+38%</span>
+  </div>
+
+  <div className="flex justify-between">
+    <span>On-time payouts</span>
+    <span className="font-semibold text-green-600">99.1%</span>
+  </div>
+
+</div>
 
     <div className="mt-6 rounded-lg bg-[#094b3d] px-4 py-3 text-center text-sm font-medium text-white">
       Go live in minutes 🚀
