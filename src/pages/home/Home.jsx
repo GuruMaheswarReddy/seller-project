@@ -334,6 +334,83 @@ const Home = () => {
   </div>
 </section>
 
+
+      {/* TOOLS SECTION */}
+<section className="relative bg-[#eef3f7] py-24 overflow-hidden">
+  <div className="mx-auto max-w-7xl px-6">
+
+    {/* Heading */}
+    <div className="max-w-4xl">
+      <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        <span className="text-[#094b3d]">
+          Access our tools to grow faster
+        </span>{" "}
+        on ArshithFresh
+      </h2>
+
+      <p className="mt-6 text-lg text-gray-600">
+        We understand that your online business may require additional 
+        support from time to time. With your seller account, you gain 
+        access to powerful tools designed to help grow your business.
+      </p>
+    </div>
+
+    {/* Background Large Text */}
+    <div className="absolute left-6 top-40 text-[120px] font-bold text-[#094b3d]/5 select-none pointer-events-none">
+      5x Growth
+    </div>
+
+    {/* Cards Grid */}
+    <div className="relative mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      {[
+        {
+          title: "Fulfillment Support",
+          desc: "Worried about storing, packing and shipping? Let us handle logistics for you."
+        },
+        {
+          title: "Seller Ads",
+          desc: "Boost your product visibility and stand out from competitors."
+        },
+        {
+          title: "Shopping Festivals",
+          desc: "Participate in mega sales and seasonal campaigns to increase orders."
+        },
+        {
+          title: "Learning Center",
+          desc: "Access webinars, tutorials and expert sessions to grow faster."
+        },
+        {
+          title: "Account Management",
+          desc: "Improve product selection, pricing and business insights with experts."
+        },
+        {
+          title: "Mobile App",
+          desc: "Manage your seller account 24x7 from your mobile device."
+        }
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="rounded-2xl bg-white p-8 shadow-sm hover:shadow-xl transition duration-300"
+        >
+          <h3 className="text-xl font-semibold text-gray-900">
+            {item.title}
+          </h3>
+
+          <p className="mt-4 text-gray-600">
+            {item.desc}
+          </p>
+
+          <button className="mt-6 text-[#094b3d] font-semibold hover:underline">
+            Learn More →
+          </button>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
+
      
 
       <Footer />
