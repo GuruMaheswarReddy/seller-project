@@ -11,7 +11,7 @@ const Footer = () => {
               Arshith Fresh
             </h3>
 
-            <p className="text-sm mb-4">
+            <p className="text-sm mb-6 text-white/80">
               <span className="font-semibold text-white">
                 Corporate Office —
               </span>{" "}
@@ -21,7 +21,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full p-3 rounded bg-black/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none"
+              className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
             />
           </div>
 
@@ -29,10 +29,46 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://arshithfresh.com/pages/about-us" className="hover:text-yellow-400">About Us</a></li>
-              <li><a href="https://arshithfresh.com/pages/careers" className="hover:text-yellow-400">Careers</a></li>
-              <li><a href="https://arshithfresh.com/collections/all" className="hover:text-yellow-400">Shop All</a></li>
-              <li><a href="https://arshithfresh.com/blogs/news" className="hover:text-yellow-400">Blog</a></li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/pages/about-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/pages/careers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/collections/all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Shop All
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/blogs/news"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -40,9 +76,36 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Policies</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://arshithfresh.com/policies/privacy-policy" className="hover:text-yellow-400">Privacy Policy</a></li>
-              <li><a href="https://arshithfresh.com/policies/shipping-policy" className="hover:text-yellow-400">Shipping Info</a></li>
-              <li><a href="https://arshithfresh.com/policies/refund-policy" className="hover:text-yellow-400">Returns & Refunds</a></li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/policies/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/policies/shipping-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Shipping Info
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://arshithfresh.com/policies/refund-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Returns & Refunds
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -50,16 +113,26 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Need Help?</h3>
 
-            <p className="text-sm mb-2">
+            <p className="text-sm mb-2 text-white/80">
               📍 Bengaluru, Karnataka
             </p>
 
             <p className="text-sm mb-2">
-              📞 <a href="tel:+919945676029" className="hover:text-yellow-400">+91 9945676029</a>
+              📞{" "}
+              <a
+                href="tel:+919945676029"
+                className="hover:text-yellow-400 transition"
+              >
+                +91 9945676029
+              </a>
             </p>
 
             <p className="text-sm mb-4">
-              ✉ <a href="mailto:support@arshithfresh.com" className="hover:text-yellow-400">
+              ✉{" "}
+              <a
+                href="mailto:support@arshithfresh.com"
+                className="hover:text-yellow-400 transition"
+              >
                 support@arshithfresh.com
               </a>
             </p>
