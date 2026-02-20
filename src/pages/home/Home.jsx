@@ -485,6 +485,60 @@ const Home = () => {
     </div>
   </div>
 </section>
+
+      {/* POPULAR CATEGORIES SECTION */}
+<section className="bg-[#2f2f2f] py-20 text-white">
+  <div className="mx-auto max-w-7xl px-6">
+
+    <h2 className="text-center text-3xl sm:text-4xl font-bold mb-16">
+      Popular Categories to Shop Across India
+    </h2>
+
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-gray-300 text-sm sm:text-base">
+
+      {/* Column 1 */}
+      <ul className="space-y-4">
+        <li className="hover:text-white transition cursor-pointer">Buy Fresh Fruits Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Fresh Vegetables Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Organic Fruits Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Seasonal Fruits Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Exotic Fruits Online</li>
+      </ul>
+
+      {/* Column 2 */}
+      <ul className="space-y-4">
+        <li className="hover:text-white transition cursor-pointer">Buy Dry Fruits Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Nuts & Seeds Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Premium Almonds Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Cashews Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Raisins Online</li>
+      </ul>
+
+      {/* Column 3 */}
+      <ul className="space-y-4">
+        <li className="hover:text-white transition cursor-pointer">Buy Dairy Products Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Fresh Milk Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Paneer Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Butter & Cheese Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Fresh Juices Online</li>
+      </ul>
+
+      {/* Column 4 */}
+      <ul className="space-y-4">
+        <li className="hover:text-white transition cursor-pointer">Buy Groceries Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Spices Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Healthy Snacks Online</li>
+        <li className="hover:text-white transition cursor-pointer">Buy Combo Offers Online</li>
+        <li className="hover:text-white transition cursor-pointer">Shop All Products</li>
+      </ul>
+
+    </div>
+
+    <div className="mt-16 border-t border-gray-600"></div>
+
+  </div>
+</section>
+      
       <Footer />
     </div>
   )
