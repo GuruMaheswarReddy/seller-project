@@ -411,6 +411,81 @@ const Home = () => {
   </div>
 </section>
 
+
+      {/* HELP SECTION */}
+<section className="bg-gray-100 py-24">
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+      {/* LEFT SIDE */}
+      <div>
+
+        <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 leading-tight">
+          We are happy to{" "}
+          <span className="text-blue-600">help you</span>{" "}
+          😊
+        </h2>
+
+        <p className="mt-6 text-lg text-gray-600 max-w-xl">
+          Still have questions or queries that are left unanswered?
+          Share your thoughts below which will help us improve your
+          website experience.
+        </p>
+
+        {/* FORM */}
+        <form className="mt-10 space-y-6 max-w-md">
+
+          <input
+            type="text"
+            placeholder="Enter Full Name *"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
+          <input
+            type="text"
+            placeholder="Enter Mobile Number / Email ID *"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
+          <select
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option>Select A Topic</option>
+            <option>General Query</option>
+            <option>Seller Support</option>
+            <option>Payments</option>
+            <option>Technical Issue</option>
+          </select>
+
+          <textarea
+            rows="5"
+            placeholder="Type Your Message *"
+            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="rounded-lg bg-blue-600 px-8 py-3 text-white font-semibold hover:bg-blue-700 transition"
+          >
+            Send Query
+          </button>
+
+        </form>
+      </div>
+
+      {/* RIGHT SIDE IMAGE */}
+      <div className="flex justify-center">
+        <img
+          src="https://illustrations.popsy.co/blue/customer-support.svg"
+          alt="Customer Support"
+          className="w-full max-w-md"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
      
 
       <Footer />
