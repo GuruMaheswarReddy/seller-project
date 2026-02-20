@@ -22,9 +22,7 @@ const Header = () => {
             alt="Arshith Fresh Logo"
             className="h-9 w-auto object-contain"
           />
-          <span className="text-lg font-semibold text-[#094b3d]">
-            ArshithFresh
-          </span>
+          
         </div>
 
         {/* Desktop Nav (UNCHANGED) */}
