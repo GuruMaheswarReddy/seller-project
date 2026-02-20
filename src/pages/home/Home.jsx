@@ -301,15 +301,16 @@ const Home = () => {
 
 
       {/* WHY SELLERS LOVE ARSHITHFRESH */}
-<section className="bg-white py-20">
+<section className="bg-white py-24">
   <div className="mx-auto max-w-7xl px-6">
 
-    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+    <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
 
       {/* LEFT SIDE */}
       <div className="space-y-6">
-        <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-          Why Sellers Love ArshithFresh
+        <h2 className="text-4xl font-bold text-gray-900 leading-tight sm:text-5xl">
+          Why Sellers Love <br className="hidden sm:block" />
+          ArshithFresh
         </h2>
 
         <p className="text-lg text-gray-600 leading-relaxed">
@@ -319,75 +320,88 @@ const Home = () => {
         </p>
       </div>
 
-      {/* RIGHT SIDE BENEFITS BOX */}
-      <div className="rounded-3xl border border-[#094b3d]/20 bg-[#f4fbf8] p-8 shadow-sm">
+      {/* RIGHT SIDE BENEFITS (NO BOX) */}
+      <div className="space-y-10">
 
-        {/* Item 1 */}
-        <div className="flex gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] font-bold">
+        {/* ITEM 1 */}
+        <div className="flex gap-5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] font-semibold">
             0%
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
               0% Commission Fee
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-gray-600 leading-relaxed">
               Sellers keep 100% of their profit by not paying any commission.
             </p>
           </div>
         </div>
 
-        <hr className="my-6 border-[#094b3d]/10" />
+        <hr className="border-gray-200" />
 
-        {/* Item 2 */}
-        <div className="flex gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
+        {/* ITEM 2 */}
+        <div className="flex gap-5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
             ₹
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
               0 Penalty Charges
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-gray-600 leading-relaxed">
               Sell without fear of cancellation charges or late dispatch penalties.
             </p>
           </div>
         </div>
 
-        <hr className="my-6 border-[#094b3d]/10" />
+        <hr className="border-gray-200" />
 
-        {/* Item 3 */}
-        <div className="flex gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
+        {/* ITEM 3 */}
+        <div className="flex gap-5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d]">
             ↑
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
               Growth for Every Seller
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-gray-600 leading-relaxed">
               From small to large businesses, we help every seller grow faster.
             </p>
           </div>
         </div>
 
-        <hr className="my-6 border-[#094b3d]/10" />
+        <hr className="border-gray-200" />
 
-        {/* Item 4 */}
+        {/* ITEM 4 */}
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+          <h3 className="text-xl font-semibold text-gray-900 mb-5">
             Ease of Doing Business
           </h3>
 
-          <div className="grid gap-3 sm:grid-cols-2 text-gray-700">
-            <p>✔ Easy Product Listing</p>
-            <p>✔ Lowest Shipping Cost</p>
-            <p>✔ 7-Day Payment Cycle</p>
-            <p>✔ Transparent Order Tracking</p>
+          <div className="grid gap-4 sm:grid-cols-2 text-gray-700">
+            <p className="flex items-center gap-2">
+              <span className="text-[#094b3d]">✔</span>
+              Easy Product Listing
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#094b3d]">✔</span>
+              Lowest Shipping Cost
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#094b3d]">✔</span>
+              7-Day Payment Cycle
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#094b3d]">✔</span>
+              Transparent Order Tracking
+            </p>
           </div>
         </div>
 
       </div>
+
     </div>
 
   </div>
