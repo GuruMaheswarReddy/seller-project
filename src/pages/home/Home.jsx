@@ -273,7 +273,7 @@ const Home = () => {
 
       
 
-     {/* HOW IT WORKS SECTION */}
+    {/* HOW IT WORKS SECTION */}
 <section className="py-24 bg-gray-50">
   <div className="mx-auto max-w-7xl px-6">
 
@@ -283,7 +283,29 @@ const Home = () => {
 
     <div className="bg-white rounded-3xl shadow-xl p-12">
 
-      <div className="relative grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
+      {/* TOP NUMBER ROW */}
+      <div className="hidden md:flex items-center justify-between mb-16">
+
+        {[1, 2, 3, 4, 5].map((num, index) => (
+          <div key={index} className="flex items-center flex-1">
+
+            {/* Circle */}
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
+              {num}
+            </div>
+
+            {/* Line (not for last item) */}
+            {index !== 4 && (
+              <div className="flex-1 h-[3px] bg-[#094b3d] mx-6"></div>
+            )}
+
+          </div>
+        ))}
+
+      </div>
+
+      {/* CONTENT GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 text-center">
 
         {[
           {
@@ -311,23 +333,13 @@ const Home = () => {
             desc: "Payments are deposited directly to your bank account following a 7-day payment cycle from order delivery."
           }
         ].map((step, index) => (
-          <div key={index} className="relative flex flex-col items-center">
+          <div key={index}>
 
-            {/* Green Line Between Circles */}
-            {index !== 4 && (
-              <div className="hidden md:block absolute top-7 left-[60%] w-[80%] h-[3px] bg-[#094b3d]"></div>
-            )}
-
-            {/* Step Circle */}
-            <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-[#094b3d] text-white font-bold text-lg shadow-lg">
-              {index + 1}
-            </div>
-
-            <h3 className="mt-6 text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {step.title}
             </h3>
 
-            <p className="mt-3 text-sm text-gray-600 max-w-xs">
+            <p className="text-sm text-gray-600">
               {step.desc}
             </p>
 
