@@ -108,48 +108,48 @@ const Home = () => {
 </section>
 
 
-{/* PLATFORM STATS SECTION - FULL WIDTH */}
-<section className="py-20 bg-[#e6f2ee]">
+{/* PLATFORM IMPACT SECTION */}
+<section className="bg-[#e6f2ee] py-20">
   <div className="mx-auto max-w-7xl px-6">
-    
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+    <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
 
       {/* Card 1 */}
-      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
-        <h3 className="text-3xl font-bold text-[#094b3d]">
+      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Lakhs of
         </h3>
-        <p className="mt-4 text-base font-medium text-gray-800">
+        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
           Sellers trust ArshithFresh to sell online
         </p>
       </div>
 
       {/* Card 2 */}
-      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
-        <h3 className="text-3xl font-bold text-[#094b3d]">
+      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Crores of
         </h3>
-        <p className="mt-4 text-base font-medium text-gray-800">
+        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
           Customers buying across India
         </p>
       </div>
 
       {/* Card 3 */}
-      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
-        <h3 className="text-3xl font-bold text-[#094b3d]">
+      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Thousands of
         </h3>
-        <p className="mt-4 text-base font-medium text-gray-800">
+        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
           Serviceable pincodes — we deliver everywhere
         </p>
       </div>
 
       {/* Card 4 */}
-      <div className="rounded-2xl bg-white p-8 shadow-lg transition hover:-translate-y-2">
-        <h3 className="text-3xl font-bold text-[#094b3d]">
+      <div className="rounded-3xl bg-white p-8 shadow-md transition hover:shadow-xl hover:-translate-y-1">
+        <h3 className="text-4xl font-extrabold text-[#094b3d] leading-tight">
           Hundreds of
         </h3>
-        <p className="mt-4 text-base font-medium text-gray-800">
+        <p className="mt-4 text-lg font-semibold text-gray-900 leading-snug">
           Categories to sell online
         </p>
       </div>
@@ -158,7 +158,6 @@ const Home = () => {
 
   </div>
 </section>
-
       
      {/* WHY SELLERS CHOOSE US */}
 <section className="space-y-12 py-16">
