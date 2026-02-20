@@ -107,6 +107,59 @@ const Home = () => {
   </div>
 </section>
 
+
+      {/* PLATFORM STATS SECTION */}
+<section className="bg-[#e6f2ee] py-16">
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      {/* Card 1 */}
+      <div className="rounded-2xl bg-white p-8 shadow-md border border-[#094b3d]/10">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Lakhs of
+        </h3>
+        <p className="mt-4 text-base font-semibold text-gray-900">
+          Sellers trust ArshithFresh to sell online
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="rounded-2xl bg-white p-8 shadow-md border border-[#094b3d]/10">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Crores of
+        </h3>
+        <p className="mt-4 text-base font-semibold text-gray-900">
+          Customers buying across India
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="rounded-2xl bg-white p-8 shadow-md border border-[#094b3d]/10">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Thousands of
+        </h3>
+        <p className="mt-4 text-base font-semibold text-gray-900">
+          Serviceable pincodes — we deliver everywhere
+        </p>
+      </div>
+
+      {/* Card 4 */}
+      <div className="rounded-2xl bg-white p-8 shadow-md border border-[#094b3d]/10">
+        <h3 className="text-3xl font-bold text-[#094b3d]">
+          Hundreds of
+        </h3>
+        <p className="mt-4 text-base font-semibold text-gray-900">
+          Categories to sell online
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+      
+
      {/* WHY SELLERS CHOOSE US */}
 <section className="space-y-12 py-16">
   <div className="text-center space-y-4">
