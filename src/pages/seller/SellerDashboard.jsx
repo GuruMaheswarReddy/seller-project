@@ -1,6 +1,8 @@
-import { useMemo } from 'react'
-import { useAuth } from '../../context/AuthContext.jsx'
-import { useAppContext } from '../../context/AppContext.jsx'
+import { useMemo } from "react"
+import { useAuth } from "../../context/AuthContext.jsx"
+import { useAppContext } from "../../context/AppContext.jsx"
+
+const PRIMARY = "#094b3d"
 
 const SellerDashboard = () => {
   const { user } = useAuth()
@@ -8,12 +10,12 @@ const SellerDashboard = () => {
 
   const myProducts = useMemo(
     () => products.filter((p) => p.sellerId === user?.id),
-    [products, user],
+    [products, user]
   )
 
   const myOrders = useMemo(
     () => orders.filter((o) => o.sellerId === user?.id),
-    [orders, user],
+    [orders, user]
   )
 
   const weeklyRevenue = useMemo(() => {
@@ -24,54 +26,96 @@ const SellerDashboard = () => {
   }, [myOrders])
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-xl font-semibold text-white">
+    <div className="min-h-screen bg-[#eef5f3] p-8">
+
+      {/* Header */}
+      <div className="mb-10">
+        <h2 className="text-3xl font-bold text-gray-800">
           Welcome back, {user?.name}
         </h2>
-        <p className="text-xs text-gray-400">
-          High-level view of your catalog performance and order flow.
+        <p className="text-gray-500 mt-2">
+          Monitor your store performance and manage operations easily.
         </p>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-yellow-500/20 bg-zinc-950/80 px-4 py-4 shadow-lg shadow-black/60">
-          <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
-            Total Products
-          </p>
-          <p className="mt-2 text-2xl font-semibold text-white">
+
+      {/* Stats Section */}
+      <div className="grid gap-8 md:grid-cols-3">
+
+        {/* Products Card */}
+        <div className="bg-white rounded-3xl shadow-md p-6 border-t-4"
+             style={{ borderColor: PRIMARY }}>
+          <p className="text-gray-500 text-sm">Total Products</p>
+          <h3 className="mt-4 text-4xl font-bold text-gray-800">
             {myProducts.length}
-          </p>
-          <p className="mt-1 text-[11px] text-gray-500">
-            Items you are currently selling across storefronts.
+          </h3>
+          <p className="mt-3 text-xs text-gray-400">
+            Active products listed in your catalog.
           </p>
         </div>
-        <div className="rounded-2xl border border-yellow-500/20 bg-zinc-950/80 px-4 py-4 shadow-lg shadow-black/60">
-          <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
-            Total Orders
-          </p>
-          <p className="mt-2 text-2xl font-semibold text-white">
+
+        {/* Orders Card */}
+        <div className="bg-white rounded-3xl shadow-md p-6 border-t-4"
+             style={{ borderColor: PRIMARY }}>
+          <p className="text-gray-500 text-sm">Total Orders</p>
+          <h3 className="mt-4 text-4xl font-bold text-gray-800">
             {myOrders.length}
-          </p>
-          <p className="mt-1 text-[11px] text-gray-500">
-            Orders attributed to your products.
+          </h3>
+          <p className="mt-3 text-xs text-gray-400">
+            Orders received from customers.
           </p>
         </div>
-        <div className="rounded-2xl border border-yellow-500/20 bg-gradient-to-r from-yellow-400 to-yellow-600 px-4 py-4 text-black shadow-xl shadow-yellow-500/60">
-          <p className="text-xs font-semibold uppercase tracking-wide text-black/80">
-            Weekly Revenue
+
+        {/* Revenue Card */}
+        <div
+          className="rounded-3xl shadow-xl p-6 text-white"
+          style={{ backgroundColor: PRIMARY }}
+        >
+          <p className="text-sm opacity-80">Weekly Revenue</p>
+          <h3 className="mt-4 text-4xl font-bold">
+            ₹{weeklyRevenue.toFixed(0)}
+          </h3>
+          <p className="mt-3 text-xs opacity-80">
+            Earnings generated in the last 7 days.
           </p>
-          <p className="mt-2 text-2xl font-semibold">
-            ${weeklyRevenue.toFixed(0)}
-          </p>
-          <p className="mt-1 text-[11px] text-black/80">
-            Revenue from the last 7 days of orders.
-          </p>
+        </div>
+
+      </div>
+
+      {/* Extra Professional Section */}
+      <div className="mt-12 bg-white rounded-3xl shadow-md p-8">
+        <h4 className="text-xl font-semibold mb-6 text-gray-800">
+          Seller Insights
+        </h4>
+
+        <div className="grid md:grid-cols-2 gap-6 text-gray-600">
+          <div className="flex items-start gap-3">
+            <div className="w-3 h-3 mt-2 rounded-full"
+                 style={{ backgroundColor: PRIMARY }} />
+            Maintain inventory to avoid stock issues.
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-3 h-3 mt-2 rounded-full"
+                 style={{ backgroundColor: PRIMARY }} />
+            Faster dispatch improves customer satisfaction.
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-3 h-3 mt-2 rounded-full"
+                 style={{ backgroundColor: PRIMARY }} />
+            Monitor quality to reduce return rate.
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-3 h-3 mt-2 rounded-full"
+                 style={{ backgroundColor: PRIMARY }} />
+            Track weekly revenue growth consistently.
+          </div>
         </div>
       </div>
+
     </div>
   )
 }
 
 export default SellerDashboard
-
-
