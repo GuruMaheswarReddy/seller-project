@@ -15,6 +15,7 @@ import AddProduct from '../pages/seller/AddProduct.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
 import HowItWorks from '../pages/info/HowItWorks.jsx'
 import Pricing from "../pages/info/Pricing.jsx"
+import ShippingReturns from "../pages/info/ShippingReturns.jsx"
 
 const AppRouter = () => {
   return (
@@ -27,6 +28,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/shipping" element={<ShippingReturns />} />
         </Route>
 
         {/* Admin area */}
