@@ -14,6 +14,7 @@ import SellerOrders from '../pages/seller/SellerOrders.jsx'
 import AddProduct from '../pages/seller/AddProduct.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
 import HowItWorks from '../pages/info/HowItWorks.jsx'
+import Pricing from "../pages/info/Pricing.jsx"
 
 const AppRouter = () => {
   return (
@@ -25,6 +26,7 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Route>
 
         {/* Admin area */}
