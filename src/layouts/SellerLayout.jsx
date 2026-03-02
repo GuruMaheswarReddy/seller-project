@@ -1,39 +1,47 @@
-import { NavLink, Outlet } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext.jsx'
+import { NavLink, Outlet } from "react-router-dom"
+import { useAuth } from "../context/AuthContext.jsx"
+
+const PRIMARY = "#094b3d"
 
 const navItems = [
-  { to: '/seller', label: 'Dashboard Overview' },
-  { to: '/seller/orders', label: 'Orders' },
-  { to: '/seller/add-product', label: 'Add Product' },
+  { to: "/seller", label: "Dashboard Overview" },
+  { to: "/seller/orders", label: "Orders" },
+  { to: "/seller/add-product", label: "Add Product" },
 ]
 
 const SellerLayout = () => {
   const { user, logout } = useAuth()
 
   return (
-    <div className="flex min-h-screen bg-black text-gray-100">
+    <div className="flex min-h-screen bg-[#eef5f3]">
+
       {/* Sidebar */}
-      <aside className="flex w-60 flex-col border-r border-yellow-500/20 bg-zinc-950/90 px-4 py-6">
-        <div className="mb-8">
-          <h2 className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-lg font-semibold text-transparent">
+      <aside className="flex w-64 flex-col px-6 py-8 text-white"
+        style={{ backgroundColor: PRIMARY }}
+      >
+        <div className="mb-10">
+          <h2 className="text-xl font-bold">
             Seller Console
           </h2>
-          <p className="mt-1 text-xs text-gray-400">Manage products & orders</p>
+          <p className="mt-1 text-xs text-white/70">
+            Manage products & orders
+          </p>
         </div>
 
-        <nav className="flex-1 space-y-1">
+        {/* Navigation */}
+        <nav className="flex-1 space-y-2">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
-              end={item.to === '/seller'}
+              end={item.to === "/seller"}
               className={({ isActive }) =>
                 [
-                  'flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                  "block rounded-lg px-4 py-2 text-sm font-medium transition",
                   isActive
-                    ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-black shadow-lg'
-                    : 'text-gray-300 hover:bg-zinc-900 hover:text-yellow-400',
-                ].join(' ')
+                    ? "bg-white text-[#094b3d] shadow-md"
+                    : "text-white/80 hover:bg-white/10",
+                ].join(" ")
               }
             >
               {item.label}
@@ -41,40 +49,45 @@ const SellerLayout = () => {
           ))}
         </nav>
 
-        <div className="mt-6 border-t border-yellow-500/20 pt-4 text-xs text-gray-400">
-          <div className="mb-2 flex items-center justify-between">
-            <span className="truncate">{user?.name ?? 'Seller'}</span>
-            <span className="rounded-full bg-yellow-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-yellow-400">
-              Seller
-            </span>
+        {/* User Info */}
+        <div className="mt-8 border-t border-white/20 pt-4 text-sm">
+          <div className="mb-3">
+            <p className="font-medium truncate">{user?.name ?? "Seller"}</p>
+            <span className="text-xs text-white/60">Seller Account</span>
           </div>
+
           <button
             onClick={logout}
-            className="w-full rounded-lg border border-zinc-700 px-3 py-1.5 text-left text-xs text-gray-300 transition hover:border-yellow-500 hover:text-yellow-400"
+            className="w-full rounded-lg bg-white text-[#094b3d] py-2 font-semibold transition hover:opacity-90"
           >
             Logout
           </button>
         </div>
       </aside>
 
-      {/* Main content */}
-      <div className="flex-1 bg-gradient-to-br from-zinc-950 via-black to-zinc-900">
-        <header className="flex items-center justify-between border-b border-yellow-500/20 px-8 py-4">
+      {/* Main Content */}
+      <div className="flex-1">
+
+        {/* Header */}
+        <header className="bg-white shadow-sm px-8 py-5 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-semibold text-white">Seller Dashboard</h1>
-            <p className="text-xs text-gray-400">
-              Track your catalog, orders and weekly revenue.
+            <h1 className="text-xl font-bold text-gray-800">
+              Seller Dashboard
+            </h1>
+            <p className="text-sm text-gray-500">
+              Track your catalog, orders and revenue.
             </p>
           </div>
         </header>
-        <main className="px-6 pb-10 pt-6">
+
+        {/* Page Content */}
+        <main className="p-8">
           <Outlet />
         </main>
       </div>
+
     </div>
   )
 }
 
 export default SellerLayout
-
-
