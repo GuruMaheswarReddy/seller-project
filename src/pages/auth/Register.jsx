@@ -29,7 +29,15 @@ const Register = () => {
     setError("")
     setLoading(true)
 
-    const result = await register(form)
+    // 🔹 Add ID + created date
+    const newUser = {
+      id: Date.now(),
+      ...form,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+
+    const result = await register(newUser)
     setLoading(false)
 
     if (!result.success) {
@@ -44,7 +52,6 @@ const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#e6f2ef] px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
 
-        {/* Logo */}
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold" style={{ color: PRIMARY }}>
             Create Your Account
@@ -62,7 +69,6 @@ const Register = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* Role */}
           <div>
             <label className="text-sm text-gray-600">Register As</label>
             <select
@@ -75,7 +81,6 @@ const Register = () => {
             </select>
           </div>
 
-          {/* Name */}
           <div>
             <label className="text-sm text-gray-600">Full Name</label>
             <input
@@ -88,7 +93,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Email */}
           <div>
             <label className="text-sm text-gray-600">Email</label>
             <input
@@ -102,7 +106,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Phone */}
           <div>
             <label className="text-sm text-gray-600">Phone</label>
             <input
@@ -114,7 +117,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label className="text-sm text-gray-600">Password</label>
             <input
@@ -128,7 +130,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Address */}
           <div>
             <label className="text-sm text-gray-600">Address</label>
             <textarea
@@ -141,7 +142,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={loading}
@@ -152,7 +152,6 @@ const Register = () => {
           </button>
         </form>
 
-        {/* Footer Link */}
         <div className="text-center mt-6 text-sm text-gray-500">
           Already have an account?{" "}
           <button
@@ -163,6 +162,7 @@ const Register = () => {
             Login
           </button>
         </div>
+
       </div>
     </div>
   )
