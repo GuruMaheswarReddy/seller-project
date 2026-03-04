@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
 
     // DEFAULT ADMIN LOGIN
-    if (email === "admin123" && password === "admin@123") {
+    if (email === "admin@arshith.com" && password === "admin@123") {
 
       const adminUser = {
         id: "admin-1",
