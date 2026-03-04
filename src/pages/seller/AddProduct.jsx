@@ -14,20 +14,26 @@ const emptyForm = {
 const AddProduct = () => {
   const { user } = useAuth()
   const { createProduct } = useAppContext()
+
   const [form, setForm] = useState(emptyForm)
   const [message, setMessage] = useState("")
 
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     if (!user) return
 
     const priceNumber = Number(form.price || 0)
 
-    createProduct({
+    const newProduct = {
+      id: Date.now(), // unique id
       name: form.name,
       price: priceNumber,
       description: form.description,
@@ -35,11 +41,20 @@ const AddProduct = () => {
         form.imageUrl ||
         "https://images.pexels.com/photos/3730760/pexels-photo-3730760.jpeg?auto=compress&cs=tinysrgb&w=800",
       sellerId: user.id,
-    })
+
+      // important for admin pages
+      createdAt: new Date().toISOString(),
+    }
+
+    createProduct(newProduct)
 
     setForm(emptyForm)
+
     setMessage("Product successfully added to your catalog.")
-    setTimeout(() => setMessage(""), 2500)
+
+    setTimeout(() => {
+      setMessage("")
+    }, 2500)
   }
 
   return (
@@ -79,14 +94,14 @@ const AddProduct = () => {
               required
               value={form.name}
               onChange={handleChange}
-              className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:border-transparent"
-              style={{ focusRingColor: PRIMARY }}
               placeholder="Organic Mangoes"
+              className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
             />
           </div>
 
           {/* Price + Image */}
           <div className="grid md:grid-cols-2 gap-6">
+
             <div>
               <label className="block text-sm font-medium text-gray-600">
                 Price (₹)
@@ -98,8 +113,8 @@ const AddProduct = () => {
                 required
                 value={form.price}
                 onChange={handleChange}
-                className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:border-transparent"
                 placeholder="199"
+                className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
               />
             </div>
 
@@ -111,10 +126,11 @@ const AddProduct = () => {
                 name="imageUrl"
                 value={form.imageUrl}
                 onChange={handleChange}
-                className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:border-transparent"
                 placeholder="https://image-link..."
+                className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
               />
             </div>
+
           </div>
 
           {/* Description */}
@@ -127,8 +143,8 @@ const AddProduct = () => {
               rows={4}
               value={form.description}
               onChange={handleChange}
-              className="mt-2 w-full resize-none border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:border-transparent"
               placeholder="Describe your product features and benefits..."
+              className="mt-2 w-full resize-none border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
             />
           </div>
 
