@@ -14,7 +14,7 @@ const AdminOrders = () => {
 
   const formatDate = (value) => {
     try {
-      return new Date(value).toLocaleDateString(undefined, {
+      return new Date(value).toLocaleDateString("en-IN", {
         month: "short",
         day: "numeric",
         year: "numeric",
@@ -22,6 +22,14 @@ const AdminOrders = () => {
     } catch {
       return value
     }
+  }
+
+  // Format price as Indian Rupees
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+    }).format(amount || 0)
   }
 
   const rows = sellerOrders.map((order) => {
@@ -50,10 +58,7 @@ const AdminOrders = () => {
       <div className="bg-white rounded-2xl shadow-md overflow-hidden">
 
         <div className="px-6 py-4 border-b">
-          <h3
-            className="font-semibold"
-            style={{ color: PRIMARY }}
-          >
+          <h3 className="font-semibold" style={{ color: PRIMARY }}>
             Seller Orders List
           </h3>
         </div>
@@ -103,7 +108,7 @@ const AdminOrders = () => {
                       className="px-6 py-3 font-semibold"
                       style={{ color: PRIMARY }}
                     >
-                      ${order.price}
+                      {formatCurrency(order.price)}
                     </td>
 
                     <td className="px-6 py-3 text-gray-500">
