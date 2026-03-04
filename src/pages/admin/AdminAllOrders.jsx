@@ -9,16 +9,19 @@ const AdminAllOrders = () => {
       orders.map((order) => {
         const seller = users.find((u) => u.id === order.sellerId)
         const product = products.find((p) => p.id === order.productId)
+
         return {
           ...order,
           sellerName: seller?.name ?? 'Unknown seller',
           productName: order.productName || product?.name || 'Unknown product',
+          productCreatedAt: product?.createdAt || null,
         }
       }),
     [orders, users, products],
   )
 
   const formatDate = (value) => {
+    if (!value) return '-'
     try {
       return new Date(value).toLocaleString(undefined, {
         month: 'short',
@@ -33,66 +36,96 @@ const AdminAllOrders = () => {
 
   return (
     <div className="space-y-4">
+
       <div>
         <h2 className="text-xl font-semibold text-white">All Orders</h2>
         <p className="text-xs text-gray-400">
           Full view of the order stream across all channels and roles.
         </p>
       </div>
+
       <div className="overflow-hidden rounded-2xl border border-yellow-500/20 bg-zinc-950/80 shadow-lg shadow-black/70">
+
         <div className="border-b border-yellow-500/10 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
           Order stream
         </div>
+
         <div className="max-h-[420px] overflow-auto text-xs">
+
           <table className="min-w-full border-separate border-spacing-y-1 px-3">
+
             <thead className="sticky top-0 bg-zinc-950/95 text-[11px] uppercase tracking-wide text-gray-400">
               <tr>
                 <th className="px-2 py-2 text-left">Order ID</th>
                 <th className="px-2 py-2 text-left">Seller</th>
                 <th className="px-2 py-2 text-left">Product</th>
                 <th className="px-2 py-2 text-left">Price</th>
-                <th className="px-2 py-2 text-left">Created by</th>
-                <th className="px-2 py-2 text-left">Date</th>
+                <th className="px-2 py-2 text-left">Created By</th>
+                <th className="px-2 py-2 text-left">Order Date</th>
+                <th className="px-2 py-2 text-left">Product Created</th>
               </tr>
             </thead>
+
             <tbody>
+
               {rows.map((order) => (
                 <tr
                   key={order.id}
                   className="rounded-xl bg-black/60 text-[11px] text-gray-200 shadow-sm shadow-black/70"
                 >
+
                   <td className="px-2 py-2 font-mono text-[10px] text-gray-400">
                     {order.id}
                   </td>
-                  <td className="px-2 py-2">{order.sellerName}</td>
-                  <td className="px-2 py-2">{order.productName}</td>
+
+                  <td className="px-2 py-2">
+                    {order.sellerName}
+                  </td>
+
+                  <td className="px-2 py-2">
+                    {order.productName}
+                  </td>
+
                   <td className="px-2 py-2 font-semibold text-yellow-300">
                     ${order.price}
                   </td>
+
                   <td className="px-2 py-2 capitalize">
                     {order.createdByRole || 'unknown'}
                   </td>
-                  <td className="px-2 py-2">{formatDate(order.createdAt)}</td>
+
+                  <td className="px-2 py-2">
+                    {formatDate(order.createdAt)}
+                  </td>
+
+                  <td className="px-2 py-2">
+                    {formatDate(order.productCreatedAt)}
+                  </td>
+
                 </tr>
               ))}
+
               {rows.length === 0 && (
                 <tr>
                   <td
-                    colSpan={6}
+                    colSpan={7}
                     className="px-2 py-4 text-center text-[11px] text-gray-500"
                   >
                     No orders yet.
                   </td>
                 </tr>
               )}
+
             </tbody>
+
           </table>
+
         </div>
+
       </div>
+
     </div>
   )
 }
 
 export default AdminAllOrders
-
-
