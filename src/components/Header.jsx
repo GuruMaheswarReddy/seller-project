@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
-import logo from '../assets/namelogo-removebg-preview.png'
+import logo from '../assets/logo.jpeg'
 
 const Header = () => {
   const { user } = useAuth()
@@ -17,10 +17,11 @@ const Header = () => {
           className="flex cursor-pointer items-center"
           onClick={() => navigate('/')}
         >
-               <img
+
+          <img
   src={logo}
   alt="Arshith Fresh Logo"
-  className="h-20 md:h-24 w-auto object-contain"
+  className="h-16 w-auto object-contain"
 />
         </div>
 
@@ -147,4 +148,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header 
