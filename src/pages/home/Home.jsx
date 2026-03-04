@@ -394,7 +394,7 @@ const Home = () => {
 </section>
   
       
-      {/* TOOLS SECTION */}
+    {/* TOOLS SECTION */}
 <section className="relative bg-[#eef3f7] py-24 overflow-hidden">
   <div className="mx-auto max-w-7xl px-6">
 
@@ -425,27 +425,33 @@ const Home = () => {
       {[
         {
           title: "Fulfillment Support",
-          desc: "Worried about storing, packing and shipping? Let us handle logistics for you."
+          desc: "Worried about storing, packing and shipping? Let us handle logistics for you.",
+          path: "/how-it-works"
         },
         {
           title: "Seller Ads",
-          desc: "Boost your product visibility and stand out from competitors."
+          desc: "Boost your product visibility and stand out from competitors.",
+          path: "/grow-business"
         },
         {
           title: "Shopping Festivals",
-          desc: "Participate in mega sales and seasonal campaigns to increase orders."
+          desc: "Participate in mega sales and seasonal campaigns to increase orders.",
+          path: "/grow-business"
         },
         {
           title: "Learning Center",
-          desc: "Access webinars, tutorials and expert sessions to grow faster."
+          desc: "Access webinars, tutorials and expert sessions to grow faster.",
+          path: "/how-it-works"
         },
         {
           title: "Account Management",
-          desc: "Improve product selection, pricing and business insights with experts."
+          desc: "Improve product selection, pricing and business insights with experts.",
+          path: "/pricing"
         },
         {
           title: "Mobile App",
-          desc: "Manage your seller account 24x7 from your mobile device."
+          desc: "Manage your seller account 24x7 from your mobile device.",
+          path: "/how-it-works"
         }
       ].map((item, index) => (
         <div
@@ -460,7 +466,10 @@ const Home = () => {
             {item.desc}
           </p>
 
-          <button className="mt-6 text-[#094b3d] font-semibold hover:underline">
+          <button
+            onClick={() => navigate(item.path)}
+            className="mt-6 text-[#094b3d] font-semibold hover:underline"
+          >
             Learn More →
           </button>
         </div>
@@ -469,7 +478,6 @@ const Home = () => {
     </div>
   </div>
 </section>
-
 
      {/* HELP SECTION */}
 <section className="bg-gray-100 py-24">
