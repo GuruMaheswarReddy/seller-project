@@ -1,3 +1,4 @@
+import logo from "../assets/masaaaa-removebg-preview.webp"
 import { useState } from "react"
 
 const Footer = () => {
@@ -15,9 +16,11 @@ const Footer = () => {
 
           {/* BRAND */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">
-              Arshith Fresh
-            </h3>
+            <img
+  src={logo}
+  alt="Arshith Fresh"
+  className="w-40 mb-6"
+/>
 
             <p className="text-base leading-relaxed text-white/80 mb-6">
               <span className="font-semibold text-white">
