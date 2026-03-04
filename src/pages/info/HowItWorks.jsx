@@ -3,41 +3,42 @@ const HowItWorks = () => {
     <div className="bg-gray-50 text-gray-800">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="bg-white py-16 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+<section className="bg-white py-16 px-6">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-          {/* Left Content */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              How to Sell on Arshith Supplier
-            </h1>
+    {/* Left Content */}
+    <div>
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        How to Sell on Arshith Supplier
+      </h1>
 
-            <p className="text-lg text-gray-600 mb-6">
-              Become a seller and grow your business across India.
-            </p>
+      <p className="text-lg text-gray-600 mb-6">
+        Become a seller and grow your business across India.
+      </p>
 
-            <div className="flex">
-              <input
-                type="text"
-                placeholder="Enter Your Mobile Number"
-                className="border px-4 py-3 w-full rounded-l-md"
-              />
-              <button className="bg-[#094b3d] text-white px-6 rounded-r-md">
-                Start Selling
-              </button>
-            </div>
-          </div>
+      <div className="flex">
+        <input
+          type="text"
+          placeholder="Enter Your Mobile Number"
+          className="border px-4 py-3 w-full rounded-l-md"
+        />
+        <button className="bg-[#094b3d] text-white px-6 rounded-r-md">
+          Start Selling
+        </button>
+      </div>
+    </div>
 
-          {/* Right Image */}
-          <div>
-            <img
-              src="https://via.placeholder.com/500x400"
-              alt="seller"
-              className="rounded-lg"
-            />
-          </div>
-        </div>
-      </section>
+    {/* Right Image */}
+    <div>
+      <img
+        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+        alt="seller business"
+        className="rounded-lg shadow-lg"
+      />
+    </div>
+
+  </div>
+</section>
 
       {/* ================= SIMPLE STEPS SECTION ================= */}
       <section className="py-16 px-6">
