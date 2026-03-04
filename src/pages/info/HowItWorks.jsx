@@ -31,7 +31,7 @@ const HowItWorks = () => {
           {/* Right Image */}
           <div>
             <img
-              src="https://via.placeholder.com/500x400"
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
               alt="seller"
               className="rounded-lg"
             />
@@ -49,16 +49,36 @@ const HowItWorks = () => {
           <div className="grid md:grid-cols-4 gap-8 bg-white p-10 rounded-xl shadow">
 
             {[
-              "Sign up for free",
-              "Upload your product & catalog",
-              "Receive & Ship Orders",
-              "Receive Payments",
+              {
+                title: "Sign up for free",
+                img: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
+              },
+              {
+                title: "Upload your product & catalog",
+                img: "https://cdn-icons-png.flaticon.com/512/1828/1828925.png"
+              },
+              {
+                title: "Receive & Ship Orders",
+                img: "https://cdn-icons-png.flaticon.com/512/3500/3500833.png"
+              },
+              {
+                title: "Receive Payments",
+                img: "https://cdn-icons-png.flaticon.com/512/2331/2331970.png"
+              }
             ].map((step, index) => (
               <div key={index}>
                 <div className="w-10 h-10 bg-[#094b3d] text-white rounded-full flex items-center justify-center mx-auto mb-4">
                   {index + 1}
                 </div>
-                <h3 className="font-semibold mb-2">{step}</h3>
+
+                <img
+                  src={step.img}
+                  alt="step"
+                  className="w-12 mx-auto mb-4"
+                />
+
+                <h3 className="font-semibold mb-2">{step.title}</h3>
+
                 <p className="text-sm text-gray-600">
                   Start your journey easily with our simple process.
                 </p>
@@ -93,12 +113,29 @@ const HowItWorks = () => {
 
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  "Mobile Number & Email ID",
-                  "GSTIN Number (for GST sellers)",
-                  "Active Bank Account",
+                  {
+                    text: "Mobile Number & Email ID",
+                    img: "https://cdn-icons-png.flaticon.com/512/561/561127.png"
+                  },
+                  {
+                    text: "GSTIN Number (for GST sellers)",
+                    img: "https://cdn-icons-png.flaticon.com/512/3135/3135679.png"
+                  },
+                  {
+                    text: "Active Bank Account",
+                    img: "https://cdn-icons-png.flaticon.com/512/2830/2830284.png"
+                  }
                 ].map((item, i) => (
-                  <div key={i} className="bg-white p-6 rounded-xl shadow">
-                    <h4 className="font-semibold">{item}</h4>
+                  <div key={i} className="bg-white p-6 rounded-xl shadow text-center">
+
+                    <img
+                      src={item.img}
+                      alt="info"
+                      className="w-12 mx-auto mb-4"
+                    />
+
+                    <h4 className="font-semibold">{item.text}</h4>
+
                   </div>
                 ))}
               </div>
@@ -109,6 +146,13 @@ const HowItWorks = () => {
               <h2 className="text-2xl font-bold mb-4">
                 Listing Your Product
               </h2>
+
+              <img
+                src="https://images.pexels.com/photos/6214457/pexels-photo-6214457.jpeg"
+                alt="listing"
+                className="rounded-xl mb-6"
+              />
+
               <p className="text-gray-600 mb-4">
                 Upload your product catalog from the supplier dashboard.
                 Add images, price, GST details and description.
@@ -120,6 +164,12 @@ const HowItWorks = () => {
               <h2 className="text-2xl font-bold mb-4">
                 Getting Orders
               </h2>
+
+              <img
+                src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+                alt="orders"
+                className="rounded-xl mb-6"
+              />
 
               <ul className="list-disc ml-6 space-y-2 text-gray-600">
                 <li>List more catalogs</li>
@@ -134,6 +184,13 @@ const HowItWorks = () => {
               <h2 className="text-2xl font-bold mb-4">
                 Delivery & Payment
               </h2>
+
+              <img
+                src="https://images.pexels.com/photos/6169659/pexels-photo-6169659.jpeg"
+                alt="delivery"
+                className="rounded-xl mb-6"
+              />
+
               <p className="text-gray-600">
                 After receiving orders, pack products and hand over to
                 logistics partner. Payment will be credited directly
