@@ -1,20 +1,23 @@
-import { useAppContext } from '../../context/AppContext.jsx'
-import { useMemo } from 'react'
+import { useAppContext } from "../../context/AppContext.jsx"
+import { useMemo } from "react"
+
+const PRIMARY = "#094b3d"
 
 const AdminOrders = () => {
   const { orders, users } = useAppContext()
 
-  // Only orders created by sellers
+  // Only seller created orders
   const sellerOrders = useMemo(
-    () => orders.filter((o) => o.createdByRole === 'seller'),
-    [orders],
+    () => orders.filter((o) => o.createdByRole === "seller"),
+    [orders]
   )
 
   const formatDate = (value) => {
     try {
       return new Date(value).toLocaleDateString(undefined, {
-        month: 'short',
-        day: 'numeric',
+        month: "short",
+        day: "numeric",
+        year: "numeric",
       })
     } catch {
       return value
@@ -23,71 +26,104 @@ const AdminOrders = () => {
 
   const rows = sellerOrders.map((order) => {
     const seller = users.find((u) => u.id === order.sellerId)
+
     return {
       ...order,
-      sellerName: seller?.name ?? 'Unknown seller',
+      sellerName: seller?.name ?? "Unknown seller",
     }
   })
 
   return (
-    <div className="space-y-4">
+    <div className="p-6 space-y-6 bg-[#f4f7f6] min-h-screen">
+
+      {/* Header */}
       <div>
-        <h2 className="text-xl font-semibold text-white">Seller Orders</h2>
-        <p className="text-xs text-gray-400">
-          Orders created by sellers, filtered from the global order stream.
+        <h2 className="text-2xl font-bold text-gray-800">
+          Seller Orders
+        </h2>
+        <p className="text-sm text-gray-500">
+          Orders created by sellers across the platform.
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-yellow-500/20 bg-zinc-950/80 shadow-lg shadow-black/70">
-        <div className="border-b border-yellow-500/10 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-          Orders created by sellers
+      {/* Orders Table */}
+      <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+
+        <div className="px-6 py-4 border-b">
+          <h3
+            className="font-semibold"
+            style={{ color: PRIMARY }}
+          >
+            Seller Orders List
+          </h3>
         </div>
-        <div className="max-h-[420px] overflow-auto text-xs">
-          <table className="min-w-full border-separate border-spacing-y-1 px-3">
-            <thead className="sticky top-0 bg-zinc-950/95 text-[11px] uppercase tracking-wide text-gray-400">
+
+        <div className="overflow-x-auto">
+
+          <table className="w-full text-sm">
+
+            <thead className="bg-gray-100 text-gray-600">
               <tr>
-                <th className="px-2 py-2 text-left">Order ID</th>
-                <th className="px-2 py-2 text-left">Seller Name</th>
-                <th className="px-2 py-2 text-left">Product</th>
-                <th className="px-2 py-2 text-left">Price</th>
-                <th className="px-2 py-2 text-left">Date</th>
+                <th className="px-6 py-3 text-left">Order ID</th>
+                <th className="px-6 py-3 text-left">Seller Name</th>
+                <th className="px-6 py-3 text-left">Product</th>
+                <th className="px-6 py-3 text-left">Price</th>
+                <th className="px-6 py-3 text-left">Date</th>
               </tr>
             </thead>
+
             <tbody>
-              {rows.map((order) => (
-                <tr
-                  key={order.id}
-                  className="rounded-xl bg-black/60 text-[11px] text-gray-200 shadow-sm shadow-black/70"
-                >
-                  <td className="px-2 py-2 font-mono text-[10px] text-gray-400">
-                    {order.id}
-                  </td>
-                  <td className="px-2 py-2">{order.sellerName}</td>
-                  <td className="px-2 py-2">{order.productName}</td>
-                  <td className="px-2 py-2 font-semibold text-yellow-300">
-                    ${order.price}
-                  </td>
-                  <td className="px-2 py-2">{formatDate(order.createdAt)}</td>
-                </tr>
-              ))}
-              {rows.length === 0 && (
+
+              {rows.length === 0 ? (
                 <tr>
-                  <td
-                    colSpan={5}
-                    className="px-2 py-4 text-center text-[11px] text-gray-500"
-                  >
-                    No seller orders yet.
+                  <td colSpan="5" className="text-center py-6 text-gray-400">
+                    No seller orders yet
                   </td>
                 </tr>
+              ) : (
+                rows.map((order) => (
+                  <tr
+                    key={order.id}
+                    className="border-t hover:bg-gray-50"
+                  >
+
+                    <td className="px-6 py-3 font-mono text-gray-500">
+                      {order.id}
+                    </td>
+
+                    <td className="px-6 py-3 font-medium text-gray-800">
+                      {order.sellerName}
+                    </td>
+
+                    <td className="px-6 py-3 text-gray-600">
+                      {order.productName}
+                    </td>
+
+                    <td
+                      className="px-6 py-3 font-semibold"
+                      style={{ color: PRIMARY }}
+                    >
+                      ${order.price}
+                    </td>
+
+                    <td className="px-6 py-3 text-gray-500">
+                      {formatDate(order.createdAt)}
+                    </td>
+
+                  </tr>
+                ))
               )}
+
             </tbody>
+
           </table>
+
         </div>
+
       </div>
+
     </div>
   )
 }
 
 export default AdminOrders
-
-
