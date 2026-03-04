@@ -1,4 +1,4 @@
-import logo from "../assets/masaaaa-removebg-preview.webp"
+import logo from "../assets/masaaaaa-removebg-preview.webp"
 import { useState } from "react"
 
 const Footer = () => {
@@ -11,30 +11,32 @@ const Footer = () => {
   return (
     <footer className="bg-[#094b3d] text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
+       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+{/* BRAND */}
+<div>
 
-          {/* BRAND */}
-          <div>
-            <img
-  src={logo}
-  alt="Arshith Fresh"
-  className="w-40 mb-6"
-/>
+  <img
+    src={logo}
+    alt="Arshith Fresh"
+    className="w-40 mb-6"
+  />
 
-            <p className="text-base leading-relaxed text-white/80 mb-6">
-              <span className="font-semibold text-white">
-                Corporate Office —
-              </span>{" "}
-              Bengaluru, Karnataka, India - 560076
-            </p>
+  <p className="text-base leading-relaxed text-white/80 mb-6">
+    <span className="font-semibold text-white">
+      Corporate Office —
+    </span>{" "}
+    Bengaluru, Karnataka, India - 560076
+  </p>
 
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            />
-          </div>
+  <input
+    type="email"
+    placeholder="Enter your email"
+    className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+  />
+
+</div>
+       
 
           {/* SERVICES */}
           <div>
