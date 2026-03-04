@@ -10,7 +10,15 @@ const AdminDashboard = () => {
   const totalSellers = sellers.length
   const totalAdmins = users.filter((u) => u.role === "admin").length
   const totalProducts = products.length
+
   const totalRevenue = orders.reduce((sum, o) => sum + (o.price || 0), 0)
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+    }).format(amount || 0)
+  }
 
   return (
     <div className="p-6 space-y-8 bg-[#f4f7f6] min-h-screen">
@@ -28,35 +36,43 @@ const AdminDashboard = () => {
       {/* Stats Cards */}
       <div className="grid gap-6 md:grid-cols-4">
 
-        <div className="bg-white rounded-2xl shadow-md p-5 border-l-4"
-             style={{ borderColor: PRIMARY }}>
+        <div
+          className="bg-white rounded-2xl shadow-md p-5 border-l-4"
+          style={{ borderColor: PRIMARY }}
+        >
           <p className="text-sm text-gray-500">Total Sellers</p>
           <p className="text-3xl font-bold text-gray-800 mt-1">
             {totalSellers}
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-md p-5 border-l-4"
-             style={{ borderColor: PRIMARY }}>
+        <div
+          className="bg-white rounded-2xl shadow-md p-5 border-l-4"
+          style={{ borderColor: PRIMARY }}
+        >
           <p className="text-sm text-gray-500">Admins</p>
           <p className="text-3xl font-bold text-gray-800 mt-1">
             {totalAdmins}
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-md p-5 border-l-4"
-             style={{ borderColor: PRIMARY }}>
+        <div
+          className="bg-white rounded-2xl shadow-md p-5 border-l-4"
+          style={{ borderColor: PRIMARY }}
+        >
           <p className="text-sm text-gray-500">Products</p>
           <p className="text-3xl font-bold text-gray-800 mt-1">
             {totalProducts}
           </p>
         </div>
 
-        <div className="rounded-2xl shadow-md p-5 text-white"
-             style={{ backgroundColor: PRIMARY }}>
+        <div
+          className="rounded-2xl shadow-md p-5 text-white"
+          style={{ backgroundColor: PRIMARY }}
+        >
           <p className="text-sm opacity-80">Total Revenue</p>
           <p className="text-3xl font-bold mt-1">
-            ${totalRevenue.toFixed(0)}
+            {formatCurrency(totalRevenue)}
           </p>
         </div>
 
@@ -112,7 +128,7 @@ const AdminDashboard = () => {
 
                     <td className="px-6 py-3 text-gray-500">
                       {seller.createdAt
-                        ? new Date(seller.createdAt).toLocaleDateString()
+                        ? new Date(seller.createdAt).toLocaleDateString("en-IN")
                         : "-"}
                     </td>
 
