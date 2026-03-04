@@ -17,11 +17,10 @@ const Header = () => {
           className="flex cursor-pointer items-center"
           onClick={() => navigate('/')}
         >
-
-          <img
+               <img
   src={logo}
   alt="Arshith Fresh Logo"
-  className="h-16 w-auto object-contain"
+  className="h-20 md:h-24 w-auto object-contain"
 />
         </div>
 
