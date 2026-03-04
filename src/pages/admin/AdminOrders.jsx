@@ -1,42 +1,15 @@
 import { useAppContext } from "../../context/AppContext.jsx"
-import { useMemo } from "react"
 
 const PRIMARY = "#094b3d"
 
-const AdminOrders = () => {
-  const { orders, users } = useAppContext()
+const AdminProducts = () => {
+  const { products, users } = useAppContext()
 
-  // Only seller created orders
-  const sellerOrders = useMemo(
-    () => orders.filter((o) => o.createdByRole === "seller"),
-    [orders]
-  )
-
-  const formatDate = (value) => {
-    try {
-      return new Date(value).toLocaleDateString("en-IN", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      })
-    } catch {
-      return value
-    }
-  }
-
-  // Format price as Indian Rupees
-  const formatCurrency = (amount) => {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-    }).format(amount || 0)
-  }
-
-  const rows = sellerOrders.map((order) => {
-    const seller = users.find((u) => u.id === order.sellerId)
+  const rows = products.map((product) => {
+    const seller = users.find((u) => u.id === product.sellerId)
 
     return {
-      ...order,
+      ...product,
       sellerName: seller?.name ?? "Unknown seller",
     }
   })
@@ -47,19 +20,19 @@ const AdminOrders = () => {
       {/* Header */}
       <div>
         <h2 className="text-2xl font-bold text-gray-800">
-          Seller Orders
+          Seller Products
         </h2>
         <p className="text-sm text-gray-500">
-          Orders created by sellers across the platform.
+          Products added by sellers.
         </p>
       </div>
 
-      {/* Orders Table */}
+      {/* Table */}
       <div className="bg-white rounded-2xl shadow-md overflow-hidden">
 
         <div className="px-6 py-4 border-b">
-          <h3 className="font-semibold" style={{ color: PRIMARY }}>
-            Seller Orders List
+          <h3 className="font-semibold text-gray-800">
+            Product List
           </h3>
         </div>
 
@@ -69,11 +42,10 @@ const AdminOrders = () => {
 
             <thead className="bg-gray-100 text-gray-600">
               <tr>
-                <th className="px-6 py-3 text-left">Order ID</th>
-                <th className="px-6 py-3 text-left">Seller Name</th>
-                <th className="px-6 py-3 text-left">Product</th>
+                <th className="px-6 py-3 text-left">Product ID</th>
+                <th className="px-6 py-3 text-left">Seller</th>
+                <th className="px-6 py-3 text-left">Product Name</th>
                 <th className="px-6 py-3 text-left">Price</th>
-                <th className="px-6 py-3 text-left">Date</th>
               </tr>
             </thead>
 
@@ -81,38 +53,31 @@ const AdminOrders = () => {
 
               {rows.length === 0 ? (
                 <tr>
-                  <td colSpan="5" className="text-center py-6 text-gray-400">
-                    No seller orders yet
+                  <td colSpan="4" className="text-center py-6 text-gray-400">
+                    No products added yet
                   </td>
                 </tr>
               ) : (
-                rows.map((order) => (
+                rows.map((product) => (
                   <tr
-                    key={order.id}
+                    key={product.id}
                     className="border-t hover:bg-gray-50"
                   >
 
-                    <td className="px-6 py-3 font-mono text-gray-500">
-                      {order.id}
+                    <td className="px-6 py-3 text-gray-500">
+                      {product.id}
                     </td>
 
                     <td className="px-6 py-3 font-medium text-gray-800">
-                      {order.sellerName}
+                      {product.sellerName}
                     </td>
 
                     <td className="px-6 py-3 text-gray-600">
-                      {order.productName}
+                      {product.name}
                     </td>
 
-                    <td
-                      className="px-6 py-3 font-semibold"
-                      style={{ color: PRIMARY }}
-                    >
-                      {formatCurrency(order.price)}
-                    </td>
-
-                    <td className="px-6 py-3 text-gray-500">
-                      {formatDate(order.createdAt)}
+                    <td className="px-6 py-3 font-semibold text-[#094b3d]">
+                      ₹{product.price}
                     </td>
 
                   </tr>
@@ -131,4 +96,4 @@ const AdminOrders = () => {
   )
 }
 
-export default AdminOrders
+export default AdminProducts
