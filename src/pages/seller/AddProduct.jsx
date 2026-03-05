@@ -1,43 +1,43 @@
-import { useState } from "react"
-import { useAuth } from "../../context/AuthContext.jsx"
-import { useAppContext } from "../../context/AppContext.jsx"
+import { useState } from "react";
+import { useAuth } from "../../context/AuthContext.jsx";
+import { useAppContext } from "../../context/AppContext.jsx";
 
-const PRIMARY = "#094b3d"
+const PRIMARY = "#094b3d";
 
 const emptyForm = {
 name: "",
 price: "",
 description: "",
-}
+};
 
 const GOOGLE_FORM_LINK =
-"https://docs.google.com/forms/d/e/1FAIpQLScROgSpRDHWbiNr6aSpk9Qx98F1JsmYeNgxuU0876lqHIQJSQ/viewform"
+"https://docs.google.com/forms/d/e/1FAIpQLScROgSpRDHWbiNr6aSpk9Qx98F1JsmYeNgxuU0876lqHIQJSQ/viewform";
 
 const AddProduct = () => {
-const { user } = useAuth()
-const { createProduct } = useAppContext()
+const { user } = useAuth();
+const { createProduct } = useAppContext();
 
-const [form, setForm] = useState(emptyForm)
-const [message, setMessage] = useState("")
+const [form, setForm] = useState(emptyForm);
+const [message, setMessage] = useState("");
 
 const handleChange = (e) => {
 setForm((prev) => ({
 ...prev,
 [e.target.name]: e.target.value,
-}))
-}
+}));
+};
 
 const openGoogleForm = () => {
-window.open(GOOGLE_FORM_LINK, "_blank")
-}
+window.open(GOOGLE_FORM_LINK, "_blank");
+};
 
 const handleSubmit = (e) => {
-e.preventDefault()
+e.preventDefault();
 
 ```
-if (!user) return
+if (!user) return;
 
-const priceNumber = Number(form.price || 0)
+const priceNumber = Number(form.price || 0);
 
 const newProduct = {
   id: Date.now(),
@@ -46,37 +46,28 @@ const newProduct = {
   description: form.description,
   sellerId: user.id,
   createdAt: new Date().toISOString(),
-}
+};
 
-createProduct(newProduct)
+createProduct(newProduct);
 
-setForm(emptyForm)
+setForm(emptyForm);
 
-setMessage("Product successfully added to your catalog.")
+setMessage("Product successfully added to your catalog.");
 
 setTimeout(() => {
-  setMessage("")
-}, 2500)
+  setMessage("");
+}, 2500);
 ```
 
-}
+};
 
 return ( <div className="min-h-screen bg-[#eef5f3] p-8">
+{/* Header */} <div className="mb-8"> <h2 className="text-2xl font-bold text-gray-800">Add New Product</h2> <p className="text-sm text-gray-500 mt-1">
+Create and publish a new product in your catalog. </p> </div>
 
 ```
-  {/* Header */}
-  <div className="mb-8">
-    <h2 className="text-2xl font-bold text-gray-800">
-      Add New Product
-    </h2>
-    <p className="text-sm text-gray-500 mt-1">
-      Create and publish a new product in your catalog.
-    </p>
-  </div>
-
   {/* Form Card */}
   <div className="bg-white rounded-3xl shadow-md p-8 max-w-3xl">
-
     {message && (
       <div
         className="mb-6 px-4 py-3 rounded-xl text-sm text-white"
@@ -87,7 +78,6 @@ return ( <div className="min-h-screen bg-[#eef5f3] p-8">
     )}
 
     <form onSubmit={handleSubmit} className="space-y-6">
-
       {/* Product Name */}
       <div>
         <label className="block text-sm font-medium text-gray-600">
@@ -135,7 +125,7 @@ return ( <div className="min-h-screen bg-[#eef5f3] p-8">
         />
       </div>
 
-      {/* Upload Image via Google Form */}
+      {/* Upload Image */}
       <div>
         <label className="block text-sm font-medium text-gray-600">
           Upload Product Image
@@ -144,18 +134,18 @@ return ( <div className="min-h-screen bg-[#eef5f3] p-8">
         <button
           type="button"
           onClick={openGoogleForm}
-          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 hover:bg-gray-100 text-sm"
+          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 hover:bg-gray-100 text-sm font-medium"
         >
           Upload Image via Google Form
         </button>
 
         <p className="text-xs text-gray-400 mt-2">
-          Clicking this will open the Google Form where you can upload your
-          product image.
+          This will open a Google Form where you can upload the product
+          image.
         </p>
       </div>
 
-      {/* Submit Button */}
+      {/* Submit */}
       <button
         type="submit"
         className="w-full text-white py-3 rounded-xl font-semibold transition hover:opacity-90"
@@ -163,15 +153,11 @@ return ( <div className="min-h-screen bg-[#eef5f3] p-8">
       >
         Add Product
       </button>
-
     </form>
-
   </div>
-
 </div>
-```
 
-)
-}
+);
+};
 
-export default AddProduct
+export default AddProduct;
