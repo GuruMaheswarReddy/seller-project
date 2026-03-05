@@ -78,6 +78,7 @@ Create and publish a new product in your catalog. </p> </div>
     )}
 
     <form onSubmit={handleSubmit} className="space-y-6">
+
       {/* Product Name */}
       <div>
         <label className="block text-sm font-medium text-gray-600">
@@ -89,7 +90,7 @@ Create and publish a new product in your catalog. </p> </div>
           value={form.name}
           onChange={handleChange}
           placeholder="Organic Mangoes"
-          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
+          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2"
         />
       </div>
 
@@ -106,7 +107,7 @@ Create and publish a new product in your catalog. </p> </div>
           value={form.price}
           onChange={handleChange}
           placeholder="199"
-          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
+          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2"
         />
       </div>
 
@@ -121,7 +122,7 @@ Create and publish a new product in your catalog. </p> </div>
           value={form.description}
           onChange={handleChange}
           placeholder="Describe your product features and benefits..."
-          className="mt-2 w-full resize-none border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2"
+          className="mt-2 w-full resize-none border border-gray-300 rounded-xl px-4 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2"
         />
       </div>
 
@@ -134,14 +135,13 @@ Create and publish a new product in your catalog. </p> </div>
         <button
           type="button"
           onClick={openGoogleForm}
-          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 hover:bg-gray-100 text-sm font-medium"
+          className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 hover:bg-gray-100 text-sm font-medium text-black"
         >
           Upload Image via Google Form
         </button>
 
         <p className="text-xs text-gray-400 mt-2">
-          This will open a Google Form where you can upload the product
-          image.
+          This will open a Google Form where you can upload the product image.
         </p>
       </div>
 
@@ -153,6 +153,7 @@ Create and publish a new product in your catalog. </p> </div>
       >
         Add Product
       </button>
+
     </form>
   </div>
 </div>
