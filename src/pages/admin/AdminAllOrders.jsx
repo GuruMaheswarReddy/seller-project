@@ -11,7 +11,6 @@ const [error, setError] = useState(null)
 const fetchOrders = async () => {
 try {
 
-```
   const res = await fetch("https://seller.arshithfresh.com/api/orders")
 
   const data = await res.json()
