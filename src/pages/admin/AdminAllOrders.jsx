@@ -6,23 +6,43 @@ const AdminAllOrders = () => {
 
 const [orders, setOrders] = useState([])
 const [loading, setLoading] = useState(true)
+const [error, setError] = useState(null)
 
-const fetchOrders = () => {
-fetch("https://seller.arshithfresh.com/api/orders")
-.then((res) => res.json())
-.then((data) => {
-if (Array.isArray(data)) {
-setOrders(data)
-} else {
-setOrders([])
+const fetchOrders = async () => {
+try {
+
+```
+  const res = await fetch("https://seller.arshithfresh.com/api/orders")
+
+  const data = await res.json()
+
+  if (Array.isArray(data)) {
+
+    // remove duplicate Shopify orders
+    const uniqueOrders = []
+    const ids = new Set()
+
+    data.forEach(order => {
+      if (!ids.has(order.orderId)) {
+        ids.add(order.orderId)
+        uniqueOrders.push(order)
+      }
+    })
+
+    setOrders(uniqueOrders)
+
+  } else {
+    setOrders([])
+  }
+
+} catch (err) {
+  console.error("Failed to load orders", err)
+  setError("Failed to load orders")
+} finally {
+  setLoading(false)
 }
-})
-.catch((err) => {
-console.error("Failed to load orders", err)
-})
-.finally(() => {
-setLoading(false)
-})
+```
+
 }
 
 useEffect(() => {
@@ -73,10 +93,8 @@ return ( <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
     </p>
   </div>
 
-  {/* Table Card */}
   <div className="bg-white rounded-2xl shadow-md overflow-hidden">
 
-    {/* Title */}
     <div
       className="px-6 py-4 border-b text-white font-semibold"
       style={{ backgroundColor: PRIMARY }}
@@ -88,7 +106,6 @@ return ( <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
 
       <table className="w-full text-sm">
 
-        {/* Table Header */}
         <thead className="bg-gray-100 text-gray-600">
           <tr>
             <th className="px-6 py-3 text-left">Order ID</th>
@@ -100,24 +117,23 @@ return ( <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
           </tr>
         </thead>
 
-        {/* Table Body */}
         <tbody>
 
           {loading ? (
             <tr>
-              <td
-                colSpan="6"
-                className="text-center py-6 text-gray-400"
-              >
+              <td colSpan="6" className="text-center py-6 text-gray-400">
                 Loading orders...
+              </td>
+            </tr>
+          ) : error ? (
+            <tr>
+              <td colSpan="6" className="text-center py-6 text-red-500">
+                {error}
               </td>
             </tr>
           ) : orders.length === 0 ? (
             <tr>
-              <td
-                colSpan="6"
-                className="text-center py-6 text-gray-400"
-              >
+              <td colSpan="6" className="text-center py-6 text-gray-400">
                 No orders received yet
               </td>
             </tr>
@@ -165,7 +181,6 @@ return ( <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
   </div>
 
 </div>
-```
 
 )
 }
