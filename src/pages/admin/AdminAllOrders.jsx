@@ -40,13 +40,12 @@ try {
 } finally {
   setLoading(false)
 }
-```
+
 
 }
 
 useEffect(() => {
 
-```
 fetchOrders()
 
 const interval = setInterval(() => {
@@ -54,13 +53,11 @@ const interval = setInterval(() => {
 }, 5000)
 
 return () => clearInterval(interval)
-```
 
 }, [])
 
 const formatDate = (value) => {
 
-```
 if (!value) return "-"
 
 try {
@@ -74,13 +71,11 @@ try {
 } catch {
   return value
 }
-```
 
 }
 
 return ( <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
 
-```
   {/* Header */}
   <div>
     <h2 className="text-2xl font-bold text-gray-800">
