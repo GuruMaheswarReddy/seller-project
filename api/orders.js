@@ -1,3 +1,5 @@
+let orders = [];
+
 export default async function handler(req, res) {
 
   if (req.method === "POST") {
@@ -13,12 +15,17 @@ export default async function handler(req, res) {
       date: order.created_at
     };
 
+    orders.push(orderData);
+
     console.log("Shopify Order:", orderData);
 
-    res.status(200).json({ success: true });
+    return res.status(200).json({ success: true });
 
-  } else {
-    res.status(405).json({ message: "Method not allowed" });
   }
 
+  if (req.method === "GET") {
+    return res.status(200).json(orders);
+  }
+
+  res.status(405).json({ message: "Method not allowed" });
 }
