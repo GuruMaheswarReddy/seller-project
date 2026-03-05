@@ -1,131 +1,173 @@
-import { useAppContext } from '../../context/AppContext.jsx'
-import { useMemo } from 'react'
+import { useEffect, useState } from "react"
+
+const PRIMARY = "#094b3d"
 
 const AdminAllOrders = () => {
-  const { orders, users, products } = useAppContext()
 
-  const rows = useMemo(
-    () =>
-      orders.map((order) => {
-        const seller = users.find((u) => u.id === order.sellerId)
-        const product = products.find((p) => p.id === order.productId)
+const [orders, setOrders] = useState([])
+const [loading, setLoading] = useState(true)
 
-        return {
-          ...order,
-          sellerName: seller?.name ?? 'Unknown seller',
-          productName: order.productName || product?.name || 'Unknown product',
-          productCreatedAt: product?.createdAt || null,
-        }
-      }),
-    [orders, users, products],
-  )
+const fetchOrders = () => {
+fetch("https://seller.arshithfresh.com/api/orders")
+.then((res) => res.json())
+.then((data) => {
+if (Array.isArray(data)) {
+setOrders(data)
+} else {
+setOrders([])
+}
+})
+.catch((err) => {
+console.error("Failed to load orders", err)
+})
+.finally(() => {
+setLoading(false)
+})
+}
 
-  const formatDate = (value) => {
-    if (!value) return '-'
-    try {
-      return new Date(value).toLocaleString(undefined, {
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      })
-    } catch {
-      return value
-    }
-  }
+useEffect(() => {
 
-  return (
-    <div className="space-y-4">
+```
+fetchOrders()
 
-      <div>
-        <h2 className="text-xl font-semibold text-white">All Orders</h2>
-        <p className="text-xs text-gray-400">
-          Full view of the order stream across all channels and roles.
-        </p>
-      </div>
+const interval = setInterval(() => {
+  fetchOrders()
+}, 5000)
 
-      <div className="overflow-hidden rounded-2xl border border-yellow-500/20 bg-zinc-950/80 shadow-lg shadow-black/70">
+return () => clearInterval(interval)
+```
 
-        <div className="border-b border-yellow-500/10 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-          Order stream
-        </div>
+}, [])
 
-        <div className="max-h-[420px] overflow-auto text-xs">
+const formatDate = (value) => {
 
-          <table className="min-w-full border-separate border-spacing-y-1 px-3">
+```
+if (!value) return "-"
 
-            <thead className="sticky top-0 bg-zinc-950/95 text-[11px] uppercase tracking-wide text-gray-400">
-              <tr>
-                <th className="px-2 py-2 text-left">Order ID</th>
-                <th className="px-2 py-2 text-left">Seller</th>
-                <th className="px-2 py-2 text-left">Product</th>
-                <th className="px-2 py-2 text-left">Price</th>
-                <th className="px-2 py-2 text-left">Created By</th>
-                <th className="px-2 py-2 text-left">Order Date</th>
-                <th className="px-2 py-2 text-left">Product Created</th>
+try {
+  return new Date(value).toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+} catch {
+  return value
+}
+```
+
+}
+
+return ( <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
+
+```
+  {/* Header */}
+  <div>
+    <h2 className="text-2xl font-bold text-gray-800">
+      Shopify Orders
+    </h2>
+
+    <p className="text-sm text-gray-500">
+      Orders received from Shopify store.
+    </p>
+  </div>
+
+  {/* Table Card */}
+  <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+
+    {/* Title */}
+    <div
+      className="px-6 py-4 border-b text-white font-semibold"
+      style={{ backgroundColor: PRIMARY }}
+    >
+      Order List
+    </div>
+
+    <div className="overflow-x-auto">
+
+      <table className="w-full text-sm">
+
+        {/* Table Header */}
+        <thead className="bg-gray-100 text-gray-600">
+          <tr>
+            <th className="px-6 py-3 text-left">Order ID</th>
+            <th className="px-6 py-3 text-left">Customer</th>
+            <th className="px-6 py-3 text-left">Price</th>
+            <th className="px-6 py-3 text-left">Address</th>
+            <th className="px-6 py-3 text-left">City</th>
+            <th className="px-6 py-3 text-left">Order Date</th>
+          </tr>
+        </thead>
+
+        {/* Table Body */}
+        <tbody>
+
+          {loading ? (
+            <tr>
+              <td
+                colSpan="6"
+                className="text-center py-6 text-gray-400"
+              >
+                Loading orders...
+              </td>
+            </tr>
+          ) : orders.length === 0 ? (
+            <tr>
+              <td
+                colSpan="6"
+                className="text-center py-6 text-gray-400"
+              >
+                No orders received yet
+              </td>
+            </tr>
+          ) : (
+            orders.map((order) => (
+              <tr
+                key={order.orderId}
+                className="border-t hover:bg-gray-50"
+              >
+
+                <td className="px-6 py-3 text-gray-500">
+                  #{String(order.orderId).slice(-6)}
+                </td>
+
+                <td className="px-6 py-3 font-medium text-gray-800">
+                  {order.customerName}
+                </td>
+
+                <td className="px-6 py-3 font-semibold text-[#094b3d]">
+                  ₹{order.price}
+                </td>
+
+                <td className="px-6 py-3 text-gray-600">
+                  {order.address}
+                </td>
+
+                <td className="px-6 py-3 text-gray-600">
+                  {order.city}
+                </td>
+
+                <td className="px-6 py-3 text-gray-600">
+                  {formatDate(order.date)}
+                </td>
+
               </tr>
-            </thead>
+            ))
+          )}
 
-            <tbody>
+        </tbody>
 
-              {rows.map((order) => (
-                <tr
-                  key={order.id}
-                  className="rounded-xl bg-black/60 text-[11px] text-gray-200 shadow-sm shadow-black/70"
-                >
-
-                  <td className="px-2 py-2 font-mono text-[10px] text-gray-400">
-                    {order.id}
-                  </td>
-
-                  <td className="px-2 py-2">
-                    {order.sellerName}
-                  </td>
-
-                  <td className="px-2 py-2">
-                    {order.productName}
-                  </td>
-
-                  <td className="px-2 py-2 font-semibold text-yellow-300">
-                    ${order.price}
-                  </td>
-
-                  <td className="px-2 py-2 capitalize">
-                    {order.createdByRole || 'unknown'}
-                  </td>
-
-                  <td className="px-2 py-2">
-                    {formatDate(order.createdAt)}
-                  </td>
-
-                  <td className="px-2 py-2">
-                    {formatDate(order.productCreatedAt)}
-                  </td>
-
-                </tr>
-              ))}
-
-              {rows.length === 0 && (
-                <tr>
-                  <td
-                    colSpan={7}
-                    className="px-2 py-4 text-center text-[11px] text-gray-500"
-                  >
-                    No orders yet.
-                  </td>
-                </tr>
-              )}
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-      </div>
+      </table>
 
     </div>
-  )
+
+  </div>
+
+</div>
+```
+
+)
 }
 
 export default AdminAllOrders
