@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.VITE_SUPABASE_ANON_KEY
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
 );
 
 export default async function handler(req, res) {
@@ -59,6 +59,5 @@ export default async function handler(req, res) {
     }
   }
 
-  // Other methods not allowed
   return res.status(405).json({ message: "Method not allowed" });
 }
