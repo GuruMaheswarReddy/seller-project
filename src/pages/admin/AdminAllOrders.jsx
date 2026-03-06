@@ -1,180 +1,63 @@
-import { useEffect, useState } from "react"
+import { createClient } from "@supabase/supabase-js"
 
-const PRIMARY = "#094b3d"
+const supabase = createClient(
+  process.env.VITE_SUPABASE_URL,
+  process.env.VITE_SUPABASE_ANON_KEY
+)
 
-// IMPORTANT: Vercel API URL
-const API_URL =
-  "https://seller-project-git-main-gurumaheswarreddys-projects.vercel.app/api/orders"
+export default async function handler(req, res) {
 
-const AdminAllOrders = () => {
+  // SAVE ORDER
+  if (req.method === "POST") {
 
-  const [orders, setOrders] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  const fetchOrders = async () => {
     try {
 
-      const res = await fetch(API_URL)
+      const order = req.body
 
-      if (!res.ok) {
-        throw new Error("API response error")
+      const orderData = {
+        orderId: order?.id?.toString(),
+        customerName: `${order?.customer?.first_name || ""} ${order?.customer?.last_name || ""}`,
+        price: order?.total_price || "0",
+        address: order?.shipping_address?.address1 || "No address"
       }
 
-      const data = await res.json()
+      const { data, error } = await supabase
+        .from("orders")
+        .insert([orderData])
 
-      if (Array.isArray(data)) {
-
-        const ids = new Set()
-
-        const uniqueOrders = data.filter(order => {
-          if (ids.has(order.orderId)) return false
-          ids.add(order.orderId)
-          return true
-        })
-
-        setOrders(uniqueOrders)
-
-      } else {
-        setOrders([])
+      if (error) {
+        return res.status(500).json({ error: error.message })
       }
+
+      return res.status(200).json({ success: true })
 
     } catch (err) {
-
-      console.error("Failed to load orders", err)
-      setError("Failed to load orders")
-
-    } finally {
-
-      setLoading(false)
-
+      return res.status(500).json({ error: err.message })
     }
+
   }
 
-  useEffect(() => {
-
-    fetchOrders()
-
-    const interval = setInterval(fetchOrders, 5000)
-
-    return () => clearInterval(interval)
-
-  }, [])
-
-  const formatDate = (value) => {
-
-    if (!value) return "-"
+  // GET ORDERS
+  if (req.method === "GET") {
 
     try {
-      return new Date(value).toLocaleString(undefined, {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-    } catch {
-      return value
+
+      const { data, error } = await supabase
+        .from("orders")
+        .select("*")
+        .order("created_at", { ascending: false })
+
+      if (error) {
+        return res.status(500).json({ error: error.message })
+      }
+
+      return res.status(200).json(data)
+
+    } catch (err) {
+      return res.status(500).json({ error: err.message })
     }
+
   }
 
-  return (
-    <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
-
-      <div>
-        <h2 className="text-2xl font-bold text-gray-800">
-          Shopify Orders
-        </h2>
-
-        <p className="text-sm text-gray-500">
-          Orders received from Shopify store.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-
-        <div
-          className="px-6 py-4 border-b text-white font-semibold"
-          style={{ backgroundColor: PRIMARY }}
-        >
-          Order List
-        </div>
-
-        <div className="overflow-x-auto">
-
-          <table className="w-full text-sm">
-
-            <thead className="bg-gray-100 text-gray-600">
-              <tr>
-                <th className="px-6 py-3 text-left">Order ID</th>
-                <th className="px-6 py-3 text-left">Customer</th>
-                <th className="px-6 py-3 text-left">Price</th>
-                <th className="px-6 py-3 text-left">Address</th>
-                <th className="px-6 py-3 text-left">Order Date</th>
-              </tr>
-            </thead>
-
-            <tbody>
-
-              {loading ? (
-                <tr>
-                  <td colSpan="5" className="text-center py-6 text-gray-400">
-                    Loading orders...
-                  </td>
-                </tr>
-              ) : error ? (
-                <tr>
-                  <td colSpan="5" className="text-center py-6 text-red-500">
-                    {error}
-                  </td>
-                </tr>
-              ) : orders.length === 0 ? (
-                <tr>
-                  <td colSpan="5" className="text-center py-6 text-gray-400">
-                    No orders received yet
-                  </td>
-                </tr>
-              ) : (
-                orders.map(order => (
-                  <tr
-                    key={order.id}
-                    className="border-t hover:bg-gray-50"
-                  >
-
-                    <td className="px-6 py-3 text-gray-500">
-                      #{String(order.orderId).slice(-6)}
-                    </td>
-
-                    <td className="px-6 py-3 font-medium text-gray-800">
-                      {order.customerName}
-                    </td>
-
-                    <td className="px-6 py-3 font-semibold text-[#094b3d]">
-                      ₹{order.price}
-                    </td>
-
-                    <td className="px-6 py-3 text-gray-600">
-                      {order.address}
-                    </td>
-
-                    <td className="px-6 py-3 text-gray-600">
-                      {formatDate(order.created_at)}
-                    </td>
-
-                  </tr>
-                ))
-              )}
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-      </div>
-
-    </div>
-  )
+  return res.status(405).json({ message: "Method not allowed" })
 }
-
-export default AdminAllOrders
