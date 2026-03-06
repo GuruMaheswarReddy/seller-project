@@ -1,57 +1,64 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  process.env.VITE_SUPABASE_URL,
+  process.env.VITE_SUPABASE_ANON_KEY
 );
 
 export default async function handler(req, res) {
 
+  // POST → Save Shopify Order
   if (req.method === "POST") {
-
     try {
-
       const order = req.body;
 
       const orderData = {
-        orderId: order.id,
-        customerName: order.customer?.first_name + " " + order.customer?.last_name,
-        price: order.total_price,
-        address: order.shipping_address?.address1,
-        city: order.shipping_address?.city,
-        date: order.created_at
+        orderId: order?.id?.toString(),
+        customerName: `${order?.customer?.first_name || ""} ${order?.customer?.last_name || ""}`,
+        price: order?.total_price || "0",
+        address: order?.shipping_address?.address1 || "No address"
       };
 
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from("orders")
         .insert([orderData]);
 
       if (error) {
-        return res.status(500).json({ error });
+        console.error(error);
+        return res.status(500).json({ error: error.message });
       }
 
-      return res.status(200).json({ success: true });
+      return res.status(200).json({
+        success: true,
+        message: "Order saved",
+        data
+      });
 
     } catch (err) {
-
       return res.status(500).json({ error: err.message });
-
     }
   }
 
+  // GET → Fetch Orders
   if (req.method === "GET") {
+    try {
 
-    const { data, error } = await supabase
-      .from("orders")
-      .select("*")
-      .order("created_at", { ascending: false });
+      const { data, error } = await supabase
+        .from("orders")
+        .select("*")
+        .order("created_at", { ascending: false });
 
-    if (error) {
-      return res.status(500).json({ error });
+      if (error) {
+        return res.status(500).json({ error: error.message });
+      }
+
+      return res.status(200).json(data);
+
+    } catch (err) {
+      return res.status(500).json({ error: err.message });
     }
-
-    return res.status(200).json(data);
   }
 
-  res.status(405).json({ message: "Method not allowed" });
+  // Other methods not allowed
+  return res.status(405).json({ message: "Method not allowed" });
 }
