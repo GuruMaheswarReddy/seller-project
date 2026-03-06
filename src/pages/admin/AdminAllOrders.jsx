@@ -1,76 +1,180 @@
-import { createClient } from "@supabase/supabase-js"
+import { useEffect, useState } from "react"
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
-)
+const PRIMARY = "#094b3d"
 
-export default async function handler(req, res) {
+// IMPORTANT: Vercel API URL
+const API_URL =
+  "https://seller-project-git-main-gurumaheswarreddys-projects.vercel.app/api/orders"
 
-  // Allow CORS
-  res.setHeader("Access-Control-Allow-Origin", "*")
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type")
+const AdminAllOrders = () => {
 
-  if (req.method === "OPTIONS") {
-    return res.status(200).end()
-  }
+  const [orders, setOrders] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-  // SAVE ORDER
-  if (req.method === "POST") {
-
+  const fetchOrders = async () => {
     try {
 
-      const order = req.body
+      const res = await fetch(API_URL)
 
-      const orderData = {
-        orderId: order?.id?.toString(),
-        customerName: `${order?.customer?.first_name || ""} ${order?.customer?.last_name || ""}`,
-        price: order?.total_price || "0",
-        address: order?.shipping_address?.address1 || "No address"
+      if (!res.ok) {
+        throw new Error("API response error")
       }
 
-      const { data, error } = await supabase
-        .from("orders")
-        .insert([orderData])
+      const data = await res.json()
 
-      if (error) {
-        return res.status(500).json({ error: error.message })
+      if (Array.isArray(data)) {
+
+        const ids = new Set()
+
+        const uniqueOrders = data.filter(order => {
+          if (ids.has(order.orderId)) return false
+          ids.add(order.orderId)
+          return true
+        })
+
+        setOrders(uniqueOrders)
+
+      } else {
+        setOrders([])
       }
 
-      return res.status(200).json({
-        success: true,
-        data
+    } catch (err) {
+
+      console.error("Failed to load orders", err)
+      setError("Failed to load orders")
+
+    } finally {
+
+      setLoading(false)
+
+    }
+  }
+
+  useEffect(() => {
+
+    fetchOrders()
+
+    const interval = setInterval(fetchOrders, 5000)
+
+    return () => clearInterval(interval)
+
+  }, [])
+
+  const formatDate = (value) => {
+
+    if (!value) return "-"
+
+    try {
+      return new Date(value).toLocaleString(undefined, {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
       })
-
-    } catch (err) {
-      return res.status(500).json({ error: err.message })
+    } catch {
+      return value
     }
-
   }
 
-  // GET ORDERS
-  if (req.method === "GET") {
+  return (
+    <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
 
-    try {
+      <div>
+        <h2 className="text-2xl font-bold text-gray-800">
+          Shopify Orders
+        </h2>
 
-      const { data, error } = await supabase
-        .from("orders")
-        .select("*")
-        .order("created_at", { ascending: false })
+        <p className="text-sm text-gray-500">
+          Orders received from Shopify store.
+        </p>
+      </div>
 
-      if (error) {
-        return res.status(500).json({ error: error.message })
-      }
+      <div className="bg-white rounded-2xl shadow-md overflow-hidden">
 
-      return res.status(200).json(data)
+        <div
+          className="px-6 py-4 border-b text-white font-semibold"
+          style={{ backgroundColor: PRIMARY }}
+        >
+          Order List
+        </div>
 
-    } catch (err) {
-      return res.status(500).json({ error: err.message })
-    }
+        <div className="overflow-x-auto">
 
-  }
+          <table className="w-full text-sm">
 
-  return res.status(405).json({ message: "Method not allowed" })
+            <thead className="bg-gray-100 text-gray-600">
+              <tr>
+                <th className="px-6 py-3 text-left">Order ID</th>
+                <th className="px-6 py-3 text-left">Customer</th>
+                <th className="px-6 py-3 text-left">Price</th>
+                <th className="px-6 py-3 text-left">Address</th>
+                <th className="px-6 py-3 text-left">Order Date</th>
+              </tr>
+            </thead>
 
+            <tbody>
+
+              {loading ? (
+                <tr>
+                  <td colSpan="5" className="text-center py-6 text-gray-400">
+                    Loading orders...
+                  </td>
+                </tr>
+              ) : error ? (
+                <tr>
+                  <td colSpan="5" className="text-center py-6 text-red-500">
+                    {error}
+                  </td>
+                </tr>
+              ) : orders.length === 0 ? (
+                <tr>
+                  <td colSpan="5" className="text-center py-6 text-gray-400">
+                    No orders received yet
+                  </td>
+                </tr>
+              ) : (
+                orders.map(order => (
+                  <tr
+                    key={order.id}
+                    className="border-t hover:bg-gray-50"
+                  >
+
+                    <td className="px-6 py-3 text-gray-500">
+                      #{String(order.orderId).slice(-6)}
+                    </td>
+
+                    <td className="px-6 py-3 font-medium text-gray-800">
+                      {order.customerName}
+                    </td>
+
+                    <td className="px-6 py-3 font-semibold text-[#094b3d]">
+                      ₹{order.price}
+                    </td>
+
+                    <td className="px-6 py-3 text-gray-600">
+                      {order.address}
+                    </td>
+
+                    <td className="px-6 py-3 text-gray-600">
+                      {formatDate(order.created_at)}
+                    </td>
+
+                  </tr>
+                ))
+              )}
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+  )
 }
+
+export default AdminAllOrders
