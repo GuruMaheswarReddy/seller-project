@@ -21,7 +21,6 @@ const AdminAllOrders = () => {
 
       if (Array.isArray(data)) {
 
-        // remove duplicate Shopify orders
         const ids = new Set()
 
         const uniqueOrders = data.filter(order => {
@@ -74,7 +73,6 @@ const AdminAllOrders = () => {
   return (
     <div className="p-6 space-y-6 bg-[#eef5f3] min-h-screen">
 
-      {/* Header */}
       <div>
         <h2 className="text-2xl font-bold text-gray-800">
           Shopify Orders
@@ -104,7 +102,6 @@ const AdminAllOrders = () => {
                 <th className="px-6 py-3 text-left">Customer</th>
                 <th className="px-6 py-3 text-left">Price</th>
                 <th className="px-6 py-3 text-left">Address</th>
-                <th className="px-6 py-3 text-left">City</th>
                 <th className="px-6 py-3 text-left">Order Date</th>
               </tr>
             </thead>
@@ -113,19 +110,19 @@ const AdminAllOrders = () => {
 
               {loading ? (
                 <tr>
-                  <td colSpan="6" className="text-center py-6 text-gray-400">
+                  <td colSpan="5" className="text-center py-6 text-gray-400">
                     Loading orders...
                   </td>
                 </tr>
               ) : error ? (
                 <tr>
-                  <td colSpan="6" className="text-center py-6 text-red-500">
+                  <td colSpan="5" className="text-center py-6 text-red-500">
                     {error}
                   </td>
                 </tr>
               ) : orders.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="text-center py-6 text-gray-400">
+                  <td colSpan="5" className="text-center py-6 text-gray-400">
                     No orders received yet
                   </td>
                 </tr>
@@ -153,11 +150,7 @@ const AdminAllOrders = () => {
                     </td>
 
                     <td className="px-6 py-3 text-gray-600">
-                      {order.city}
-                    </td>
-
-                    <td className="px-6 py-3 text-gray-600">
-                      {formatDate(order.date)}
+                      {formatDate(order.created_at)}
                     </td>
 
                   </tr>
