@@ -1,30 +1,56 @@
-let orders = [];
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
 
 export default async function handler(req, res) {
 
   if (req.method === "POST") {
 
-    const order = req.body;
+    try {
 
-    const orderData = {
-      orderId: order.id,
-      customerName: order.customer?.first_name + " " + order.customer?.last_name,
-      price: order.total_price,
-      address: order.shipping_address?.address1,
-      city: order.shipping_address?.city,
-      date: order.created_at
-    };
+      const order = req.body;
 
-    orders.push(orderData);
+      const orderData = {
+        orderId: order.id,
+        customerName: order.customer?.first_name + " " + order.customer?.last_name,
+        price: order.total_price,
+        address: order.shipping_address?.address1,
+        city: order.shipping_address?.city,
+        date: order.created_at
+      };
 
-    console.log("Shopify Order:", orderData);
+      const { error } = await supabase
+        .from("orders")
+        .insert([orderData]);
 
-    return res.status(200).json({ success: true });
+      if (error) {
+        return res.status(500).json({ error });
+      }
 
+      return res.status(200).json({ success: true });
+
+    } catch (err) {
+
+      return res.status(500).json({ error: err.message });
+
+    }
   }
 
   if (req.method === "GET") {
-    return res.status(200).json(orders);
+
+    const { data, error } = await supabase
+      .from("orders")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      return res.status(500).json({ error });
+    }
+
+    return res.status(200).json(data);
   }
 
   res.status(405).json({ message: "Method not allowed" });
