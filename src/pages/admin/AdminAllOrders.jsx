@@ -2,6 +2,10 @@ import { useEffect, useState } from "react"
 
 const PRIMARY = "#094b3d"
 
+// IMPORTANT: Vercel API URL
+const API_URL =
+  "https://seller-project-git-main-gurumaheswarreddys-projects.vercel.app/api/orders"
+
 const AdminAllOrders = () => {
 
   const [orders, setOrders] = useState([])
@@ -11,7 +15,7 @@ const AdminAllOrders = () => {
   const fetchOrders = async () => {
     try {
 
-      const res = await fetch("/api/orders")
+      const res = await fetch(API_URL)
 
       if (!res.ok) {
         throw new Error("API response error")
@@ -36,10 +40,14 @@ const AdminAllOrders = () => {
       }
 
     } catch (err) {
+
       console.error("Failed to load orders", err)
       setError("Failed to load orders")
+
     } finally {
+
       setLoading(false)
+
     }
   }
 
@@ -129,7 +137,7 @@ const AdminAllOrders = () => {
               ) : (
                 orders.map(order => (
                   <tr
-                    key={order.orderId}
+                    key={order.id}
                     className="border-t hover:bg-gray-50"
                   >
 
