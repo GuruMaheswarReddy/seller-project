@@ -1,16 +1,22 @@
 import { createClient } from "@supabase/supabase-js"
 
-const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.VITE_SUPABASE_ANON_KEY
-)
+const supabaseUrl = process.env.VITE_SUPABASE_URL
+const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error("Supabase environment variables are missing")
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 export default async function handler(req, res) {
 
-  // SAVE ORDER
-  if (req.method === "POST") {
+  try {
 
-    try {
+    // =========================
+    // POST → Save Shopify Order
+    // =========================
+    if (req.method === "POST") {
 
       const order = req.body
 
@@ -26,21 +32,21 @@ export default async function handler(req, res) {
         .insert([orderData])
 
       if (error) {
+        console.error("Insert error:", error)
         return res.status(500).json({ error: error.message })
       }
 
-      return res.status(200).json({ success: true })
-
-    } catch (err) {
-      return res.status(500).json({ error: err.message })
+      return res.status(200).json({
+        success: true,
+        message: "Order saved",
+        data
+      })
     }
 
-  }
-
-  // GET ORDERS
-  if (req.method === "GET") {
-
-    try {
+    // =========================
+    // GET → Fetch Orders
+    // =========================
+    if (req.method === "GET") {
 
       const { data, error } = await supabase
         .from("orders")
@@ -48,16 +54,21 @@ export default async function handler(req, res) {
         .order("created_at", { ascending: false })
 
       if (error) {
+        console.error("Fetch error:", error)
         return res.status(500).json({ error: error.message })
       }
 
       return res.status(200).json(data)
-
-    } catch (err) {
-      return res.status(500).json({ error: err.message })
     }
 
-  }
+    return res.status(405).json({ message: "Method not allowed" })
 
-  return res.status(405).json({ message: "Method not allowed" })
+  } catch (err) {
+
+    console.error("Server error:", err)
+
+    return res.status(500).json({
+      error: "Internal server error"
+    })
+  }
 }
