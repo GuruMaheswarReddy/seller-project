@@ -1,4 +1,4 @@
-import heroImg from "../assets/Gemini_Generated_Image_ek2uhiek2uhiek2u.png";
+import heroImg from "../../assets/Gemini_Generated_Image_ek2uhiek2uhiek2u.png";
 const HowItWorks = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
