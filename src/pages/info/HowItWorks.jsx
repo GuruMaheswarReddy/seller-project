@@ -1,45 +1,52 @@
+import heroImg from "../assets/Gemini_Generated_Image_ek2uhiek2uhiek2u.png";
 const HowItWorks = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
 
-      {/* ================= HERO SECTION ================= */}
-<section className="bg-white py-16 px-6">
+     <section className="bg-[#fdf7fb] py-20 px-6 relative overflow-hidden">
   <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
     {/* Left Content */}
     <div>
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        How to Sell on Arshith Supplier
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        How to Sell on{" "}
+        <span className="text-[#094b3d]">Arshith Supplier</span>
       </h1>
 
-      <p className="text-lg text-gray-600 mb-6">
-        Become a seller and grow your business across India.
+      <p className="text-lg text-gray-600 mb-6 max-w-md">
+        Become a seller and join thousands of businesses growing their sales every day across India.
       </p>
 
-      <div className="flex">
+      <div className="flex max-w-md shadow-sm">
+        <div className="flex items-center px-3 border border-gray-300 rounded-l-md bg-white text-gray-500">
+          +91
+        </div>
+
         <input
           type="text"
           placeholder="Enter Your Mobile Number"
-          className="border px-4 py-3 w-full rounded-l-md"
+          className="w-full px-4 py-3 border-t border-b border-gray-300 focus:outline-none"
         />
-        <button className="bg-[#094b3d] text-white px-6 rounded-r-md">
+
+        <button className="bg-[#094b3d] hover:bg-[#07382e] text-white px-6 py-3 rounded-r-md font-medium transition">
           Start Selling
         </button>
       </div>
     </div>
 
     {/* Right Image */}
-    <div>
+    <div className="relative flex justify-center">
+      <div className="absolute -right-16 -bottom-16 w-[380px] h-[380px] bg-[#f3d9e6] rounded-full z-0"></div>
+
       <img
-        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+        src={heroImg}
         alt="seller business"
-        className="rounded-lg shadow-lg"
+        className="relative z-10 w-full max-w-md"
       />
     </div>
 
   </div>
 </section>
-
       {/* ================= SIMPLE STEPS SECTION ================= */}
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
