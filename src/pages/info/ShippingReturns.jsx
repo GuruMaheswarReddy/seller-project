@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import heroImg from "../assets/shipping-hero.png";
 
 
 const ShippingReturns = () => {
@@ -39,11 +40,11 @@ const ShippingReturns = () => {
 
     {/* RIGHT IMAGE */}
     <div className="flex justify-center">
-      <img
-        src={heroImg}
-        alt="Shipping Illustration"
-        className="w-full max-w-md md:max-w-lg rounded-2xl shadow-lg"
-      />
+     <img
+  src={heroImg}
+  alt="Shipping"
+  className="w-full max-w-md md:max-w-lg rounded-2xl shadow-lg"
+/>
     </div>
 
   </div>
