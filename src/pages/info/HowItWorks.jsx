@@ -1,3 +1,4 @@
+
 import heroImg from "../../assets/Gemini_Generated_Image_ek2uhiek2uhiek2u.png";
 const HowItWorks = () => {
   return (
