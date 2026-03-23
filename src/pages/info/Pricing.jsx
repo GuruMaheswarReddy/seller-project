@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import heroImg from "../../assets/Gemini_Generated_Image_ek2uhiek2uhiek2u.png";
 
 const Pricing = () => {
   const navigate = useNavigate()
@@ -6,45 +7,57 @@ const Pricing = () => {
   return (
     <div className="bg-gray-50">
 
-      {/* HERO SECTION */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <section className="bg-gray-100 py-16 px-4">
+  <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden">
 
-          <div>
-            <h1 className="text-5xl font-bold mb-6">
-              Pricing & Commission
-            </h1>
+    <div className="grid md:grid-cols-2 items-center">
 
-            <p className="text-lg text-gray-600 mb-6">
-              Arshith Fresh charges <span className="text-[#094b3d] font-semibold">0% Commission</span> across all categories.
-              Keep 100% of your earnings on every sale.
-            </p>
+      {/* Image */}
+      <div className="w-full h-full">
+        <img
+          src={heroImg}
+          alt="pricing"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-            <div className="flex gap-4">
-              <input
-                type="text"
-                placeholder="Enter your mobile number"
-                className="border p-3 rounded-lg w-64"
-              />
-              <button
-                onClick={() => navigate("/register")}
-                className="bg-[#094b3d] text-white px-6 py-3 rounded-lg hover:bg-[#063c31]"
-              >
-                Start Selling
-              </button>
-            </div>
-          </div>
+      {/* Content */}
+      <div className="p-8 md:p-12 text-center md:text-left">
 
-          <div className="text-center">
-            <h2 className="text-7xl font-extrabold text-[#094b3d]">
-              0%
-            </h2>
-            <p className="text-2xl font-semibold">Commission</p>
-          </div>
+        <h1 className="text-3xl md:text-5xl font-bold mb-6">
+          Pricing & Commission
+        </h1>
+
+        <p className="text-lg text-gray-600 mb-6">
+          Arshith Fresh charges{" "}
+          <span className="text-[#094b3d] font-semibold">0% Commission</span>{" "}
+          across all categories. Keep 100% of your earnings on every sale.
+        </p>
+
+        {/* Input + Button */}
+        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
+
+          <input
+            type="tel"
+            placeholder="Enter your mobile number"
+            className="border p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
+          />
+
+          <button
+            onClick={() => navigate("/register")}
+            className="bg-[#094b3d] text-white px-6 py-3 rounded-lg hover:bg-[#063c31] w-full sm:w-auto"
+          >
+            Start Selling
+          </button>
 
         </div>
-      </section>
 
+      </div>
+
+    </div>
+  </div>
+</section>
+      
       {/* BENEFITS CARDS */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
