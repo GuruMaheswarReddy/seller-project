@@ -45,92 +45,40 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#094b3d] via-[#0f6b58] to-[#063d32] px-4 py-20 sm:px-6 lg:px-8 xl:px-12">
-        <div className="mx-auto max-w-7xl lg:flex lg:items-center lg:gap-12 xl:gap-20">
-          
-          {/* Left Content */}
-          <div className="lg:w-1/2 xl:w-2/3">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-yellow-300 sm:mb-6">
-              ArshithFresh
-            </p>
-            <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-              Start selling online.
-              <br />
-              <span className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
-                Grow your business faster.
-              </span>
-            </h1>
-            <p className="mb-8 text-lg text-white/90 sm:text-xl">
-              Create your store, add products, and start receiving orders in minutes.
-              <br className="hidden sm:block" />
-              <span className="font-semibold">No commission. No hidden charges.</span> Built for Indian sellers.
-            </p>
+     {/* HERO SECTION - AMAZON STYLE */}
+<section className="bg-gray-100 px-4 py-16 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-10 items-center">
 
-            <div className="flex flex-wrap gap-4 mb-10 sm:gap-6">
-              <button
-                onClick={() => navigate('/register')}
-                className="rounded-xl bg-yellow-400 px-8 py-4 text-base font-semibold text-black shadow-xl transition-all duration-300 hover:bg-yellow-300 hover:shadow-2xl hover:-translate-y-1 sm:px-10 sm:py-5"
-              >
-                🚀 Start Selling
-              </button>
-              <button
-                onClick={() => {
-                  const el = document.getElementById('latest-products')
-                  if (el) el.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="rounded-xl border-2 border-white/50 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/20 hover:shadow-2xl hover:-translate-y-1 sm:px-10 sm:py-5"
-              >
-                👤 Login
-              </button>
-            </div>
+    {/* LEFT CONTENT */}
+    <div>
+      <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+        Start selling today!
+      </h1>
 
-            <div className="grid grid-cols-3 gap-8 text-center sm:text-left">
-              <div>
-                <p className="text-2xl font-bold text-yellow-300">0%</p>
-                <p className="text-xs text-white/70 uppercase tracking-wide">Commission</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-yellow-300">Instant</p>
-                <p className="text-xs text-white/70 uppercase tracking-wide">Payouts</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-yellow-300">Easy</p>
-                <p className="text-xs text-white/70 uppercase tracking-wide">Onboarding</p>
-              </div>
-            </div>
-          </div>
+      <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+        Put your products in front of thousands of customers who shop on{" "}
+        <span className="font-semibold text-green-700">ArshithFresh</span> every day.
+      </p>
 
-          {/* Right Side Card */}
-          <div className="mt-12 w-full max-w-md lg:mt-0 lg:max-w-sm xl:max-w-md">
-            <div className="rounded-3xl bg-white/90 backdrop-blur-xl p-8 shadow-2xl">
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-600">
-                Platform Snapshot
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-1">Seller Growth</h4>
-                  <p className="text-xs text-gray-500 mb-4">Real marketplace insights</p>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between py-2">
-                    <span className="text-sm font-medium text-gray-700">Avg Monthly Orders</span>
-                    <span className="text-lg font-bold text-green-600">+38%</span>
-                  </div>
-                  <div className="flex justify-between py-2">
-                    <span className="text-sm font-medium text-gray-700">On-time Payouts</span>
-                    <span className="text-lg font-bold text-green-600">99.1%</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 rounded-2xl bg-gradient-to-r from-[#094b3d] to-[#0f6b58] px-6 py-4 text-center font-semibold text-white shadow-lg">
-                Go live in minutes 🚀
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <button
+        onClick={() => navigate('/register')}
+        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition"
+      >
+        Start selling
+      </button>
+    </div>
 
+    {/* RIGHT IMAGE */}
+    <div className="w-full">
+      <img
+        src="/images/seller-hero.jpg" // replace with your image
+        alt="Start selling"
+        className="w-full h-auto rounded-2xl shadow-lg object-cover"
+      />
+    </div>
+
+  </div>
+</section>
       {/* STATS SECTION */}
 <section className="bg-gray-100 py-20">
   <div className="mx-auto max-w-7xl px-6">
