@@ -8,11 +8,9 @@ const ShippingReturns = () => {
   return (
     <div className="bg-gray-50">
 
-      {/* HERO SECTION */}
-<section className="bg-white py-20">
+     <section className="bg-white py-20">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-    {/* LEFT CONTENT */}
     <div>
       <h1 className="text-5xl font-bold mb-6">
         Shipping, Delivery & Returns Policy
@@ -23,11 +21,11 @@ const ShippingReturns = () => {
         transparent return policies.
       </p>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         <input
           type="text"
           placeholder="Enter your mobile number"
-          className="border p-3 rounded-lg w-64"
+          className="border p-3 rounded-lg w-full sm:w-64"
         />
         <button
           onClick={() => navigate("/register")}
@@ -38,13 +36,12 @@ const ShippingReturns = () => {
       </div>
     </div>
 
-    {/* RIGHT IMAGE */}
     <div className="flex justify-center">
-     <img
-  src={heroImg}
-  alt="Shipping"
-  className="w-full max-w-md md:max-w-lg rounded-2xl shadow-lg"
-/>
+      <img
+        src={heroImg}
+        alt="Shipping"
+        className="w-full max-w-sm md:max-w-lg object-contain rounded-2xl shadow-lg"
+      />
     </div>
 
   </div>
