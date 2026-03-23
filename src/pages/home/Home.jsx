@@ -81,6 +81,7 @@ const Home = () => {
   </div>
 </section>
       
+
       {/* STATS SECTION */}
 <section className="bg-gray-100 py-20">
   <div className="mx-auto max-w-7xl px-6">
