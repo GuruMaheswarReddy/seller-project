@@ -71,14 +71,14 @@ const Home = () => {
     {/* RIGHT IMAGE */}
     <div className="w-full">
       <img
-        src="/images/seller-hero.jpg" // replace with your image
-        alt="Start selling"
+        src="/src/assets/Gemini_Generated_Image_q6rdtoq6rdtoq6rd.png"
+        alt="Start selling on ArshithFresh"
         className="w-full h-auto rounded-2xl shadow-lg object-cover"
       />
     </div>
 
   </div>
-</section>
+</section> 
       {/* STATS SECTION */}
 <section className="bg-gray-100 py-20">
   <div className="mx-auto max-w-7xl px-6">
