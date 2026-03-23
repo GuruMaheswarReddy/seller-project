@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAppContext } from '../../context/AppContext.jsx'
 import ProductCard from '../../components/ProductCard.jsx'
 import Footer from '../../components/Footer'
-import heroImage from "../assets/Gemini_Generated_Image_q6rdtoq6rdtoq6rd.png";
+import heroImage from "../../assets/Gemini_Generated_Image_q6rdtoq6rdtoq6rd.png";
 
 const Home = () => {
   const navigate = useNavigate()
@@ -48,33 +48,33 @@ const Home = () => {
     <div className="min-h-screen bg-gray-50">
 {/* HERO SECTION - AMAZON STYLE */}
 <section className="bg-gray-100 px-4 py-16 sm:px-6 lg:px-8">
-  <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-10 items-center">
+  <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
     {/* LEFT CONTENT */}
-    <div>
-      <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+    <div className="text-center lg:text-left">
+      <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6 leading-tight">
         Start selling today!
       </h1>
 
-      <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+      <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
         Put your products in front of thousands of customers who shop on{" "}
         <span className="font-semibold text-green-700">ArshithFresh</span> every day.
       </p>
 
       <button
-        onClick={() => navigate('/register')}
-        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition"
+        onClick={() => navigate("/register")}
+        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition duration-300 hover:shadow-lg hover:-translate-y-1"
       >
         Start selling
       </button>
     </div>
 
     {/* RIGHT IMAGE */}
-    <div className="w-full">
+    <div className="w-full flex justify-center">
       <img
         src={heroImage}
         alt="Start selling on ArshithFresh"
-        className="w-full h-auto rounded-2xl shadow-lg object-cover"
+        className="w-full max-w-md lg:max-w-full h-auto rounded-2xl shadow-lg object-cover transition duration-500 hover:scale-105"
       />
     </div>
 
