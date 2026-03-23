@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
+
 const ShippingReturns = () => {
   const navigate = useNavigate()
 
@@ -7,43 +8,47 @@ const ShippingReturns = () => {
     <div className="bg-gray-50">
 
       {/* HERO SECTION */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+<section className="bg-white py-20">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          <div>
-            <h1 className="text-5xl font-bold mb-6">
-              Shipping, Delivery & Returns Policy
-            </h1>
+    {/* LEFT CONTENT */}
+    <div>
+      <h1 className="text-5xl font-bold mb-6">
+        Shipping, Delivery & Returns Policy
+      </h1>
 
-            <p className="text-lg text-gray-600 mb-6">
-              Deliver your products across India with reliable logistics and 
-              transparent return policies.
-            </p>
+      <p className="text-lg text-gray-600 mb-6">
+        Deliver your products across India with reliable logistics and 
+        transparent return policies.
+      </p>
 
-            <div className="flex gap-4">
-              <input
-                type="text"
-                placeholder="Enter your mobile number"
-                className="border p-3 rounded-lg w-64"
-              />
-              <button
-                onClick={() => navigate("/register")}
-                className="bg-[#094b3d] text-white px-6 py-3 rounded-lg hover:bg-[#063c31]"
-              >
-                Start Selling
-              </button>
-            </div>
-          </div>
+      <div className="flex gap-4">
+        <input
+          type="text"
+          placeholder="Enter your mobile number"
+          className="border p-3 rounded-lg w-64"
+        />
+        <button
+          onClick={() => navigate("/register")}
+          className="bg-[#094b3d] text-white px-6 py-3 rounded-lg hover:bg-[#063c31]"
+        >
+          Start Selling
+        </button>
+      </div>
+    </div>
 
-          <div className="bg-[#094b3d]/10 p-10 rounded-3xl text-center">
-            <h2 className="text-3xl font-bold text-[#094b3d]">
-              Fast & Secure Shipping
-            </h2>
-          </div>
+    {/* RIGHT IMAGE */}
+    <div className="flex justify-center">
+      <img
+        src={heroImg}
+        alt="Shipping Illustration"
+        className="w-full max-w-md md:max-w-lg rounded-2xl shadow-lg"
+      />
+    </div>
 
-        </div>
-      </section>
-
+  </div>
+</section>
+      
       {/* DELIVER ACROSS INDIA */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
