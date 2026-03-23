@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import heroImg from "../assets/shipping-hero.png";
 
 
 const ShippingReturns = () => {
