@@ -46,41 +46,45 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-{/* HERO SECTION - AMAZON STYLE */}
-<section className="bg-gray-100 px-4 py-16 sm:px-6 lg:px-8">
-  <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+{/* HERO SECTION - AMAZON MOBILE STYLE */}
+<section className="bg-gray-100 px-4 py-10 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-md lg:max-w-6xl">
 
-    {/* LEFT CONTENT */}
-    <div className="text-center lg:text-left">
-      <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6 leading-tight">
-        Start selling today!
-      </h1>
+    {/* CARD */}
+    <div className="bg-gray-50 rounded-3xl shadow-md overflow-hidden lg:grid lg:grid-cols-2 lg:items-center">
 
-      <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-        Put your products in front of thousands of customers who shop on{" "}
-        <span className="font-semibold text-green-700">ArshithFresh</span> every day.
-      </p>
+      {/* IMAGE (TOP in mobile) */}
+      <div className="w-full">
+        <img
+          src={heroImage}
+          alt="Start selling"
+          className="w-full h-64 sm:h-72 object-cover lg:h-full"
+        />
+      </div>
 
-      <button
-        onClick={() => navigate("/register")}
-        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition duration-300 hover:shadow-lg hover:-translate-y-1"
-      >
-        Start selling
-      </button>
-    </div>
+      {/* CONTENT */}
+      <div className="p-6 sm:p-8 text-center lg:text-left">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Start selling today!
+        </h1>
 
-    {/* RIGHT IMAGE */}
-    <div className="w-full flex justify-center">
-      <img
-        src={heroImage}
-        alt="Start selling on ArshithFresh"
-        className="w-full max-w-md lg:max-w-full h-auto rounded-2xl shadow-lg object-cover transition duration-500 hover:scale-105"
-      />
+        <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">
+          Put your products in front of millions of customers who search for{" "}
+          <span className="font-semibold text-[#094b3d]">ArshithFresh</span> everyday.
+        </p>
+
+        <button
+          onClick={() => navigate("/register")}
+          className="w-full lg:w-auto bg-[#094b3d] hover:bg-[#0f6b58] text-white font-semibold py-4 px-8 rounded-full shadow-md transition duration-300"
+        >
+          Start selling
+        </button>
+      </div>
+
     </div>
 
   </div>
 </section>
-      
 
       {/* STATS SECTION */}
 <section className="bg-gray-100 py-20">
