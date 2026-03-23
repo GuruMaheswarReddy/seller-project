@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAppContext } from '../../context/AppContext.jsx'
 import ProductCard from '../../components/ProductCard.jsx'
 import Footer from '../../components/Footer'
+import heroImage from "../assets/Gemini_Generated_Image_q6rdtoq6rdtoq6rd.png";
 
 const Home = () => {
   const navigate = useNavigate()
@@ -45,7 +46,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-     {/* HERO SECTION - AMAZON STYLE */}
+{/* HERO SECTION - AMAZON STYLE */}
 <section className="bg-gray-100 px-4 py-16 sm:px-6 lg:px-8">
   <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-10 items-center">
 
@@ -71,14 +72,15 @@ const Home = () => {
     {/* RIGHT IMAGE */}
     <div className="w-full">
       <img
-        src="/src/assets/Gemini_Generated_Image_q6rdtoq6rdtoq6rd.png"
+        src={heroImage}
         alt="Start selling on ArshithFresh"
         className="w-full h-auto rounded-2xl shadow-lg object-cover"
       />
     </div>
 
   </div>
-</section> 
+</section>
+      
       {/* STATS SECTION */}
 <section className="bg-gray-100 py-20">
   <div className="mx-auto max-w-7xl px-6">
