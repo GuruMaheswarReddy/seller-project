@@ -21,10 +21,10 @@ const SellerShipping = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#eef5f3] p-6">
 
-      {/* Container */}
+      {/* Main Container */}
       <div className="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden max-w-5xl w-full">
 
-        {/* LEFT SIDE IMAGE */}
+        {/* LEFT IMAGE */}
         <div className="md:w-1/2 bg-gradient-to-br from-[#eef5f3] to-white flex items-center justify-center p-6">
           <img
             src={rocketImg}
@@ -33,9 +33,10 @@ const SellerShipping = () => {
           />
         </div>
 
-        {/* RIGHT SIDE FORM */}
+        {/* RIGHT SIDE */}
         <div className="md:w-1/2 p-8">
 
+          {/* Title */}
           <h2 className="text-2xl font-bold text-gray-800 mb-2">
             Shipping Setup
           </h2>
@@ -44,6 +45,7 @@ const SellerShipping = () => {
             Enter your contact number to configure shipping.
           </p>
 
+          {/* FORM */}
           <form onSubmit={handleSubmit} className="space-y-4">
 
             {/* Phone Input */}
@@ -63,7 +65,7 @@ const SellerShipping = () => {
             {/* Button */}
             <button
               type="submit"
-              className="w-full p-3 rounded-lg font-semibold text-white"
+              className="w-full p-3 rounded-lg font-semibold text-white hover:opacity-90 transition"
               style={{ backgroundColor: PRIMARY }}
             >
               Continue
@@ -71,7 +73,39 @@ const SellerShipping = () => {
 
           </form>
 
-          <p className="text-xs text-gray-400 mt-4 text-center">
+          {/* STATUS CARD */}
+          <div className="mt-6 p-4 rounded-lg bg-green-50 border border-green-200">
+            <p className="text-green-700 font-medium">
+              🚚 Shipping not connected
+            </p>
+            <p className="text-sm text-green-600">
+              Connect your shipping partner to start deliveries.
+            </p>
+          </div>
+
+          {/* BENEFITS */}
+          <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-600">
+
+            <div className="flex items-center gap-2">
+              🚚 Fast Delivery
+            </div>
+
+            <div className="flex items-center gap-2">
+              📦 Secure Packaging
+            </div>
+
+            <div className="flex items-center gap-2">
+              🌍 Nationwide Coverage
+            </div>
+
+            <div className="flex items-center gap-2">
+              💰 Affordable Shipping
+            </div>
+
+          </div>
+
+          {/* Footer */}
+          <p className="text-xs text-gray-400 mt-6 text-center">
             By continuing, you agree to terms & conditions.
           </p>
 
