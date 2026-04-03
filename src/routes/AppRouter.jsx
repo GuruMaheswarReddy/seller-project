@@ -17,6 +17,7 @@ import HowItWorks from '../pages/info/HowItWorks.jsx'
 import Pricing from "../pages/info/Pricing.jsx"
 import ShippingReturns from "../pages/info/ShippingReturns.jsx"
 import GrowBusiness from "../pages/info/GrowBusiness.jsx"
+import SellerShipping from "../pages/seller/SellerShipping.jsx"
 
 const AppRouter = () => {
   return (
@@ -60,6 +61,7 @@ const AppRouter = () => {
           <Route index element={<SellerDashboard />} />
           <Route path="orders" element={<SellerOrders />} />
           <Route path="add-product" element={<AddProduct />} />
+          <Route path="shipping" element={<SellerShipping />} />
         </Route>
       </Routes>
     </BrowserRouter>
