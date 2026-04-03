@@ -137,7 +137,7 @@ Create and publish a new product in your catalog. </p> </div>
           onClick={openGoogleForm}
           className="mt-2 w-full border border-gray-300 rounded-xl px-4 py-3 bg-gray-50 hover:bg-gray-100 text-sm font-medium text-black"
         >
-          Upload Image via Google Form
+          Upload Image & Product Details via Google Form
         </button>
 
         <p className="text-xs text-gray-400 mt-2">
