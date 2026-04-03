@@ -13,8 +13,8 @@ const SellerShipping = () => {
       return
     }
 
-    alert("Shipping setup saved!")
-    console.log("Phone:", phone)
+    // Redirect to Shiprocket
+    window.open("https://app.shiprocket.in/newlogin", "_blank")
   }
 
   return (
@@ -38,12 +38,13 @@ const SellerShipping = () => {
           {/* Phone Input */}
           <div className="flex items-center border rounded-lg overflow-hidden">
             <span className="px-3 bg-gray-100 text-gray-600">+91</span>
+
             <input
               type="tel"
               placeholder="Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="flex-1 p-3 outline-none"
+              className="flex-1 p-3 outline-none text-black placeholder-gray-400"
               required
             />
           </div>
@@ -51,7 +52,7 @@ const SellerShipping = () => {
           {/* Button */}
           <button
             type="submit"
-            className="w-full p-3 rounded-lg font-semibold text-white"
+            className="w-full p-3 rounded-lg font-semibold text-white transition hover:opacity-90"
             style={{ backgroundColor: PRIMARY }}
           >
             Continue
@@ -59,7 +60,7 @@ const SellerShipping = () => {
 
         </form>
 
-        {/* Bottom Text */}
+        {/* Footer */}
         <p className="text-xs text-gray-400 mt-4 text-center">
           By continuing, you agree to terms & conditions.
         </p>
