@@ -7,6 +7,7 @@ const navItems = [
   { to: "/seller", label: "Dashboard Overview" },
   { to: "/seller/orders", label: "Orders" },
   { to: "/seller/add-product", label: "Add Product" },
+  { to: "/seller/shipping", label: "Shipping Management" },
 ]
 
 const SellerLayout = () => {
