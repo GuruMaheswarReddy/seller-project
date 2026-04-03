@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const PRIMARY = "#094b3d"
 
@@ -8,28 +8,51 @@ const SellerShipping = () => {
     area: "",
     cost: "",
     days: "",
+    freeShipping: false,
+    minAmount: "",
   })
   const [editIndex, setEditIndex] = useState(null)
 
+  // Load from localStorage
+  useEffect(() => {
+    const data = localStorage.getItem("shippingRules")
+    if (data) setRules(JSON.parse(data))
+  }, [])
+
+  // Save to localStorage
+  useEffect(() => {
+    localStorage.setItem("shippingRules", JSON.stringify(rules))
+  }, [rules])
+
   // Handle Input Change
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    const { name, value, type, checked } = e.target
+    setForm({
+      ...form,
+      [name]: type === "checkbox" ? checked : value,
+    })
   }
 
-  // Add or Update Rule
+  // Add / Update Rule
   const handleSubmit = (e) => {
     e.preventDefault()
 
     if (editIndex !== null) {
-      const updatedRules = [...rules]
-      updatedRules[editIndex] = form
-      setRules(updatedRules)
+      const updated = [...rules]
+      updated[editIndex] = form
+      setRules(updated)
       setEditIndex(null)
     } else {
       setRules([...rules, form])
     }
 
-    setForm({ area: "", cost: "", days: "" })
+    setForm({
+      area: "",
+      cost: "",
+      days: "",
+      freeShipping: false,
+      minAmount: "",
+    })
   }
 
   // Delete Rule
@@ -53,22 +76,23 @@ const SellerShipping = () => {
           🚚 Shipping Management
         </h2>
         <p className="text-gray-500 mt-2">
-          Manage delivery areas, charges, and timelines.
+          Configure delivery areas, charges, and shipping rules.
         </p>
       </div>
 
-      {/* Form Section */}
+      {/* Form */}
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-3xl shadow-md mb-10 grid gap-4 md:grid-cols-3"
       >
+
         <input
           type="text"
           name="area"
           placeholder="Delivery Area (e.g. Bangalore)"
           value={form.area}
           onChange={handleChange}
-          className="border p-3 rounded-lg focus:outline-none focus:ring-2"
+          className="border p-3 rounded-lg"
           required
         />
 
@@ -78,7 +102,7 @@ const SellerShipping = () => {
           placeholder="Shipping Cost ₹"
           value={form.cost}
           onChange={handleChange}
-          className="border p-3 rounded-lg focus:outline-none focus:ring-2"
+          className="border p-3 rounded-lg"
           required
         />
 
@@ -88,69 +112,97 @@ const SellerShipping = () => {
           placeholder="Delivery Days"
           value={form.days}
           onChange={handleChange}
-          className="border p-3 rounded-lg focus:outline-none focus:ring-2"
+          className="border p-3 rounded-lg"
           required
+        />
+
+        {/* Free Shipping */}
+        <div className="flex items-center gap-2 col-span-1">
+          <input
+            type="checkbox"
+            name="freeShipping"
+            checked={form.freeShipping}
+            onChange={handleChange}
+          />
+          <label>Free Shipping</label>
+        </div>
+
+        {/* Minimum Amount */}
+        <input
+          type="number"
+          name="minAmount"
+          placeholder="Free shipping above ₹"
+          value={form.minAmount}
+          onChange={handleChange}
+          className="border p-3 rounded-lg"
         />
 
         <button
           type="submit"
-          className="md:col-span-3 text-white p-3 rounded-xl font-semibold hover:opacity-90 transition"
+          className="md:col-span-3 text-white p-3 rounded-xl font-semibold"
           style={{ backgroundColor: PRIMARY }}
         >
-          {editIndex !== null ? "Update Shipping Rule" : "Add Shipping Rule"}
+          {editIndex !== null ? "Update Rule" : "Add Rule"}
         </button>
       </form>
 
-      {/* Table Section */}
+      {/* Table */}
       <div className="bg-white rounded-3xl shadow-md p-6">
-
-        <h3 className="text-xl font-semibold mb-6 text-gray-800">
-          Shipping Rules List
+        <h3 className="text-xl font-semibold mb-6">
+          Shipping Rules
         </h3>
 
         {rules.length === 0 ? (
           <div className="text-center py-10 text-gray-500">
-            No shipping rules added yet 🚫
+            📦 No shipping rules yet. Add your first rule!
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left">
+            <table className="w-full">
 
               <thead>
                 <tr className="border-b text-gray-600">
                   <th className="py-3">Area</th>
-                  <th className="py-3">Cost</th>
-                  <th className="py-3">Delivery Time</th>
-                  <th className="py-3">Actions</th>
+                  <th>Cost</th>
+                  <th>Days</th>
+                  <th>Free</th>
+                  <th>Min ₹</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
 
               <tbody>
                 {rules.map((rule, index) => (
-                  <tr key={index} className="border-b hover:bg-gray-50">
+                  <tr key={index} className="border-b">
 
                     <td className="py-3">{rule.area}</td>
 
-                    <td className="py-3 font-medium">
-                      ₹{rule.cost}
+                    <td>₹{rule.cost}</td>
+
+                    <td>{rule.days} days</td>
+
+                    <td>
+                      {rule.freeShipping ? (
+                        <span className="text-green-600">Yes</span>
+                      ) : (
+                        "No"
+                      )}
                     </td>
 
-                    <td className="py-3">
-                      {rule.days} days
-                    </td>
+                    <td>{rule.minAmount || "-"}</td>
 
-                    <td className="py-3 flex gap-3">
+                    <td className="flex gap-3 py-3">
 
                       <button
                         onClick={() => handleEdit(index)}
-                        className="text-blue-600 hover:underline"
+                        className="text-blue-600"
                       >
                         Edit
                       </button>
 
                       <button
                         onClick={() => handleDelete(index)}
-                        className="text-red-600 hover:underline"
+                        className="text-red-600"
                       >
                         Delete
                       </button>
