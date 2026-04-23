@@ -94,20 +94,20 @@ const Home = () => {
       {/* CARD 1 */}
       <div className="rounded-2xl bg-white p-10 shadow-sm">
         <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
-          Lakhs of
+          ArshithFresh 
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Sellers trust ArshithFresh to sell online
+          is trusted by lakhs of sellers for online sales.
         </p>
       </div>
 
       {/* CARD 2 */}
       <div className="rounded-2xl bg-white p-10 shadow-sm">
         <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
-          Crores of
+          Millions of
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Customers buying across India
+          customers shopping across India.
         </p>
       </div>
 
@@ -117,7 +117,7 @@ const Home = () => {
           Thousands of
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Serviceable pincodes across India — we deliver everywhere.
+          serviceable pincodes across India - delivering to every corner.
         </p>
       </div>
 
@@ -127,7 +127,7 @@ const Home = () => {
           Hundreds of
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Categories to sell online
+          categories available for you to sell online.
         </p>
       </div>
 
