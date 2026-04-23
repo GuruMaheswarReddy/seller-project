@@ -69,7 +69,7 @@ const Home = () => {
         </h1>
 
         <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">
-          Put your products in front of millions of customers who search for{" "}
+          Showcase your products to millions of customers who search on{" "}
           <span className="font-semibold text-[#094b3d]">ArshithFresh</span> everyday.
         </p>
 
