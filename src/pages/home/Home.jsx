@@ -12,34 +12,34 @@ const Home = () => {
     const seller = users.find((u) => u.id === p.sellerId)
     return {
       ...p,
-      sellerName: seller?.name ?? 'Verified Seller',
+      sellerName: seller?.name ?? 'Authenticated Merchant',
     }
   })
 
   const steps = [
   {
-    title: "Create Your Profile",
-    desc: "To begin selling, you need:",
+    title: "Account Initialization",
+    desc: "To begin onboarding, you must provide:",
     points: [
-      "Basic identity or business verification",
-      "An active bank account for payouts"
+      "Government or business identity credentials",
+      "Active settlement bank account details"
     ]
   },
   {
-    title: "Upload Your Catalog",
-    desc: "Add product details, images, and pricing in your dashboard."
+    title: "Product Enrollment",
+    desc: "Publish your inventory with full details inside your seller console."
   },
   {
-    title: "Receive Orders",
-    desc: "Customers browse and place orders anytime on the platform."
+    title: "Order Acquisition",
+    desc: "Customers from the marketplace place purchases around the clock."
   },
   {
-    title: "Hassle-Free Delivery",
-    desc: "We support logistics to deliver products across locations."
+    title: "Fulfillment Network",
+    desc: "We coordinate logistics to ensure nationwide product dispatch."
   },
   {
-    title: "Get Paid Easily",
-    desc: "Payments are securely transferred to your account in cycles."
+    title: "Revenue Settlement",
+    desc: "Your earnings are credited securely in scheduled payout cycles."
   }
 ]
   
@@ -57,7 +57,7 @@ const Home = () => {
       <div className="w-full">
         <img
           src={heroImage}
-          alt="Start your online business"
+          alt="Digital storefront activation banner"
           className="w-full h-64 sm:h-72 object-cover lg:h-full"
         />
       </div>
@@ -65,19 +65,19 @@ const Home = () => {
       {/* CONTENT */}
       <div className="p-6 sm:p-8 text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          Take your business online!
+          Launch your digital storefront instantly
         </h1>
 
         <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">
-          Reach thousands of active shoppers exploring{" "}
-          <span className="font-semibold text-[#094b3d]">ArshithFresh</span> every day.
+          Present your catalog to thousands of daily active buyers exploring{" "}
+          <span className="font-semibold text-[#094b3d]">ArshithFresh</span> ecosystem.
         </p>
 
         <button
           onClick={() => navigate("/register")}
           className="w-full lg:w-auto bg-[#094b3d] hover:bg-[#0f6b58] text-white font-semibold py-4 px-8 rounded-full shadow-md transition duration-300"
         >
-          Start Selling Now
+          Activate Seller Account
         </button>
       </div>
 
@@ -85,49 +85,44 @@ const Home = () => {
 
   </div>
 </section>
-
       {/* STATS SECTION */}
 <section className="bg-gray-100 py-20">
   <div className="mx-auto max-w-7xl px-6">
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
-      {/* CARD 1 */}
       <div className="rounded-2xl bg-white p-10 shadow-sm">
         <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
-          Thousands of
+          Expanding Network of
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Sellers building their businesses with us
+          Independent sellers scaling their online presence
         </p>
       </div>
 
-      {/* CARD 2 */}
       <div className="rounded-2xl bg-white p-10 shadow-sm">
         <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
-          Millions of
+          Massive Base of
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Customers shopping every month
+          Active customers engaging with products daily
         </p>
       </div>
 
-      {/* CARD 3 */}
       <div className="rounded-2xl bg-white p-10 shadow-sm">
         <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
-          Wide coverage
+          Nationwide Reach Across
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Delivering to numerous serviceable locations
+          Logistics coverage spanning multiple regions
         </p>
       </div>
 
-      {/* CARD 4 */}
       <div className="rounded-2xl bg-white p-10 shadow-sm">
         <h3 className="text-4xl font-bold text-[#094b3d] mb-6">
-          Multiple
+          Diverse Marketplace of
         </h3>
         <p className="text-xl font-semibold text-gray-900 leading-snug">
-          Categories available for selling
+          Product verticals available for listing
         </p>
       </div>
 
@@ -135,110 +130,97 @@ const Home = () => {
   </div>
 </section>
 
-      {/* WHY SELLERS LOVE SECTION */}
+
+{/* WHY SECTION */}
 <section className="bg-gray-50 py-24">
   <div className="mx-auto max-w-7xl px-6">
     <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
 
-      {/* LEFT SIDE */}
       <div className="space-y-6">
         <h2 className="text-4xl font-bold text-gray-900 leading-tight sm:text-5xl">
-          Why Choose Our Platform
+          Platform Advantages for Sellers
         </h2>
 
         <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-          Everything is designed to help you grow faster and manage your business with ease.
+          A fully optimized ecosystem designed to maximize seller performance and operational efficiency.
         </p>
       </div>
 
-      {/* RIGHT SIDE CARD */}
       <div className="rounded-2xl border border-gray-200 bg-white shadow-lg">
 
-        {/* ITEM 1 */}
         <div className="flex gap-4 p-8">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-[#094b3d] font-bold text-lg">
             0%
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
-              No Commission Fees
+              Commission-Free Model
             </h3>
             <p className="mt-2 text-gray-600">
-              Keep full earnings without paying platform commissions.
+              Sellers retain complete revenue ownership without deductions.
             </p>
           </div>
         </div>
 
         <hr className="border-gray-200" />
 
-        {/* ITEM 2 */}
         <div className="flex gap-4 p-8">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-[#094b3d] font-bold">
             ₹
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
-              No Extra Charges
+              Transparent Financial Structure
             </h3>
             <p className="mt-2 text-gray-600">
-              Transparent pricing without hidden deductions.
+              No hidden deductions or unexpected operational fees.
             </p>
           </div>
         </div>
 
         <hr className="border-gray-200" />
 
-        {/* ITEM 3 */}
         <div className="flex gap-4 p-8">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#094b3d]/10 text-[#094b3d] font-bold">
             ↑
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900">
-              Growth Opportunities
+              Scalable Business Growth
             </h3>
             <p className="mt-2 text-gray-600">
-              Suitable for both new and experienced sellers.
+              Structured support for businesses at all growth stages.
             </p>
           </div>
         </div>
 
         <hr className="border-gray-200" />
 
-        {/* ITEM 4 */}
         <div className="p-8">
           <h3 className="text-xl font-semibold text-gray-900 mb-6">
-            Simple Business Tools
+            Simplified Operational Workflow
           </h3>
 
           <div className="grid gap-4 sm:grid-cols-2 text-gray-700">
 
             <div className="flex items-center gap-3">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
-                ✓
-              </span>
-              Easy Product Upload
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">✓</span>
+              Streamlined Product Upload System
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
-                ✓
-              </span>
-              Affordable Shipping Options
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">✓</span>
+              Optimized Shipping Infrastructure
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
-                ✓
-              </span>
-              Fast Payment Processing
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">✓</span>
+              Accelerated Payment Settlement Cycle
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">
-                ✓
-              </span>
-              Transparent Order Tracking
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#094b3d]/10 text-[#094b3d] text-sm font-bold">✓</span>
+              Real-Time Transaction Visibility
             </div>
 
           </div>
@@ -248,12 +230,12 @@ const Home = () => {
     </div>
   </div>
 </section>
-    {/* HOW IT WORKS SECTION */}
+{/* HOW IT WORKS SECTION */}
 <section className="py-20 bg-gray-50">
   <div className="mx-auto max-w-6xl px-6">
 
     <h2 className="text-center text-3xl font-semibold text-gray-900 mb-16">
-      How the process works
+      Platform Workflow Guide
     </h2>
 
     <div className="bg-white rounded-2xl shadow-lg px-10 py-14">
@@ -304,19 +286,16 @@ const Home = () => {
       {/* ================= MOBILE VIEW ================= */}
       <div className="md:hidden relative">
 
-        {/* Vertical Line */}
         <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-[#094b3d]"></div>
 
         <div className="space-y-14">
           {steps.map((step, index) => (
             <div key={index} className="relative pl-16">
 
-              {/* Circle */}
               <div className="absolute left-0 top-1 flex h-12 w-12 items-center justify-center rounded-full bg-[#094b3d] text-white font-semibold text-sm shadow-md">
                 {index + 1}
               </div>
 
-              {/* Content */}
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {step.title}
               </h3>
@@ -341,64 +320,59 @@ const Home = () => {
     </div>
   </div>
 </section>
-  
-      
-    {/* TOOLS SECTION */}
+
+{/* TOOLS SECTION */}
 <section className="relative bg-[#eef3f7] py-24 overflow-hidden">
   <div className="mx-auto max-w-7xl px-6">
 
-    {/* Heading */}
     <div className="max-w-4xl">
       <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
         <span className="text-[#094b3d]">
-          Powerful tools to accelerate growth
+          Business acceleration tools
         </span>{" "}
-        on ArshithFresh
+        built for sellers on ArshithFresh
       </h2>
 
       <p className="mt-6 text-lg text-gray-600">
-        Your business journey may need support at different stages. 
-        Our platform provides tools that simplify operations and boost growth.
+        Expand your operations smoothly using integrated solutions designed to support scaling businesses.
       </p>
     </div>
 
-    {/* Background Large Text */}
     <div className="absolute left-6 top-40 text-[120px] font-bold text-[#094b3d]/5 select-none pointer-events-none">
-      Grow Faster
+      SCALE UP
     </div>
 
-    {/* Cards Grid */}
     <div className="relative mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
       {[
         {
-          title: "Logistics Assistance",
-          desc: "We help manage storage, packaging, and delivery efficiently.",
+          title: "Fulfillment Management",
+          desc: "End-to-end logistics support including packaging and dispatch coordination.",
           path: "/how-it-works"
         },
         {
-          title: "Promotional Ads",
-          desc: "Increase visibility and attract more customers to your products.",
+          title: "Advertising System",
+          desc: "Promote your listings to reach a larger and more relevant audience.",
           path: "/grow-business"
         },
         {
-          title: "Seasonal Campaigns",
-          desc: "Join special campaigns and boost your sales during peak seasons.",
+          title: "Campaign Participation",
+          desc: "Join promotional events and seasonal sales programs to boost visibility.",
           path: "/grow-business"
         },
         {
-          title: "Learning Resources",
-          desc: "Access tutorials, webinars, and expert guidance anytime.",
+          title: "Training Hub",
+          desc: "Learn strategies, insights, and marketplace optimization techniques.",
           path: "/how-it-works"
         },
         {
-          title: "Business Insights",
-          desc: "Optimize pricing and product strategy with data insights.",
+          title: "Analytics Dashboard",
+          desc: "Monitor performance and improve decision-making with data insights.",
           path: "/pricing"
         },
         {
-          title: "Mobile Access",
-          desc: "Manage your business anytime, anywhere from your device.",
+          title: "Mobile Operations",
+          desc: "Control your entire seller account directly from mobile devices.",
           path: "/how-it-works"
         }
       ].map((item, index) => (
@@ -418,7 +392,7 @@ const Home = () => {
             onClick={() => navigate(item.path)}
             className="mt-6 text-[#094b3d] font-semibold hover:underline"
           >
-            Explore More →
+            Open Feature →
           </button>
         </div>
       ))}
@@ -427,52 +401,49 @@ const Home = () => {
   </div>
 </section>
 
-     {/* HELP SECTION */}
+{/* HELP SECTION */}
 <section className="bg-gray-100 py-24">
   <div className="mx-auto max-w-7xl px-6">
     <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
 
-      {/* LEFT SIDE */}
       <div>
 
         <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 leading-tight">
-          Need assistance?{" "}
-          <span className="text-[#094b3d]">We’re here!</span>{" "}
-          😊
+          Support Center{" "}
+          <span className="text-[#094b3d]">available 24/7</span>
         </h2>
 
         <p className="mt-6 text-lg text-gray-600 max-w-xl">
-          Have questions or need help? Share your concerns and we’ll assist you promptly.
+          Reach out to us anytime for assistance regarding your seller journey or platform usage.
         </p>
 
-        {/* FORM */}
         <form className="mt-10 space-y-6 max-w-md">
 
           <input
             type="text"
-            placeholder="Your Full Name *"
+            placeholder="Full Name Required"
             className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           />
 
           <input
             type="text"
-            placeholder="Phone Number or Email *"
+            placeholder="Contact Information (Phone / Email)"
             className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           />
 
           <select
             className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           >
-            <option>Choose a Topic</option>
-            <option>General Inquiry</option>
-            <option>Seller Assistance</option>
-            <option>Payment Related</option>
-            <option>Technical Support</option>
+            <option>Select Support Category</option>
+            <option>General Help</option>
+            <option>Seller Issues</option>
+            <option>Payment Queries</option>
+            <option>Technical Problems</option>
           </select>
 
           <textarea
             rows="5"
-            placeholder="Write your message here *"
+            placeholder="Describe your issue in detail"
             className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#094b3d]"
           ></textarea>
 
@@ -480,17 +451,16 @@ const Home = () => {
             type="submit"
             className="rounded-lg bg-[#094b3d] px-8 py-3 text-white font-semibold hover:bg-[#0f6b58] transition"
           >
-            Submit Request
+            Submit Ticket
           </button>
 
         </form>
       </div>
 
-      {/* RIGHT SIDE IMAGE */}
       <div className="flex justify-center">
         <img
           src="https://illustrations.popsy.co/blue/customer-support.svg"
-          alt="Support assistance"
+          alt="Support illustration"
           className="w-full max-w-md"
         />
       </div>
@@ -499,46 +469,46 @@ const Home = () => {
   </div>
 </section>
 
-      {/* POPULAR CATEGORIES SECTION */}
+{/* CATEGORIES SECTION */}
 <section className="bg-[#094b3d] py-20 text-white">
   <div className="mx-auto max-w-7xl px-6">
 
     <h2 className="text-center text-3xl sm:text-4xl font-bold mb-16">
-      Trending Categories Across the Platform
+      Popular Product Segments Across Marketplace
     </h2>
 
     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-green-100 text-sm sm:text-base">
 
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Organic Oils</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Sunflower Oil</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Groundnut Oil</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Coconut Oil</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Sesame Oil</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Natural Oils Category</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Refined Sunflower Oils</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Premium Groundnut Oils</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Cold Press Coconut Oils</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Sesame Extract Oils</li>
       </ul>
 
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Dry Fruits</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Nuts & Seeds</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Premium Almonds</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Cashews</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Raisins</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Dry Fruits Collection</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Nut Based Products</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Almond Variants</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Cashew Range</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Raisin Products</li>
       </ul>
 
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Beauty Essentials</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Kids Toys</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Fashion Wear</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Books</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Beverages</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Beauty Essentials Line</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Kids Entertainment Toys</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Fashion Apparel</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Literature & Books</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Beverage Items</li>
       </ul>
 
       <ul className="space-y-4">
-        <li className="hover:text-yellow-300 transition cursor-pointer">Groceries</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Spices</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Healthy Snacks</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">Combo Packs</li>
-        <li className="hover:text-yellow-300 transition cursor-pointer">All Categories</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Daily Grocery Items</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Spice Collections</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Healthy Snacks Range</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Combo Product Packs</li>
+        <li className="hover:text-yellow-300 transition cursor-pointer">Full Marketplace Access</li>
       </ul>
 
     </div>
