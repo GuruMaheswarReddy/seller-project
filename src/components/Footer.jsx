@@ -103,7 +103,7 @@ const Footer = () => {
               } lg:block`}
             >
               <p>📍 Bengaluru, Karnataka</p>
-              <p>📞 <a href="tel:+919945676029" className="hover:text-yellow-400">+91 9945676029</a></p>
+              <p>📞 <a href="tel:+919945676029" className="hover:text-yellow-400">+91 9014574712</a></p>
               <p>✉ <a href="mailto:support@arshithfresh.com" className="hover:text-yellow-400">support@arshithfresh.com</a></p>
             </div>
           </div>
